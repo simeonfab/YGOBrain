@@ -4,14 +4,14 @@ Status: DRAFTED
 Version: v0.1
 Category: runtime
 Scope: Runtime instructions for event, deck list, matchup, and performance data analysis
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
 
 This file is the task-specific runtime context for analytics work in YGOBrain.
 
-Use this file when Simeon provides deck lists, event results, matchup data, statistics, testing logs, or performance data and wants useful decisions from it.
+Use this file when Admin provides deck lists, event results, matchup data, statistics, testing logs, or performance data and wants useful decisions from it.
 
 ## 2. Required Context
 
@@ -33,7 +33,7 @@ Use analytics modules from `analytics/` when available.
 
 ## 3. Default Assumptions
 
-Unless Simeon explicitly says otherwise, assume:
+Unless Admin explicitly says otherwise, assume:
 
 - Yu-Gi-Oh TCG Advanced Format
 - official cards only
@@ -99,7 +99,7 @@ Do not treat incomplete data as complete.
 
 ## 7. Source Approval Gate
 
-Before using a new tournament result database, decklist website, spreadsheet, creator source, community dataset, or recurring data provider as a trusted analytics source, ask Simeon for approval.
+Before using a new tournament result database, decklist website, spreadsheet, creator source, community dataset, or recurring data provider as a trusted analytics source, ask Admin for approval.
 
 Once a source family is approved for analytics use, individual entries from that approved source may be extracted or analyzed without asking for approval each time unless the entry is unusual, contradictory, or high-impact.
 
@@ -234,7 +234,7 @@ For larger analytics tasks, sub-agents may be used for:
 - deckbuilding interpretation
 - consistency review against existing YGOBrain files
 
-Sub-agents must use approved sources only unless their task is explicitly to propose new sources for Simeon review.
+Sub-agents must use approved sources only unless their task is explicitly to propose new sources for Admin review.
 
 The top-level agent must synthesize outputs, label limitations, and resolve contradictions.
 
@@ -258,7 +258,7 @@ Avoid:
 - recommending deck changes from weak evidence without labelling uncertainty
 - mixing TCG and OCG data without warning
 - failing to connect findings to decisions
-- using a new decklist website or data provider as trusted without Simeon approval
+- using a new decklist website or data provider as trusted without Admin approval
 
 ## 19. Durable Update Rule
 
