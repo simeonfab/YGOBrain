@@ -1,7 +1,7 @@
 # Error Log Entry Template
 
 Status: PLANNED
-Version: v0.1
+Version: v0.2
 Category: error_logs
 Scope: Standard structure for logging material YGOBrain errors
 Owner: Simeon Fabowale-Makinde
@@ -24,7 +24,7 @@ error_logs/YYYY-MM.md
 Example:
 
 ```text
-error_logs/2026-05.md
+error_logs/2026-06.md
 ```
 
 ## 3. Error Entry Format
@@ -49,6 +49,15 @@ Correction:
 
 Preventative Action:
 - [Rule, test, source note, warning, template update, or runtime update added]
+
+Sub-Agent Involved:
+- Yes / No
+
+Top-Level Synthesis Issue:
+- Yes / No
+
+Source Family Status:
+- Approved / Candidate / Limited Use / Unapproved / Not Applicable
 
 Affected Files:
 - [path/to/file.md]
@@ -75,6 +84,7 @@ TIMING_ERROR
 SUMMONING_ERROR
 CARD_TEXT_ERROR
 SOURCE_ERROR
+UNAPPROVED_SOURCE_USE
 OUTDATED_INFORMATION
 FORMAT_CONFUSION
 BAD_ASSUMPTION
@@ -85,6 +95,9 @@ RESPONSE_BEHAVIOUR_ERROR
 FILE_STRUCTURE_ERROR
 MISSING_EDGE_CASE
 AMBIGUOUS_WORDING
+SUB_AGENT_SCOPE_ERROR
+TOP_LEVEL_SYNTHESIS_ERROR
+SUB_AGENT_UNVERIFIED_OUTPUT_ERROR
 ```
 
 ## 5. Status Options
@@ -114,8 +127,11 @@ Create an error log entry when:
 - Simeon identifies a material assistant mistake
 - a repeated mistake occurs
 - a source is found to be wrong or misleading
+- an unapproved recurring source is used as trusted
 - a verified module becomes incorrect
 - a runtime instruction causes bad behaviour
+- a sub-agent exceeds scope
+- a top-level agent fails to synthesize or check sub-agent output
 - a deckbuilding recommendation is materially misleading
 - an analytics interpretation is materially wrong
 - a format confusion issue occurs
@@ -129,7 +145,9 @@ A logged error should consider one or more preventative actions:
 
 - update governance
 - update source hierarchy
+- update approved source family list
 - update response methodology
+- update sub-agent workflow policy
 - update a module
 - update a template
 - update runtime context
@@ -138,6 +156,8 @@ A logged error should consider one or more preventative actions:
 - add a common mistake warning
 - demote or qualify a source
 - add a source requirement
+- tighten sub-agent task scope
+- require top-level synthesis checklist
 
 ## 9. Closure Checklist
 
@@ -148,43 +168,55 @@ Before marking an error as VERIFIED_RESOLVED, check:
 - [ ] Preventative action was considered.
 - [ ] A file update was made if needed.
 - [ ] A test or warning was added if useful.
+- [ ] Source family approval status was checked if relevant.
+- [ ] Sub-agent scope was checked if relevant.
+- [ ] Top-level synthesis was checked if relevant.
 - [ ] Follow-up work was assigned a priority.
 - [ ] Simeon verified or accepted the resolution.
 
 ## 10. Example Entry
 
 ```text
-## ERR-2026-05-28-001 — Incorrect Targeting Interpretation
+## ERR-2026-06-02-001 — Unapproved Decklist Source Used as Trusted
 
-Date: 2026-05-28
+Date: 2026-06-02
 Reported By: Simeon
 Status: PREVENTION_ADDED
-Error Type: PSCT_ERROR / CARD_TEXT_ERROR
+Error Type: UNAPPROVED_SOURCE_USE / SOURCE_ERROR
 Priority: Immediate
 
 Description:
-- Assistant incorrectly treated a non-targeting effect as targeting.
+- Assistant treated a new decklist website as a trusted recurring source without first asking Simeon to approve the source family.
 
 Root Cause:
-- Assistant inferred targeting from effect behaviour instead of exact PSCT wording.
+- Missing source-family approval check before agent research.
 
 Correction:
-- Corrected the interaction answer.
+- Reclassified the source as CANDIDATE until Simeon review.
 
 Preventative Action:
-- Added a targeting validation checklist.
-- Added an edge case test to the PSCT targeting test suite.
+- Updated source approval gate in runtime files.
+- Added source family approval fields to source templates.
+
+Sub-Agent Involved:
+- Yes
+
+Top-Level Synthesis Issue:
+- Yes
+
+Source Family Status:
+- Unapproved
 
 Affected Files:
-- core_rules/024_psct_targeting.md
-- tests/024_psct_targeting_tests.md
+- sources/000_source_index.md
+- governance/007_sub_agent_workflow_policy.md
 
 Follow-Up:
-- Simeon to verify updated examples.
+- Simeon to approve or reject the source family.
 
 Verification:
 - Needs Simeon review.
 
 Notes:
-- Exact card text must be used when determining whether an effect targets.
+- Individual entries from approved sources do not need separate approval unless unusual, contradictory, or high-impact.
 ```
