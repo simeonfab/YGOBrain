@@ -1,7 +1,7 @@
 # 001 Approved Source Families
 
 Status: DRAFTED
-Version: v0.1
+Version: v0.2
 Category: sources
 Scope: Dedicated registry of approved, candidate, limited-use, rejected, and deprecated source families
 Owner: Admin
@@ -71,6 +71,56 @@ Disallowed Use Cases:
 Notes: Admin is final arbiter for YGOBrain acceptance but does not override official rules.
 ```
 
+### Yu-Gi-Oh Meta
+
+```text
+Source Family: Yu-Gi-Oh Meta
+Primary URL: https://www.yugiohmeta.com/
+Approved Scope: Yu-Gi-Oh tournament statistics, decklists, tournament results, metagame trends, and Yu-Gi-Oh news.
+Approval Status: APPROVED
+Approved By: Admin
+Authority Tier: Tier 4 — High-Quality Community Resource
+Allowed Use Cases:
+- tournament statistics
+- decklist research
+- metagame trend analysis
+- competitive analytics
+- Yu-Gi-Oh news as context
+Disallowed Use Cases:
+- final ruling authority
+- official TCG card text authority
+- official tournament policy authority
+Notes: Approved as a competitive and analytics source family. Strategic conclusions still need sample-size and context checks.
+```
+
+### YGOResources Database/API
+
+```text
+Source Family: YGOResources Database/API
+Primary URL: https://db.ygoresources.com/
+Approved Scope: Card database lookup, card text research, card metadata, Q&A/rulings lookup, and API-backed querying where available.
+Approval Status: APPROVED
+Approved By: Admin
+Authority Tier: Tier 3 — Judge-Level or Policy-Aware Source / Tier 4 — High-Quality Community Resource depending on claim
+Allowed Use Cases:
+- card database lookup
+- card metadata lookup
+- Q&A/rulings lookup
+- API-assisted card and ruling queries
+- research pointer for exact card/ruling checks
+Disallowed Use Cases:
+- overriding official Konami TCG sources
+- treating API-derived results as final when they conflict with official TCG material
+API Use Rules:
+- Do not request more data than needed.
+- Do not query the entire database unnecessarily.
+- Cache requested data locally where practical.
+- Respect X-Cache-Revision where applicable.
+- Use manifest/revision-style update checks where practical instead of repeatedly re-downloading unchanged data.
+- Request only relevant card, Q&A, metadata, or index endpoints for the task.
+Notes: Approved as a practical database/API source. Treat as highly useful for querying and research, but maintain source hierarchy discipline.
+```
+
 ## 5. Limited-Use Source Families
 
 ### Official OCG Sources
@@ -79,7 +129,7 @@ Notes: Admin is final arbiter for YGOBrain acceptance but does not override offi
 Source Family: Official OCG Sources
 Approved Scope: Informative support only when no TCG authority is available.
 Approval Status: LIMITED_USE
-Approved By: YGOBrain foundation default, subject to Admin review for recurring use.
+Approved By: YGOBrain foundation default, confirmed by Admin
 Authority Tier: Tier 2 — Official or Semi-Official Related Authority
 Allowed Use Cases:
 - informative support
@@ -91,56 +141,66 @@ Disallowed Use Cases:
 Notes: Must be labelled as OCG informative only.
 ```
 
-## 6. Candidate Source Families Pending Admin Review
-
 ### Yugipedia
 
 ```text
 Source Family: Yugipedia
-Proposed Scope: Low-risk factual lookup, terminology, card information summaries, and research pointers.
-Approval Status: CANDIDATE
-Approved By: Pending Admin review
+Primary URL: https://yugipedia.com/
+Approved Scope: Low-risk factual lookup, terminology, card information summaries, and research pointers.
+Approval Status: LIMITED_USE
+Approved By: Admin
 Authority Tier: Tier 4 — High-Quality Community Resource
-Potential Use Cases:
+Allowed Use Cases:
 - quick lookup
-- card information summary
+- card information summaries
 - terminology research
-- rulings references as pointers
-Risks:
-- community-maintained
-- may need higher-tier verification for important claims
-Notes: Needs Admin decision before becoming trusted for recurring use.
+- research pointers
+- low-risk factual checks
+Disallowed Use Cases:
+- final ruling authority without higher-tier support
+- final current card text authority where official sources are available
+- official policy authority
+Notes: Useful as a fast reference and pointer source. Important claims should be verified against higher-tier sources where practical.
 ```
 
 ### YGOrganization
 
 ```text
 Source Family: YGOrganization
-Proposed Scope: Yu-Gi-Oh news, translations, OCG-related information, and rulings coverage.
-Approval Status: CANDIDATE
-Approved By: Pending Admin review
+Primary URL: https://ygorganization.com/
+Approved Scope: Yu-Gi-Oh news, translations, OCG-related information, and ruling pointers.
+Approval Status: LIMITED_USE
+Approved By: Admin
 Authority Tier: Tier 4 — High-Quality Community Resource
-Potential Use Cases:
+Allowed Use Cases:
 - OCG translation support
-- news research
+- Yu-Gi-Oh news research
 - ruling coverage as pointer
-Risks:
-- not primary TCG authority
-- OCG-to-TCG transfer must be qualified
-Notes: Needs Admin decision before becoming trusted for recurring use.
+- product/news context
+Disallowed Use Cases:
+- final TCG ruling authority
+- unqualified OCG-to-TCG transfer
+- official TCG policy authority
+Notes: Useful for OCG-related information and translation/news context. Treat TCG application carefully.
+```
+
+## 6. Candidate Source Families Pending Admin Review
+
+```text
+None currently listed.
 ```
 
 ## 7. Needed Source Families
 
-These categories need Admin-approved source families before agent-assisted content generation relies on them.
+These categories may need more Admin-approved source families before agent-assisted content generation relies on them.
 
 ```text
-Judge / ruling source family: SOURCE_NEEDED
-Decklist source family: SOURCE_NEEDED
-Tournament result source family: SOURCE_NEEDED
-Metagame statistics source family: SOURCE_NEEDED
-Creator / channel source family: SOURCE_NEEDED
-Community spreadsheet source family: SOURCE_NEEDED
+Judge / ruling source family: PARTIALLY_COVERED by YGOResources Database/API; additional judge resources may be proposed later.
+Decklist source family: COVERED by Yu-Gi-Oh Meta; additional decklist sources may be proposed later.
+Tournament result source family: COVERED by Yu-Gi-Oh Meta; official event coverage may also be used when available.
+Metagame statistics source family: COVERED by Yu-Gi-Oh Meta; additional statistics sources may be proposed later.
+Creator / channel source family: SOURCE_NEEDED if creator sources are required.
+Community spreadsheet source family: SOURCE_NEEDED if external spreadsheets are required.
 ```
 
 ## 8. Rejected Source Families
@@ -162,4 +222,9 @@ None yet.
 Status: DRAFTED
 Change: Created approved source families registry.
 Reason: YGOBrain needs a dedicated source-family approval file before agent-assisted source research and data extraction.
+
+2026-06-02
+Status: DRAFTED
+Change: Approved initial source family set and added Yu-Gi-Oh Meta plus YGOResources Database/API.
+Reason: Admin approved the initial source recommendations and added specific competitive/statistics and database/API sources.
 ```
