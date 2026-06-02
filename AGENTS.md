@@ -3,7 +3,7 @@
 Status: DRAFTED
 Version: v0.1
 Scope: Top-level instructions for Codex, Claude-style agents, and other coding or research agents working in YGOBrain
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
@@ -43,7 +43,7 @@ runtime/060_sub_agent_task_template.md
 
 ## 3. Default Scope
 
-Unless Simeon explicitly says otherwise, assume:
+Unless Admin explicitly says otherwise, assume:
 
 - Yu-Gi-Oh TCG Advanced Format
 - official cards only
@@ -64,17 +64,17 @@ Out of scope unless explicitly requested:
 
 ## 4. Core Working Principle
 
-The assistant drafts. Simeon verifies.
+The assistant drafts. Admin verifies.
 
-Agents may draft, research, test, extract data, and propose changes, but substantive YGOBrain knowledge must not be marked VERIFIED unless Simeon approves it.
+Agents may draft, research, test, extract data, and propose changes, but substantive YGOBrain knowledge must not be marked VERIFIED unless Admin approves it.
 
 ## 5. Source Family Approval Rule
 
 Agents must not independently promote new recurring sources to trusted status.
 
-New source families, websites, databases, decklist providers, tournament result sources, judge resources, community resources, creator sources, spreadsheets, and data providers require Simeon approval before becoming trusted YGOBrain inputs.
+New source families, websites, databases, decklist providers, tournament result sources, judge resources, community resources, creator sources, spreadsheets, and data providers require Admin approval before becoming trusted YGOBrain inputs.
 
-Once a source family is approved for a defined use case, individual entries from that approved source may be used within scope without asking Simeon for each lookup.
+Once a source family is approved for a defined use case, individual entries from that approved source may be used within scope without asking Admin for each lookup.
 
 ## 6. Sub-Agent Rule
 
@@ -110,7 +110,7 @@ When changing files:
 - preserve file naming conventions
 - keep modules reviewable
 - include metadata in new files
-- keep content modules as DRAFTED unless Simeon verifies them
+- keep content modules as DRAFTED unless Admin verifies them
 
 ## 8. Required Change Summary
 
@@ -147,13 +147,13 @@ Every substantive module should:
 - include dependencies
 - include source status
 - include verification gate
-- remain DRAFTED or UNDER_REVIEW until Simeon verifies it
+- remain DRAFTED or UNDER_REVIEW until Admin verifies it
 
 ## 10. Do Not Do
 
 Do not:
 
-- mark content VERIFIED without Simeon approval
+- mark content VERIFIED without Admin approval
 - use unapproved recurring sources as trusted
 - silently rewrite established files
 - create giant unreviewable modules
@@ -172,7 +172,7 @@ For setup or maintenance batches:
 4. Create missing foundation files.
 5. Summarize changes.
 6. List remaining work.
-7. Ask Simeon for verification where needed.
+7. Ask Admin for verification where needed.
 
 ## 12. Current Foundation State
 
@@ -184,4 +184,4 @@ Current pilot content module:
 competitive/010_deckbuilding_principles.md
 ```
 
-This module is DRAFTED and needs Simeon review.
+This module is DRAFTED and needs Admin review.
