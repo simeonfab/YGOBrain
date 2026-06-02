@@ -3,7 +3,7 @@
 Status: DRAFTED
 Version: v0.1
 Scope: Repository structure, module architecture, dependency rules, and build order
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-05-28
 
 ## 1. Purpose
@@ -443,7 +443,7 @@ or
 VERIFIED -> DEPRECATED
 ```
 
-Only Simeon can approve VERIFIED status unless he explicitly delegates verification for a defined source category.
+Only Admin can approve VERIFIED status unless verification is explicitly delegated for a defined source category.
 
 ## 17. Expansion Rule
 
