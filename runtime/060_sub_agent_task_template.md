@@ -4,7 +4,7 @@ Status: DRAFTED
 Version: v0.1
 Category: runtime
 Scope: Reusable prompt structure for assigning sub-agent tasks in YGOBrain
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
@@ -62,7 +62,7 @@ Expected Output:
 Uncertainty Handling:
 - Mark unknowns clearly.
 - Do not invent sources, card text, rulings, or data.
-- Use SOURCE_NEEDED or NEEDS_SIMEON_REVIEW where appropriate.
+- Use SOURCE_NEEDED or NEEDS_ADMIN_REVIEW where appropriate.
 
 Return Format:
 - Concise structured markdown.
