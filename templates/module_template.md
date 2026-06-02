@@ -4,7 +4,7 @@ Status: PLANNED
 Version: v0.1
 Category: [governance / core_rules / competitive / analytics / decks / tests / sources / runtime]
 Scope: [What this module covers]
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: YYYY-MM-DD
 
 ## 1. Purpose
@@ -53,7 +53,7 @@ Related Modules:
 
 ## 5. Clarifying Questions
 
-Before drafting or finalizing this module, identify whether Simeon needs to answer any clarifying questions.
+Before drafting or finalizing this module, identify whether Admin needs to answer any clarifying questions.
 
 Ask only questions that materially affect the module.
 
@@ -86,7 +86,7 @@ Use source labels where relevant:
 ```text
 Officially Confirmed:
 Source-Backed:
-Simeon Verified:
+Admin Verified:
 Inferred Not Verified:
 Source Needed:
 ```
@@ -150,12 +150,12 @@ List important edge cases.
 
 ## 12. Verification Gate
 
-This module cannot be marked VERIFIED until Simeon has reviewed or approved it.
+This module cannot be marked VERIFIED until Admin has reviewed or approved it.
 
 Verification Status:
 
 ```text
-NEEDS_SIMEON_REVIEW
+NEEDS_ADMIN_REVIEW
 ```
 
 Review Notes:
@@ -175,7 +175,7 @@ Before marking this module as VERIFIED, check:
 - [ ] Edge cases are included where useful.
 - [ ] Common mistakes are included where useful.
 - [ ] Related tests are created if needed.
-- [ ] Simeon has reviewed or approved the module.
+- [ ] Admin has reviewed or approved the module.
 
 ## 14. Sources
 
