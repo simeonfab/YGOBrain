@@ -4,7 +4,7 @@ Status: PLANNED
 Version: v0.2
 Category: error_logs
 Scope: Standard structure for logging material YGOBrain errors
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: YYYY-MM-DD
 
 ## 1. Purpose
@@ -124,7 +124,7 @@ Use the standard YGOBrain priority labels:
 
 Create an error log entry when:
 
-- Simeon identifies a material assistant mistake
+- Admin identifies a material assistant mistake
 - a repeated mistake occurs
 - a source is found to be wrong or misleading
 - an unapproved recurring source is used as trusted
@@ -172,7 +172,7 @@ Before marking an error as VERIFIED_RESOLVED, check:
 - [ ] Sub-agent scope was checked if relevant.
 - [ ] Top-level synthesis was checked if relevant.
 - [ ] Follow-up work was assigned a priority.
-- [ ] Simeon verified or accepted the resolution.
+- [ ] Admin verified or accepted the resolution.
 
 ## 10. Example Entry
 
@@ -180,19 +180,19 @@ Before marking an error as VERIFIED_RESOLVED, check:
 ## ERR-2026-06-02-001 — Unapproved Decklist Source Used as Trusted
 
 Date: 2026-06-02
-Reported By: Simeon
+Reported By: Admin
 Status: PREVENTION_ADDED
 Error Type: UNAPPROVED_SOURCE_USE / SOURCE_ERROR
 Priority: Immediate
 
 Description:
-- Assistant treated a new decklist website as a trusted recurring source without first asking Simeon to approve the source family.
+- Assistant treated a new decklist website as a trusted recurring source without first asking Admin to approve the source family.
 
 Root Cause:
 - Missing source-family approval check before agent research.
 
 Correction:
-- Reclassified the source as CANDIDATE until Simeon review.
+- Reclassified the source as CANDIDATE until Admin review.
 
 Preventative Action:
 - Updated source approval gate in runtime files.
@@ -212,10 +212,10 @@ Affected Files:
 - governance/007_sub_agent_workflow_policy.md
 
 Follow-Up:
-- Simeon to approve or reject the source family.
+- Admin to approve or reject the source family.
 
 Verification:
-- Needs Simeon review.
+- Needs Admin review.
 
 Notes:
 - Individual entries from approved sources do not need separate approval unless unusual, contradictory, or high-impact.
