@@ -1,7 +1,7 @@
 # [Deck Name] Deck Template
 
 Status: PLANNED
-Version: v0.1
+Version: v0.2
 Category: decks
 Format: Yu-Gi-Oh TCG Advanced Format
 Owner: Simeon Fabowale-Makinde
@@ -60,6 +60,8 @@ Depends On:
 - governance/001_knowledge_architecture.md
 - governance/002_source_hierarchy.md
 - governance/003_response_methodology.md
+- governance/006_module_creation_and_review_policy.md
+- governance/007_sub_agent_workflow_policy.md
 - competitive/010_deckbuilding_principles.md
 - competitive/011_card_roles.md
 - competitive/013_ratios_and_consistency.md
@@ -70,7 +72,23 @@ Related Modules:
 - [competitive module]
 - [analytics module]
 
-## 5. Current Deck List
+## 5. Source Approval Gate
+
+Before using a new decklist website, tournament result database, creator source, spreadsheet, or recurring data provider as a trusted source for this deck, ask Simeon for approval.
+
+Approved Source Families:
+
+- [Source family]
+
+Candidate Source Families:
+
+- [Source family]
+
+Rejected or Out-of-Scope Source Families:
+
+- [Source family]
+
+## 6. Current Deck List
 
 Use this section only when a specific list is being analyzed.
 
@@ -93,7 +111,7 @@ Side Deck: [number]
 - 
 ```
 
-## 6. Engine Overview
+## 7. Engine Overview
 
 Core Engine Cards:
 
@@ -115,7 +133,7 @@ Engine Payoffs:
 
 - 
 
-## 7. Card Roles
+## 8. Card Roles
 
 Starters:
 
@@ -149,7 +167,7 @@ Bricks or Garnets:
 
 - 
 
-## 8. Ratio Framework
+## 9. Ratio Framework
 
 Recommended Starter Count:
 
@@ -165,7 +183,7 @@ Known Ratio Tensions:
 
 - 
 
-## 9. Standard Builds
+## 10. Standard Builds
 
 ### Build A — [Name]
 
@@ -195,7 +213,7 @@ Key Cards:
 
 - 
 
-## 10. Combo Lines
+## 11. Combo Lines
 
 ### Combo 1 — [Name]
 
@@ -228,7 +246,7 @@ Source Status:
 
 - [Tested / Simeon Verified / Source-Backed / Needs Review]
 
-## 11. Chokepoints
+## 12. Chokepoints
 
 Common Interruption Points:
 
@@ -246,7 +264,7 @@ Recovery Lines:
 
 - 
 
-## 12. Matchups
+## 13. Matchups
 
 ### Matchup — [Deck Name]
 
@@ -271,7 +289,7 @@ Notes:
 
 - 
 
-## 13. Side Deck Theory
+## 14. Side Deck Theory
 
 Cards to Consider:
 
@@ -289,7 +307,7 @@ Going Second Side Plan:
 
 - 
 
-## 14. Analytics Notes
+## 15. Analytics Notes
 
 Track useful data points:
 
@@ -302,7 +320,31 @@ Track useful data points:
 - matchup win rates
 - side deck card performance
 
-## 15. Testing Plan
+## 16. Sub-Agent Workflow Notes
+
+Sub-agents may be used for:
+
+- role classification
+- ratio review
+- matchup review
+- source extraction from approved sources
+- test generation
+- consistency checking
+
+Allowed Sources:
+
+- [Approved source family]
+
+Do Not Use:
+
+- unapproved recurring decklist or data sources as trusted inputs
+- OCG or Master Duel sources unless explicitly requested
+
+Top-Level Synthesis Required:
+
+- [Yes]
+
+## 17. Testing Plan
 
 Current Hypotheses:
 
@@ -320,21 +362,36 @@ Results:
 
 - 
 
-## 16. Common Mistakes
+## 18. Common Mistakes
 
 - 
 - 
 - 
 
-## 17. Open Questions
+## 19. Verification Gate
+
+This deck file cannot be marked VERIFIED until Simeon has reviewed or approved it.
+
+Verification Status:
+
+```text
+NEEDS_SIMEON_REVIEW
+```
+
+Review Notes:
+
+- 
+
+## 20. Open Questions
 
 - 
 - 
 
-## 18. Sources
+## 21. Sources
 
 ```text
 Source Name:
+Source Family:
 Source Type:
 Tier:
 URL or Reference:
@@ -342,10 +399,12 @@ Format:
 Date Checked:
 Relevant Claim:
 Confidence:
+Approval Status:
+Approved Scope:
 Notes:
 ```
 
-## 19. Change Log
+## 22. Change Log
 
 ```text
 YYYY-MM-DD
