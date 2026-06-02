@@ -3,7 +3,7 @@
 Status: DRAFTED
 Version: v0.1
 Scope: Source authority, confidence levels, verification rules, and contradiction handling
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-05-28
 
 ## 1. Purpose
@@ -23,7 +23,7 @@ Unless explicitly stated otherwise, all source evaluation is for:
 - official cards
 - current rules and policy
 
-OCG, Master Duel, Rush Duel, Speed Duel, anime-only material, historic formats, unofficial simulator behaviour, and custom-card contexts are out of scope unless Simeon explicitly requests them.
+OCG, Master Duel, Rush Duel, Speed Duel, anime-only material, historic formats, unofficial simulator behaviour, and custom-card contexts are out of scope unless Admin explicitly requests them.
 
 ## 3. Authority Ranking
 
@@ -99,7 +99,7 @@ Tier 5 should not become final source of truth without corroboration.
 
 Lowest authority.
 
-Assistant inference may be used to propose drafts, explanations, or hypotheses, but it must not become final truth without source support or Simeon's verification.
+Assistant inference may be used to propose drafts, explanations, or hypotheses, but it must not become final truth without source support or Admin verification.
 
 ## 4. Source Confidence Levels
 
@@ -107,7 +107,7 @@ Every important source-backed claim should use a confidence level where practica
 
 ### HIGH
 
-Use when the claim is directly supported by a Tier 1 source or explicitly verified by Simeon.
+Use when the claim is directly supported by a Tier 1 source or explicitly verified by Admin.
 
 ### MEDIUM
 
@@ -127,7 +127,7 @@ Use these labels in modules where useful:
 
 ```text
 VERIFIED_BY_OFFICIAL_SOURCE
-VERIFIED_BY_SIMEON
+VERIFIED_BY_ADMIN
 SUPPORTED_BY_JUDGE_CONSENSUS
 SUPPORTED_BY_COMMUNITY_SOURCE
 NEEDS_OFFICIAL_SOURCE
@@ -137,7 +137,7 @@ INFERRED_NOT_VERIFIED
 
 ## 6. Human Verification Rule
 
-Simeon is the final arbiter of what enters YGOBrain as accepted knowledge.
+Admin is the final arbiter of what enters YGOBrain as accepted knowledge.
 
 The assistant may draft, source, summarize, and propose conclusions, but should not self-certify uncertain rulings or strategic claims.
 
@@ -225,7 +225,7 @@ For deck building, analytics, and competitive recommendations, useful sources in
 - matchup data
 - player testing notes
 - probability analysis
-- Simeon's own results and preferences
+- Admin's results and preferences
 
 Strategic recommendations should distinguish between:
 
@@ -268,13 +268,13 @@ Notes:
 
 ## 15. Source Promotion Rule
 
-A source can be promoted in trust only when it proves reliable over time or is explicitly approved by Simeon.
+A source can be promoted in trust only when it proves reliable over time or is explicitly approved by Admin.
 
 Promotion examples:
 
 - A community source consistently matches official rulings.
 - A judge resource is repeatedly useful and policy-aware.
-- Simeon explicitly marks a source as acceptable for a category.
+- Admin explicitly marks a source as acceptable for a category.
 
 ## 16. Source Demotion Rule
 
@@ -296,7 +296,7 @@ A Reddit explanation may point toward a ruling, but it does not prove an officia
 
 ## 18. Inference Labelling Rule
 
-When the assistant infers something from rules, wording, or data, label it as inference unless a source or Simeon has verified it.
+When the assistant infers something from rules, wording, or data, label it as inference unless a source or Admin has verified it.
 
 Useful labels:
 
@@ -305,7 +305,7 @@ Inference:
 Likely but unverified:
 Source-backed:
 Officially confirmed:
-Simeon verified:
+Admin verified:
 ```
 
 ## 19. Missing Source Rule
@@ -328,6 +328,6 @@ Do not allow unsourced claims to silently become stable knowledge.
 
 ## 20. Project-Specific Authority Rule
 
-For YGOBrain itself, Simeon's instruction overrides generic community preferences.
+For YGOBrain itself, Admin instruction overrides generic community preferences.
 
-However, user preference cannot change official rules. If Simeon's deckbuilding preference conflicts with common competitive practice, record it as a preference. If a statement conflicts with official rules, official rules remain authoritative.
+However, user preference cannot change official rules. If Admin's deckbuilding preference conflicts with common competitive practice, record it as a preference. If a statement conflicts with official rules, official rules remain authoritative.
