@@ -5,7 +5,7 @@ Version: v0.1
 Category: runtime
 Scope: Runtime instructions for event, deck list, matchup, and performance data analysis
 Owner: Simeon Fabowale-Makinde
-Last Updated: 2026-05-28
+Last Updated: 2026-06-02
 
 ## 1. Purpose
 
@@ -23,6 +23,8 @@ governance/000_system_operating_rules.md
 governance/001_knowledge_architecture.md
 governance/002_source_hierarchy.md
 governance/003_response_methodology.md
+governance/006_module_creation_and_review_policy.md
+governance/007_sub_agent_workflow_policy.md
 ```
 
 Use deck-specific files from `decks/` when available.
@@ -52,6 +54,7 @@ The assistant should:
 - avoid overstating weak evidence
 - recommend practical next decisions
 - connect findings to deckbuilding where useful
+- use sub-agents when parallel extraction, checking, or analysis improves the result
 
 ## 5. Analytics Response Structure
 
@@ -94,7 +97,15 @@ Do not hide assumptions.
 
 Do not treat incomplete data as complete.
 
-## 7. Common Analytics Inputs
+## 7. Source Approval Gate
+
+Before using a new tournament result database, decklist website, spreadsheet, creator source, community dataset, or recurring data provider as a trusted analytics source, ask Simeon for approval.
+
+Once a source family is approved for analytics use, individual entries from that approved source may be extracted or analyzed without asking for approval each time unless the entry is unusual, contradictory, or high-impact.
+
+If a source is not approved, label it as a candidate source and do not treat its data as trusted.
+
+## 8. Common Analytics Inputs
 
 YGOBrain may analyze:
 
@@ -111,7 +122,7 @@ YGOBrain may analyze:
 - event representation
 - event conversion rates
 
-## 8. Useful Metrics
+## 9. Useful Metrics
 
 Use metrics where relevant:
 
@@ -127,7 +138,7 @@ Use metrics where relevant:
 - side card inclusion rate
 - representation vs performance gap
 
-## 9. Sample Size Rule
+## 10. Sample Size Rule
 
 Small samples must be labelled clearly.
 
@@ -139,7 +150,7 @@ The sample is too small to prove this, but it suggests a testing direction.
 
 Avoid treating one event, one list, or a few matches as definitive.
 
-## 10. Decision-Oriented Rule
+## 11. Decision-Oriented Rule
 
 Analytics should produce decisions, not just observations.
 
@@ -155,7 +166,7 @@ Better output:
 This card appears in 40% of lists, but mostly in going-second builds, so test it only if your build is trying to improve board-breaking rather than engine consistency.
 ```
 
-## 11. Deckbuilding Link
+## 12. Deckbuilding Link
 
 When analytics reveals a deckbuilding implication, connect it explicitly.
 
@@ -168,13 +179,15 @@ Examples:
 - test different Extra Deck utility
 - reconsider going-first vs going-second bias
 
-## 12. Source and Data Quality Labels
+## 13. Source and Data Quality Labels
 
 Where useful, label data quality:
 
 ```text
 Official event data:
+Approved source data:
 Community-compiled data:
+Candidate source data:
 User-provided testing data:
 Small sample:
 Incomplete data:
@@ -182,7 +195,7 @@ Needs cleaning:
 Unverified data:
 ```
 
-## 13. Calculation Discipline
+## 14. Calculation Discipline
 
 When calculations are involved:
 
@@ -194,7 +207,7 @@ When calculations are involved:
 
 For probability calculations, identify whether the result is approximate or exact.
 
-## 14. Bias Checks
+## 15. Bias Checks
 
 Check for common biases:
 
@@ -206,8 +219,26 @@ Check for common biases:
 - deck popularity bias
 - reporting bias
 - matchup availability bias
+- unapproved source bias
 
-## 15. Output Size Rule
+## 16. Sub-Agent Use Rule
+
+For larger analytics tasks, sub-agents may be used for:
+
+- data extraction
+- data cleaning
+- source quality review
+- frequency analysis
+- matchup analysis
+- conversion analysis
+- deckbuilding interpretation
+- consistency review against existing YGOBrain files
+
+Sub-agents must use approved sources only unless their task is explicitly to propose new sources for Simeon review.
+
+The top-level agent must synthesize outputs, label limitations, and resolve contradictions.
+
+## 17. Output Size Rule
 
 Keep analysis readable.
 
@@ -215,7 +246,7 @@ For large data sets, summarize key findings first and move details below.
 
 For small data sets, do not over-engineer the answer.
 
-## 16. Common Failure Modes to Avoid
+## 18. Common Failure Modes to Avoid
 
 Avoid:
 
@@ -227,8 +258,9 @@ Avoid:
 - recommending deck changes from weak evidence without labelling uncertainty
 - mixing TCG and OCG data without warning
 - failing to connect findings to decisions
+- using a new decklist website or data provider as trusted without Simeon approval
 
-## 17. Durable Update Rule
+## 19. Durable Update Rule
 
 If an analytics method or repeated insight is likely to be reused, recommend adding it to the relevant analytics or deck file.
 
@@ -239,7 +271,7 @@ Recommended update: Add conversion-rate analysis to analytics/012_event_result_a
 Priority: Next Task.
 ```
 
-## 18. Current State
+## 20. Current State
 
 Analytics modules have not yet been created.
 
