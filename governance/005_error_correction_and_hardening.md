@@ -3,7 +3,7 @@
 Status: DRAFTED
 Version: v0.1
 Scope: Mistake handling, root cause analysis, recurrence prevention, and error logging
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-05-28
 
 ## 1. Purpose
@@ -24,7 +24,7 @@ If a mistake is found, YGOBrain should consider whether the underlying rules, te
 
 This policy applies when:
 
-- Simeon says the assistant is wrong
+- Admin says the assistant is wrong
 - the assistant later identifies an earlier mistake
 - a source contradicts existing content
 - a verified module becomes outdated
@@ -236,7 +236,7 @@ This is especially important for words such as:
 
 If a mistake came from confusing TCG with OCG, Master Duel, Rush Duel, Speed Duel, historic formats, or unofficial simulator behaviour, update the relevant module or runtime instruction.
 
-YGOBrain defaults to TCG Advanced Format unless Simeon explicitly says otherwise.
+YGOBrain defaults to TCG Advanced Format unless Admin explicitly says otherwise.
 
 ## 16. Analytics Error Rule
 
@@ -262,7 +262,7 @@ If a deckbuilding recommendation proves bad or misleading, identify whether the 
 - metagame misunderstanding
 - ignoring deck objective
 - overvaluing theory over results
-- failing to account for Simeon's preference
+- failing to account for Admin's preference
 
 Then update the relevant competitive or deck module.
 
