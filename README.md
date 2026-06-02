@@ -13,9 +13,17 @@ It is designed to help with:
 Status: Foundation build
 Version: v0.1
 
-The repository currently contains governance, templates, runtime context files, source tracking, and scaffold automation.
+The repository currently contains governance, templates, runtime context files, source tracking, scaffold automation, and one draft pilot content module.
 
-It does not yet contain full Yu-Gi-Oh rules logic, deck modules, or analytics modules.
+The repository does not yet contain verified full Yu-Gi-Oh rules logic, deck modules, or analytics modules.
+
+Current pilot module:
+
+```text
+competitive/010_deckbuilding_principles.md
+```
+
+Status: DRAFTED. It requires Simeon review before it can become VERIFIED.
 
 ## Default Scope
 
@@ -70,6 +78,8 @@ runtime/010_ruling_assistant_context.md
 runtime/020_deckbuilding_assistant_context.md
 runtime/030_analytics_assistant_context.md
 runtime/040_system_building_context.md
+runtime/050_top_level_agent_context.md
+runtime/060_sub_agent_task_template.md
 ```
 
 ## Core Principle
@@ -77,6 +87,37 @@ runtime/040_system_building_context.md
 The assistant drafts. Simeon verifies.
 
 Assistant inference alone is not final authority. Official sources, trusted sources, and Simeon's review determine what becomes accepted knowledge.
+
+Sub-agent outputs are not automatically verified. The top-level agent must synthesize, check, and present final outputs for review where needed.
+
+## Source Approval Rule
+
+New recurring source families, websites, databases, decklist providers, judge resources, creator sources, community resources, and data providers require Simeon approval before they become trusted YGOBrain inputs.
+
+Once a source family is approved for a defined use case, individual entries from that source may be used within the approved scope without asking Simeon for every lookup.
+
+## Agent Workflow
+
+YGOBrain supports future Codex/Claude-style agent workflows.
+
+Use:
+
+```text
+AGENTS.md
+runtime/050_top_level_agent_context.md
+runtime/060_sub_agent_task_template.md
+governance/007_sub_agent_workflow_policy.md
+```
+
+The top-level agent is responsible for:
+
+- deciding whether sub-agents are needed
+- defining sub-agent scope
+- controlling allowed sources
+- resolving contradictions
+- synthesizing outputs
+- updating repository files only when appropriate
+- asking Simeon for verification where needed
 
 ## Local Setup
 
@@ -102,22 +143,24 @@ Recommended order:
 1. Governance foundation.
 2. Templates.
 3. Runtime context files.
-4. Source index.
-5. Pilot modules.
-6. Core rules foundation.
-7. Deckbuilding theory.
-8. Analytics modules.
-9. Deck overlays.
-10. Tests and validation expansion.
+4. Source index and approved source families.
+5. Agent instructions and batch plan.
+6. Pilot modules.
+7. Core rules foundation.
+8. Deckbuilding theory.
+9. Analytics modules.
+10. Deck overlays.
+11. Tests and validation expansion.
 
 ## Current Next Steps
 
-Recommended next files:
+Before large-scale agent-assisted content creation:
 
 ```text
-competitive/010_deckbuilding_principles.md
-analytics/010_analytics_principles.md
-core_rules/010_terminology.md
+1. Verify setup batch changes.
+2. Approve initial source families.
+3. Review competitive/010_deckbuilding_principles.md.
+4. Start analytics/010_analytics_principles.md or core_rules/010_terminology.md.
 ```
 
-The first pilot module should be small and reviewable.
+All substantive content modules must remain DRAFTED or UNDER_REVIEW until Simeon approves them.
