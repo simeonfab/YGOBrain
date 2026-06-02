@@ -3,7 +3,7 @@
 Status: DRAFTED
 Version: v0.1
 Scope: Rules for using sub-agents, parallel research, multi-agent drafting, and synthesis workflows
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
@@ -28,39 +28,25 @@ The top-level agent is accountable for:
 - merging outputs
 - producing the final recommendation or file
 - marking uncertainty
-- asking Simeon for verification where needed
+- asking Admin for verification where needed
 
 The top-level agent must not blindly merge sub-agent outputs.
 
 ## 3. Source Approval Gate
 
-At a top level, source families, websites, databases, and recurring data providers must be approved by Simeon before they become trusted YGOBrain inputs.
+At a top level, source families, websites, databases, and recurring data providers must be approved by Admin before they become trusted YGOBrain inputs.
 
 This means:
 
 - a sub-agent may use already-approved sources within their approved scope
 - a sub-agent may propose a new source for review
-- a sub-agent must not treat a new website, database, decklist source, ruling source, or community source as trusted until Simeon approves it or the source is already covered by YGOBrain source policy
+- a sub-agent must not treat a new website, database, decklist source, ruling source, or community source as trusted until Admin approves it or the source is already covered by YGOBrain source policy
 
 Individual facts, card entries, rulings, or deck lists from an already-approved source do not each require separate approval unless they are unusual, contradictory, or high-impact.
 
-Examples:
+## 4. When to Ask Admin About Sources
 
-```text
-Needs Simeon approval:
-- Should we use this website as a decklist source?
-- Should we trust this judge resource for rulings?
-- Should this event result database become an approved analytics source?
-
-Does not always need separate approval once source is approved:
-- Extract this deck list from the approved decklist site.
-- Check this card text from the official database.
-- Use an approved event source to count representation.
-```
-
-## 4. When to Ask Simeon About Sources
-
-Ask Simeon before using a new recurring source category or website for durable project knowledge.
+Ask Admin before using a new recurring source category or website for durable project knowledge.
 
 Examples:
 
@@ -72,7 +58,7 @@ Examples:
 - a new YouTube or creator source used for strategic claims
 - a new spreadsheet or dataset intended to be reused
 
-Do not ask Simeon for every individual lookup from a source that has already been approved for that purpose.
+Do not ask Admin for every individual lookup from a source that has already been approved for that purpose.
 
 ## 5. When to Use Sub-Agents
 
@@ -98,7 +84,7 @@ Do not use sub-agents when:
 - the work requires a single precise ruling from exact card text
 - parallel work would create more noise than value
 - the source of truth is already clear
-- Simeon has asked for a concise answer only
+- Admin has asked for a concise answer only
 
 ## 6. Top-Level Agent Responsibilities
 
@@ -107,7 +93,7 @@ The top-level agent must:
 1. Define the objective.
 2. Decide whether sub-agents are needed.
 3. Check whether sources are already approved.
-4. Ask Simeon before trusting a new recurring source family or website.
+4. Ask Admin before trusting a new recurring source family or website.
 5. Assign each sub-agent a narrow task.
 6. Give each sub-agent the relevant context and source rules.
 7. Require each sub-agent to report assumptions and uncertainty.
@@ -115,7 +101,7 @@ The top-level agent must:
 9. Resolve contradictions.
 10. Produce one coherent final output.
 11. Recommend repository updates where needed.
-12. Ask Simeon for verification before marking substantive knowledge as verified.
+12. Ask Admin for verification before marking substantive knowledge as verified.
 
 ## 7. Sub-Agent Task Design
 
@@ -132,24 +118,7 @@ Do Not Do:
 Uncertainty Handling:
 ```
 
-Example:
-
-```text
-Task: Review official sources for PSCT targeting language.
-Scope: Find official or approved high-authority support only.
-Allowed Sources: Konami Official Yu-Gi-Oh Card Database, approved official policy resources.
-Relevant Files:
-- governance/002_source_hierarchy.md
-- core_rules/024_psct_targeting.md
-Source Rules: Official TCG first. OCG informative only.
-Expected Output: Short list of source-backed claims and gaps.
-Do Not Do: Do not infer final rulings from community discussion.
-Uncertainty Handling: Mark missing sources as SOURCE_NEEDED.
-```
-
 ## 8. Recommended Sub-Agent Roles
-
-Use these roles where useful.
 
 ### Source Research Agent
 
@@ -158,7 +127,7 @@ Purpose:
 - find official or approved high-quality sources
 - classify source authority
 - identify source gaps
-- propose new sources for Simeon approval
+- propose new sources for Admin approval
 
 Output:
 
@@ -293,12 +262,12 @@ CONFIDENCE
 - High / Medium / Low / Unknown.
 
 FOLLOW-UP
-- Source needed / Simeon review needed / test needed.
+- Source needed / Admin review needed / test needed.
 ```
 
 Official TCG sources override lower-tier sources.
 
-Assistant inference does not override sources or Simeon verification.
+Assistant inference does not override sources or Admin verification.
 
 ## 11. Output Discipline
 
@@ -320,7 +289,7 @@ Sub-agent outputs are never automatically verified.
 A sub-agent can support a draft, but final knowledge still follows the standard review rule:
 
 ```text
-Assistant drafts. Simeon verifies.
+Assistant drafts. Admin verifies.
 ```
 
 Sub-agent work may be marked as:
@@ -328,7 +297,7 @@ Sub-agent work may be marked as:
 ```text
 SUB_AGENT_DRAFT
 NEEDS_TOP_LEVEL_SYNTHESIS
-NEEDS_SIMEON_REVIEW
+NEEDS_ADMIN_REVIEW
 SOURCE_NEEDED
 ```
 
@@ -340,9 +309,9 @@ Before making repository changes based on sub-agent work, the top-level agent sh
 2. identify affected files
 3. resolve conflicts
 4. assign priority
-5. confirm whether Simeon review is needed before commit
+5. confirm whether Admin review is needed before commit
 
-For small governance or template changes already approved by Simeon, the top-level agent may commit directly and provide the standard change summary.
+For small governance or template changes already approved by Admin, the top-level agent may commit directly and provide the standard change summary.
 
 ## 14. Multi-Agent Workflow Template
 
@@ -375,7 +344,7 @@ SYNTHESIS PLAN
 - How outputs will be merged.
 
 VERIFICATION PLAN
-- What Simeon needs to review.
+- What Admin needs to review.
 
 REPOSITORY IMPACT
 - Files likely to change.
@@ -390,7 +359,7 @@ Create core_rules/024_psct_targeting.md.
 AGENTS
 1. Source Research Agent
    Task: Find official or approved high-authority targeting references.
-   Allowed Sources: Official TCG sources and Simeon-approved ruling resources only.
+   Allowed Sources: Official TCG sources and Admin-approved ruling resources only.
    Output: Source-backed claims and gaps.
 
 2. Rules Analyst Agent
@@ -412,7 +381,7 @@ SYNTHESIS PLAN
 Top-level agent merges the findings into one module draft.
 
 VERIFICATION PLAN
-Simeon reviews before status can become VERIFIED.
+Admin reviews before status can become VERIFIED.
 
 REPOSITORY IMPACT
 - core_rules/024_psct_targeting.md
@@ -428,7 +397,7 @@ Analyze multiple topping deck lists and extract deckbuilding implications.
 AGENTS
 1. Data Extraction Agent
    Task: Extract card counts and list structure.
-   Allowed Sources: Simeon-approved decklist sources only.
+   Allowed Sources: Admin-approved decklist sources only.
    Output: Cleaned data table.
 
 2. Analytics Agent
@@ -450,7 +419,7 @@ SYNTHESIS PLAN
 Top-level agent separates raw findings from recommendations.
 
 VERIFICATION PLAN
-Simeon reviews before durable deck module updates.
+Admin reviews before durable deck module updates.
 
 REPOSITORY IMPACT
 - analytics/[relevant_file].md
@@ -470,7 +439,7 @@ Avoid these sub-agent mistakes:
 - allowing sub-agents to make final source-of-truth decisions
 - creating large unreviewable outputs
 - failing to preserve source hierarchy
-- failing to ask Simeon for verification
+- failing to ask Admin for verification
 - using parallelism when a direct answer would be better
 
 ## 18. Completion Criteria
@@ -483,7 +452,7 @@ A sub-agent workflow is complete only when:
 - source status is clear
 - final output is coherent
 - repository updates are identified
-- Simeon review is requested where needed
+- Admin review is requested where needed
 
 ## 19. Change Log
 
@@ -491,5 +460,5 @@ A sub-agent workflow is complete only when:
 2026-06-02
 Status: DRAFTED
 Change: Created sub-agent workflow policy.
-Reason: Simeon wants YGOBrain to support multi-agent workflows for research, data querying, module drafting, and future Codex/Claude-style implementation.
+Reason: Admin wants YGOBrain to support multi-agent workflows for research, data querying, module drafting, and future Codex/Claude-style implementation.
 ```
