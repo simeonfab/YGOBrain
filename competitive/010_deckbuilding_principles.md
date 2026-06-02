@@ -4,7 +4,7 @@ Status: DRAFTED
 Version: v0.1
 Category: competitive
 Scope: Foundational principles for evaluating and improving Yu-Gi-Oh TCG Advanced Format deck lists
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
@@ -78,37 +78,37 @@ Assumptions Used Instead of Asking:
 ```text
 Term: Deck Plan
 Definition: The primary way a deck intends to win or reach a winning position.
-Source Status: Inferred Not Verified / Needs Simeon Review
+Source Status: Inferred Not Verified / Needs Admin Review
 ```
 
 ```text
 Term: Engine
 Definition: The connected set of cards that enable the deck's main strategy.
-Source Status: Inferred Not Verified / Needs Simeon Review
+Source Status: Inferred Not Verified / Needs Admin Review
 ```
 
 ```text
 Term: Non-Engine
 Definition: Cards included primarily to interact with the opponent, improve matchup coverage, or support the deck without being part of the core engine.
-Source Status: Inferred Not Verified / Needs Simeon Review
+Source Status: Inferred Not Verified / Needs Admin Review
 ```
 
 ```text
 Term: Starter
 Definition: A card or card combination that initiates the deck's main line of play.
-Source Status: Inferred Not Verified / Needs Simeon Review
+Source Status: Inferred Not Verified / Needs Admin Review
 ```
 
 ```text
 Term: Extender
 Definition: A card that continues, strengthens, or protects plays after a starter or partial line has begun.
-Source Status: Inferred Not Verified / Needs Simeon Review
+Source Status: Inferred Not Verified / Needs Admin Review
 ```
 
 ```text
 Term: Brick or Garnet
 Definition: A card that is required or useful within the engine but is weak, dead, or actively bad to draw in many hands.
-Source Status: Inferred Not Verified / Needs Simeon Review
+Source Status: Inferred Not Verified / Needs Admin Review
 ```
 
 ## 7. Core Rules or Principles
@@ -128,7 +128,7 @@ Examples of deck plans include:
 - trade efficiently until a payoff wins
 - use a flexible midrange engine with strong non-engine support
 
-Source Status: Inferred Not Verified / Needs Simeon Review
+Source Status: Inferred Not Verified / Needs Admin Review
 
 ### 7.2 Classify Cards by Role Before Recommending Changes
 
@@ -150,7 +150,7 @@ Before recommending changes, classify cards where useful as:
 - side deck card
 - follow-up card
 
-Source Status: Inferred Not Verified / Needs Simeon Review
+Source Status: Inferred Not Verified / Needs Admin Review
 
 ### 7.3 Ratios Must Serve the Plan
 
@@ -170,7 +170,7 @@ The better question is:
 Does this ratio create the hands the deck needs to execute its plan while still interacting enough with the format?
 ```
 
-Source Status: Inferred Not Verified / Needs Simeon Review
+Source Status: Inferred Not Verified / Needs Admin Review
 
 ### 7.4 Identify the Cost of Every Inclusion
 
@@ -184,7 +184,7 @@ Example:
 Adding more board breakers may improve going second, but it may reduce the number of hands that can build a strong going-first board.
 ```
 
-Source Status: Inferred Not Verified / Needs Simeon Review
+Source Status: Inferred Not Verified / Needs Admin Review
 
 ### 7.5 Separate Theory from Testing
 
@@ -198,7 +198,7 @@ A deckbuilding recommendation should be framed as:
 
 The assistant should not present theory as proven.
 
-Source Status: Inferred Not Verified / Needs Simeon Review
+Source Status: Inferred Not Verified / Needs Admin Review
 
 ### 7.6 Avoid Vague Recommendations
 
@@ -220,7 +220,7 @@ Best recommendation:
 Cut 2 low-impact flex cards for 2 additional starter-equivalent cards, then test whether opening hand playability improves without increasing brick rate or reducing interaction too much.
 ```
 
-Source Status: Inferred Not Verified / Needs Simeon Review
+Source Status: Inferred Not Verified / Needs Admin Review
 
 ## 8. Practical Application
 
@@ -299,17 +299,17 @@ Source Status:
 
 ## 12. Verification Gate
 
-This module cannot be marked VERIFIED until Simeon has reviewed or approved it.
+This module cannot be marked VERIFIED until Admin has reviewed or approved it.
 
 Verification Status:
 
 ```text
-NEEDS_SIMEON_REVIEW
+NEEDS_ADMIN_REVIEW
 ```
 
 Review Notes:
 
-- Confirm whether these definitions match Simeon's preferred deckbuilding language.
+- Confirm whether these definitions match Admin's preferred deckbuilding language.
 - Confirm whether the module is too broad, too basic, or useful as a first foundation.
 - Confirm whether larger-deck discussion should remain here or move fully into ratios/probability.
 
@@ -326,20 +326,20 @@ Before marking this module as VERIFIED, check:
 - [x] Edge cases are included where useful.
 - [x] Common mistakes are included where useful.
 - [ ] Related tests are created if needed.
-- [ ] Simeon has reviewed or approved the module.
+- [ ] Admin has reviewed or approved the module.
 
 ## 14. Sources
 
 ```text
-Source Name: Simeon Verification
-Source Type: SIMEON_VERIFICATION
+Source Name: Admin Verification
+Source Type: ADMIN_VERIFICATION
 Tier: Project-specific authority
 URL or Reference: Internal YGOBrain review
 Format: PROJECT_INTERNAL
 Date Checked: Pending
 Relevant Claim: Deckbuilding language and framework approval.
 Confidence: UNKNOWN until reviewed
-Notes: This module is currently a draft and requires Simeon review.
+Notes: This module is currently a draft and requires Admin review.
 ```
 
 ## 15. Open Questions
@@ -354,5 +354,5 @@ Notes: This module is currently a draft and requires Simeon review.
 2026-06-02
 Status: DRAFTED
 Change: Created first draft of deckbuilding principles module.
-Reason: Deckbuilding is Simeon's highest-priority YGOBrain use case.
+Reason: Deckbuilding is Admin's highest-priority YGOBrain use case.
 ```
