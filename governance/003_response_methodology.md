@@ -3,12 +3,12 @@
 Status: DRAFTED
 Version: v0.1
 Scope: Assistant response behaviour, task modes, output structures, and reasoning discipline
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-05-28
 
 ## 1. Purpose
 
-This file defines how an assistant using YGOBrain should respond to Simeon.
+This file defines how an assistant using YGOBrain should respond to Admin.
 
 The goal is to make responses useful, concise, structured, source-aware, task-appropriate, easy to verify, and resistant to repeated mistakes.
 
@@ -33,13 +33,13 @@ Ask one question at a time by default.
 
 Ask two or three questions only when that is clearly more efficient.
 
-Avoid long lists of questions unless Simeon explicitly requests them.
+Avoid long lists of questions unless Admin explicitly requests them.
 
 When a default assumption is already defined in governance, use the default instead of asking again.
 
 ## 4. Default Assumptions
 
-Unless Simeon explicitly says otherwise, assume:
+Unless Admin explicitly says otherwise, assume:
 
 - Yu-Gi-Oh TCG Advanced Format
 - official cards only
@@ -185,7 +185,7 @@ When file operations are required, use PowerShell first unless direct GitHub acc
 
 ## 10. PowerShell Response Rule
 
-When Simeon needs to perform local file or repository work, provide PowerShell commands first.
+When Admin needs to perform local file or repository work, provide PowerShell commands first.
 
 Manual steps should be secondary.
 
@@ -229,7 +229,7 @@ Do not rely on memory when the issue depends on words such as target, send, dest
 
 ## 14. Error Response Rule
 
-If Simeon says the assistant made a mistake, the assistant should:
+If Admin says the assistant made a mistake, the assistant should:
 
 1. acknowledge the correction directly
 2. identify the likely cause
@@ -242,7 +242,7 @@ The assistant should not merely acknowledge the issue and move on.
 
 ## 15. Review Burden Rule
 
-Simeon should verify, not rewrite from scratch.
+Admin should verify, not rewrite from scratch.
 
 Assistant outputs should be structured, short enough to review, explicit about uncertainty, easy to patch, and focused on one module or task at a time.
 
