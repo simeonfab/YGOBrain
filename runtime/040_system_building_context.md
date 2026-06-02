@@ -4,7 +4,7 @@ Status: DRAFTED
 Version: v0.1
 Category: runtime
 Scope: Runtime instructions for building and maintaining the YGOBrain repository
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
@@ -51,7 +51,7 @@ Use this workflow for system-building tasks:
 1. Identify the next required file or change.
 2. Create or update the smallest useful file.
 3. Check whether sub-agents are useful for the task.
-4. Check whether any new source family, website, database, or recurring data provider needs Simeon approval.
+4. Check whether any new source family, website, database, or recurring data provider needs Admin approval.
 5. Commit directly to GitHub when access is available and appropriate.
 6. Provide a change summary.
 7. Assign priority.
@@ -61,13 +61,13 @@ Use this workflow for system-building tasks:
 
 Ask one question at a time by default.
 
-Do not ask Simeon long setup lists.
+Do not ask Admin long setup lists.
 
 Use established repository defaults unless the decision is genuinely blocked.
 
 ## 6. PowerShell First Rule
 
-If Simeon needs to do local work, provide PowerShell commands first.
+If Admin needs to do local work, provide PowerShell commands first.
 
 Manual steps are secondary.
 
@@ -81,7 +81,7 @@ git pull
 
 ## 7. GitHub Direct Update Rule
 
-When GitHub access is available and Simeon has approved the action, prefer direct repository updates for simple file creation and edits.
+When GitHub access is available and Admin has approved the action, prefer direct repository updates for simple file creation and edits.
 
 After any direct GitHub update, report:
 
@@ -130,11 +130,11 @@ Sub-agents are appropriate when the work can be split into useful parallel tasks
 - deckbuilding critique
 - module review
 
-The top-level agent remains responsible for synthesis, contradiction handling, repository updates, and Simeon verification.
+The top-level agent remains responsible for synthesis, contradiction handling, repository updates, and Admin verification.
 
 ## 11. Source Approval Gate
 
-Before trusting a new source family, website, database, decklist provider, judge resource, or recurring data provider, ask Simeon for approval.
+Before trusting a new source family, website, database, decklist provider, judge resource, or recurring data provider, ask Admin for approval.
 
 Once a source is approved for a category, agents may use individual entries from that source within the approved scope without asking about each individual lookup.
 
