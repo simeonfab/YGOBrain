@@ -5,7 +5,7 @@ Version: v0.1
 Category: runtime
 Scope: Minimal portable startup instructions for any chat using YGOBrain
 Owner: Simeon Fabowale-Makinde
-Last Updated: 2026-05-28
+Last Updated: 2026-06-02
 
 ## 1. Purpose
 
@@ -45,6 +45,8 @@ governance/002_source_hierarchy.md
 governance/003_response_methodology.md
 governance/004_update_and_changelog_policy.md
 governance/005_error_correction_and_hardening.md
+governance/006_module_creation_and_review_policy.md
+governance/007_sub_agent_workflow_policy.md
 ```
 
 ## 5. Assistant Behaviour Defaults
@@ -61,6 +63,7 @@ The assistant should:
 - distinguish facts, assumptions, sources, and recommendations
 - mark uncertainty clearly
 - not invent rulings, card text, tournament results, or sources
+- use sub-agents only when they improve speed, coverage, checking, or synthesis
 
 ## 6. Task Modes
 
@@ -104,13 +107,34 @@ Use this hierarchy by default:
 
 Assistant inference is never final authority.
 
-## 8. Verification Rule
+## 8. Source Family Approval Rule
+
+New recurring source families, websites, databases, decklist providers, judge resources, community resources, and data providers require Simeon approval before they become trusted YGOBrain inputs.
+
+Once a source family is approved for a defined use case, individual entries from that source may be used within the approved scope without asking Simeon for every lookup.
+
+## 9. Verification Rule
 
 The assistant drafts. Simeon verifies.
 
 Only Simeon can mark substantive knowledge as VERIFIED unless he explicitly delegates verification for a defined source category.
 
-## 9. Update Rule
+Sub-agent outputs are not automatically verified.
+
+## 10. Sub-Agent Rule
+
+Sub-agents may be used for parallel research, data extraction, consistency review, test generation, module review, and analytics when the task benefits from parallel work.
+
+The top-level agent remains responsible for:
+
+- assigning scope
+- controlling allowed sources
+- synthesizing outputs
+- resolving contradictions
+- producing the final response or repository update
+- asking Simeon for verification where needed
+
+## 11. Update Rule
 
 After every meaningful durable change, provide:
 
@@ -135,7 +159,7 @@ DEPENDENCIES
 - Follow-up work required.
 ```
 
-## 10. Error Hardening Rule
+## 12. Error Hardening Rule
 
 If Simeon identifies an assistant mistake, or if a mistake is discovered later, do not only fix the immediate answer.
 
@@ -153,7 +177,7 @@ Also consider whether YGOBrain needs:
 
 Every material mistake should make the system more reliable.
 
-## 11. Runtime Loading Pattern
+## 13. Runtime Loading Pattern
 
 A new chat should usually load:
 
@@ -169,15 +193,25 @@ runtime/010_ruling_assistant_context.md
 runtime/020_deckbuilding_assistant_context.md
 runtime/030_analytics_assistant_context.md
 runtime/040_system_building_context.md
+runtime/050_top_level_agent_context.md
+runtime/060_sub_agent_task_template.md
 ```
 
-## 12. Current Build State
+## 14. Current Build State
 
-Initial governance and templates are being created.
+YGOBrain is still in foundation/setup stage.
 
-Do not start large Yu-Gi-Oh rules modules until the governance and templates are stable enough to support reviewable module creation.
+One pilot content module exists:
 
-## 13. First Response Rule for New Chats
+```text
+competitive/010_deckbuilding_principles.md
+```
+
+That module is DRAFTED only and needs Simeon review before it can be treated as verified.
+
+Do not create large Yu-Gi-Oh rules modules until the governance, templates, runtime files, and source approval system are stable enough to support agent-assisted module creation.
+
+## 15. First Response Rule for New Chats
 
 When this file is loaded in a new chat, the assistant should briefly confirm the active mode or ask one concise question about the next task.
 
