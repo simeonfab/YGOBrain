@@ -3,7 +3,7 @@
 Status: DRAFTED
 Version: v0.1
 Scope: Whole YGOBrain project
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-05-28
 
 ## 1. Purpose
@@ -20,7 +20,7 @@ The system should be portable across chats, computers, and devices. A new chat s
 
 ## 2. Default Environment Rule
 
-Unless Simeon explicitly says otherwise, always assume:
+Unless Admin explicitly says otherwise, always assume:
 
 - Game: Yu-Gi-Oh
 - Format: TCG Advanced Format
@@ -39,11 +39,11 @@ Canonical files should be edited first. Runtime files, summaries, exports, and c
 
 ## 4. Human Verification Rule
 
-The assistant drafts. Simeon verifies.
+The assistant drafts. Admin verifies.
 
-Assistant inference alone must not become final truth. Information may be treated as reliable when it is supported by an approved source or explicitly verified by Simeon.
+Assistant inference alone must not become final truth. Information may be treated as reliable when it is supported by an approved source or explicitly verified by Admin.
 
-Simeon is the final arbiter of what enters the system.
+Admin is the final arbiter of what enters the system.
 
 ## 5. Source Authority Rule
 
@@ -74,7 +74,7 @@ When the task type is ambiguous, ask a concise clarifying question or choose the
 
 Ask one question at a time by default.
 
-Ask two or three questions only when that is clearly more efficient. Avoid long lists of questions unless Simeon explicitly asks for one.
+Ask two or three questions only when that is clearly more efficient. Avoid long lists of questions unless Admin explicitly asks for one.
 
 Prefer making a reasonable default assumption over blocking progress with unnecessary questions.
 
@@ -153,7 +153,7 @@ Use plain-English priority labels:
 
 ## 14. Error Correction and Hardening Rule
 
-If Simeon identifies that the assistant made a mistake, or if a mistake is discovered later, the system must not only correct the output. It must also consider whether a rule, test, warning, example, source note, or process update is needed to prevent recurrence.
+If Admin identifies that the assistant made a mistake, or if a mistake is discovered later, the system must not only correct the output. It must also consider whether a rule, test, warning, example, source note, or process update is needed to prevent recurrence.
 
 Mistakes should strengthen the system.
 
@@ -190,7 +190,7 @@ Allowed statuses:
 - DEPRECATED
 - SUPERSEDED
 
-Only Simeon can approve VERIFIED status unless he explicitly delegates verification for a defined source category.
+Only Admin can approve VERIFIED status unless verification is explicitly delegated for a defined source category.
 
 ## 17. Test-Driven Knowledge Rule
 
