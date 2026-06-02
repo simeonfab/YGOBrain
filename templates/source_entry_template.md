@@ -4,7 +4,7 @@ Status: PLANNED
 Version: v0.2
 Category: sources
 Scope: Standard structure for tracking YGOBrain sources and approved source families
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
@@ -15,9 +15,9 @@ Sources should be tracked clearly so future modules can distinguish official rul
 
 ## 2. Source Family Approval Rule
 
-New recurring source families, websites, databases, decklist providers, judge resources, community resources, creator sources, spreadsheets, and data providers require Simeon approval before they become trusted YGOBrain inputs.
+New recurring source families, websites, databases, decklist providers, judge resources, community resources, creator sources, spreadsheets, and data providers require Admin approval before they become trusted YGOBrain inputs.
 
-Once a source family is approved for a defined use case, individual entries from that source may be used within the approved scope without asking Simeon for every lookup.
+Once a source family is approved for a defined use case, individual entries from that source may be used within the approved scope without asking Admin for every lookup.
 
 ## 3. Source Family Entry
 
@@ -70,7 +70,7 @@ DECKLIST_SOURCE
 PLAYER_TESTING_NOTES
 CREATOR_SOURCE
 COMMUNITY_SPREADSHEET
-SIMEON_VERIFICATION
+ADMIN_VERIFICATION
 ASSISTANT_INFERENCE
 ```
 
@@ -114,7 +114,7 @@ UNKNOWN
 
 ```text
 VERIFIED_BY_OFFICIAL_SOURCE
-VERIFIED_BY_SIMEON
+VERIFIED_BY_ADMIN
 SUPPORTED_BY_JUDGE_CONSENSUS
 SUPPORTED_BY_COMMUNITY_SOURCE
 NEEDS_OFFICIAL_SOURCE
@@ -141,7 +141,7 @@ NEEDS_REVIEW
 Source Family: [Name]
 Approved Scope: [What this source family may be used for]
 Approval Status: APPROVED / CANDIDATE / LIMITED_USE / REJECTED
-Approved By: Simeon / Pending Simeon review / Official source default
+Approved By: Admin / Pending Admin review / Official source default
 Authority Tier: [Tier]
 Allowed Use Cases:
 - [Use case]
@@ -174,7 +174,7 @@ Notes: [Any limitations or context]
 Before using a source for an important claim, check:
 
 - [ ] Is the source family approved for this use case?
-- [ ] If not approved, has it been proposed to Simeon?
+- [ ] If not approved, has it been proposed to Admin?
 - [ ] Is the source relevant to TCG Advanced Format?
 - [ ] Is the source official, judge-level, community, or inferred?
 - [ ] Is the source current enough for the claim?
@@ -187,6 +187,6 @@ Before using a source for an important claim, check:
 
 Do not treat a lower-tier source as official confirmation.
 
-Do not use OCG sources as definitive TCG authority unless later confirmed by a TCG source or by Simeon as acceptable for a specific use case.
+Do not use OCG sources as definitive TCG authority unless later confirmed by a TCG source or by Admin as acceptable for a specific use case.
 
-Do not promote a candidate source family to approved without Simeon review.
+Do not promote a candidate source family to approved without Admin review.
