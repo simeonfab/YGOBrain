@@ -4,14 +4,14 @@ Status: DRAFTED
 Version: v0.1
 Category: runtime
 Scope: Runtime instructions for deckbuilding, deck critique, ratios, and testing decisions
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
 
 This file is the task-specific runtime context for deckbuilding work in YGOBrain.
 
-Use this file when Simeon asks for deck list critique, card ratio analysis, engine sizing, non-engine choices, side deck planning, or testing recommendations.
+Use this file when Admin asks for deck list critique, card ratio analysis, engine sizing, non-engine choices, side deck planning, or testing recommendations.
 
 ## 2. Required Context
 
@@ -32,7 +32,7 @@ Use deck-specific files from `decks/` when available.
 
 ## 3. Default Assumptions
 
-Unless Simeon explicitly says otherwise, assume:
+Unless Admin explicitly says otherwise, assume:
 
 - Yu-Gi-Oh TCG Advanced Format
 - official cards only
@@ -122,7 +122,7 @@ Do not recommend ratios without considering the deck's objective.
 
 ## 8. Source Approval Gate
 
-Before using a new decklist website, tournament result database, creator, community spreadsheet, or recurring data provider as a trusted deckbuilding source, ask Simeon for approval.
+Before using a new decklist website, tournament result database, creator, community spreadsheet, or recurring data provider as a trusted deckbuilding source, ask Admin for approval.
 
 Once a source family is approved for deckbuilding use, individual lists or entries from that approved source may be analyzed without asking for approval each time unless the entry is unusual, contradictory, or high-impact.
 
@@ -147,7 +147,7 @@ Cut 2 low-impact flex cards for 2 additional starters because the list currently
 For strategic claims, label the basis where useful:
 
 ```text
-Tested by Simeon:
+Tested by Admin:
 Event-data supported:
 Common competitive practice:
 Theory:
@@ -219,15 +219,15 @@ For complex deckbuilding tasks, sub-agents may be used for:
 - data extraction from approved sources
 - consistency review against existing deck files
 
-Sub-agents must use approved sources only unless their task is explicitly to propose new sources for Simeon review.
+Sub-agents must use approved sources only unless their task is explicitly to propose new sources for Admin review.
 
 The top-level agent must synthesize outputs and resolve contradictions.
 
 ## 16. Review Burden Rule
 
-Simeon should verify recommendations, not reconstruct them.
+Admin should verify recommendations, not reconstruct them.
 
-Make recommendations clear enough that he can accept, reject, or modify them quickly.
+Make recommendations clear enough that Admin can accept, reject, or modify them quickly.
 
 ## 17. Output Size Rule
 
@@ -249,8 +249,8 @@ Avoid:
 - recommending more consistency without identifying what is being cut
 - making side deck suggestions without matchup context
 - treating small sample data as conclusive
-- ignoring Simeon's stated preferences
-- using a new decklist website or data provider as trusted without Simeon approval
+- ignoring Admin's stated preferences
+- using a new decklist website or data provider as trusted without Admin approval
 
 ## 19. Durable Update Rule
 
