@@ -4,14 +4,14 @@ Status: DRAFTED
 Version: v0.1
 Category: runtime
 Scope: Runtime instructions for Yu-Gi-Oh rulings, interactions, PSCT, chains, and legality analysis
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
 
 This file is the task-specific runtime context for ruling and interaction questions in YGOBrain.
 
-Use this file when Simeon asks about card interactions, timing, activation legality, chain construction, resolution legality, PSCT interpretation, summoning legality, or game-state reasoning.
+Use this file when Admin asks about card interactions, timing, activation legality, chain construction, resolution legality, PSCT interpretation, summoning legality, or game-state reasoning.
 
 ## 2. Required Context
 
@@ -32,7 +32,7 @@ Use relevant core rules modules from `core_rules/` when available.
 
 ## 3. Default Assumptions
 
-Unless Simeon explicitly says otherwise, assume:
+Unless Admin explicitly says otherwise, assume:
 
 - Yu-Gi-Oh TCG Advanced Format
 - official cards only
@@ -75,7 +75,7 @@ CHECKS
 - Final game state.
 
 SOURCE STATUS
-- Officially confirmed / Source-backed / Simeon verified / Inferred not verified / Source needed.
+- Officially confirmed / Source-backed / Admin verified / Inferred not verified / Source needed.
 
 NOTES
 - Edge cases or uncertainty.
@@ -85,7 +85,7 @@ For simple questions, answer directly without forcing every heading.
 
 ## 6. Source Approval Gate
 
-Before using a new judge resource, rulings archive, community database, article site, creator source, or recurring rulings source as trusted, ask Simeon for approval.
+Before using a new judge resource, rulings archive, community database, article site, creator source, or recurring rulings source as trusted, ask Admin for approval.
 
 Once a source family is approved for ruling use, individual rulings or card entries from that approved source may be used without asking for approval each time unless they are unusual, contradictory, or high-impact.
 
@@ -142,7 +142,7 @@ Use these labels where useful:
 ```text
 OFFICIALLY_CONFIRMED
 SOURCE_BACKED
-SIMEON_VERIFIED
+ADMIN_VERIFIED
 SUPPORTED_BY_JUDGE_CONSENSUS
 SUPPORTED_BY_COMMUNITY_SOURCE
 INFERRED_NOT_VERIFIED
@@ -173,7 +173,7 @@ For complex ruling or module-building tasks, sub-agents may be used for:
 - test case generation
 - consistency review against existing YGOBrain files
 
-Sub-agents must use approved sources only unless their task is explicitly to propose new sources for Simeon review.
+Sub-agents must use approved sources only unless their task is explicitly to propose new sources for Admin review.
 
 The top-level agent must synthesize outputs, resolve contradictions, and preserve the source hierarchy.
 
@@ -190,7 +190,7 @@ Avoid:
 - confusing TCG with OCG or Master Duel
 - relying on paraphrased card text
 - presenting community interpretation as official ruling
-- using a new ruling website or judge source as trusted without Simeon approval
+- using a new ruling website or judge source as trusted without Admin approval
 - over-answering simple questions
 
 ## 14. Durable Update Rule
