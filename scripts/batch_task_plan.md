@@ -4,7 +4,7 @@ Status: DRAFTED
 Version: v0.1
 Category: scripts
 Scope: Checklist for completing YGOBrain setup before large-scale agent-assisted content creation
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
@@ -28,9 +28,9 @@ This file lists the setup batch tasks that should be completed before using Code
 
 ## 3. Required Human Verification Before Large-Scale Agent Work
 
-- [ ] Simeon reviews and accepts the setup batch.
-- [ ] Simeon approves or rejects candidate source families.
-- [ ] Simeon reviews `competitive/010_deckbuilding_principles.md`.
+- [ ] Admin reviews and accepts the setup batch.
+- [ ] Admin approves or rejects candidate source families.
+- [ ] Admin reviews `competitive/010_deckbuilding_principles.md`.
 
 ## 4. Source Approval Tasks
 
@@ -55,7 +55,7 @@ competitive/013_ratios_and_consistency.md
 analytics/016_probability_and_consistency.md
 ```
 
-All substantive content modules should remain DRAFTED or UNDER_REVIEW until Simeon verifies them.
+All substantive content modules should remain DRAFTED or UNDER_REVIEW until Admin verifies them.
 
 ## 6. Agent Batch Rules
 
@@ -76,5 +76,5 @@ When using agents for future batches:
 2026-06-02
 Status: DRAFTED
 Change: Created batch task plan.
-Reason: Simeon requested a complete setup checklist before using agents in Codex for content generation.
+Reason: Admin requested a complete setup checklist before using agents in Codex for content generation.
 ```
