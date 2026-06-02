@@ -69,8 +69,9 @@ Questions Needed:
 
 Assumptions Used Instead of Asking:
 
-- "Brick" and "garnet" should be separated for draft terminology, with Admin review required.
-- "Starter-equivalent" should be treated as a useful candidate term, not final terminology, until Admin accepts it.
+- Admin confirmed "brick" and "garnet" should be separate YGOBrain terms.
+- Admin confirmed "starter-equivalent" should become a formal YGOBrain term.
+- Admin clarified that a "1.5-card starter" generally means one specific card that requires another card in hand, where the other card can be any card rather than a specific named card.
 - Examples should use generic Yu-Gi-Oh language rather than specific archetypes.
 
 ## 6. Key Definitions
@@ -95,8 +96,8 @@ Source Status: Inferred Not Verified / Needs Admin Review
 
 ```text
 Term: 1.5-Card Starter
-Definition: A card that starts the deck's intended line when paired with a broad category of support, such as any discard, any monster, or any engine body, rather than one specific named card.
-Source Status: Inferred Not Verified / Needs Admin Review
+Definition: One specific card that starts the deck's intended line only when paired with another card in hand, where the other card can be any card rather than a specific named card.
+Source Status: Admin Verified for terminology direction / Needs full module review
 ```
 
 ```text
@@ -108,13 +109,13 @@ Source Status: Inferred Not Verified / Needs Admin Review
 ```text
 Term: Extender
 Definition: A card that continues, strengthens, protects, or rebuilds a play after a starter or partial line has begun.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified for terminology direction / Needs full module review
 ```
 
 ```text
 Term: Payoff
 Definition: A card or outcome that rewards the deck for successfully executing its plan, such as pressure, interruption, follow-up, damage, advantage, or board presence.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified for formal term / Needs full module review
 ```
 
 ```text
@@ -126,13 +127,13 @@ Source Status: Inferred Not Verified / Needs Admin Review
 ```text
 Term: Brick
 Definition: A card that is weak, dead, or difficult to use in many opening hands.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified for terminology direction / Needs full module review
 ```
 
 ```text
 Term: Garnet
 Definition: A specific engine requirement that is bad or much worse to draw because the deck usually wants to access it from another location.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified for terminology direction / Needs full module review
 ```
 
 ```text
@@ -192,7 +193,7 @@ Source Status: Inferred Not Verified / Needs Admin Review
 ```text
 Term: Starter-Equivalent
 Definition: A candidate YGOBrain term for a card or package that does not literally start alone but functionally increases the deck's access to playable opening lines.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified for formal term / Needs full module review
 ```
 
 ## 7. Core Rules or Principles
@@ -237,16 +238,16 @@ Source Status: Inferred Not Verified / Needs Admin Review
 
 ### 7.4 Brick and Garnet Should Be Separate Draft Terms
 
-For this draft, YGOBrain should separate the terms:
+Admin confirmed YGOBrain should separate the terms:
 
 - Brick: broad term for a bad or dead draw.
 - Garnet: narrower term for an engine requirement that is especially bad to draw because it is meant to stay in deck or be accessed indirectly.
 
 This distinction is useful because a card can be a brick without being a garnet.
 
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified for terminology direction / Needs full module review
 
-### 7.5 Starter-Equivalent Should Be a Candidate Formal Term
+### 7.5 Starter-Equivalent Should Be a Formal Term
 
 "Starter-equivalent" is useful when a card does not start alone but increases the number of playable openers.
 
@@ -256,9 +257,9 @@ Example uses:
 - a bridge card that turns many hands into engine access
 - a broad enabler that makes several partial hands playable
 
-This term should remain provisional until Admin accepts or replaces it.
+Admin confirmed this should become formal YGOBrain terminology.
 
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified for formal term / Needs full module review
 
 ## 8. Practical Application
 
@@ -372,9 +373,10 @@ NEEDS_ADMIN_REVIEW
 
 Review Notes:
 
-- Confirm whether "brick" and "garnet" should remain separate YGOBrain terms.
-- Confirm whether "starter-equivalent" should become formal terminology.
-- Confirm whether "1.5-card starter" is preferred wording or should be renamed.
+- Admin confirmed "brick" and "garnet" should remain separate YGOBrain terms.
+- Admin confirmed "starter-equivalent" should become formal terminology.
+- Admin clarified that "1.5-card starter" generally means one specific card that needs any other card in hand, rather than a specific named second card.
+- Confirm these terms in the glossary/terminology file before the next workstream.
 
 ## 13. Validation Checklist
 
@@ -412,9 +414,9 @@ Notes: This module is a strategic terminology draft and requires Admin review.
 
 ## 15. Open Questions
 
-- Should YGOBrain permanently separate "brick" and "garnet," with garnet as the narrower engine-requirement subtype?
-- Should "starter-equivalent" become a formal YGOBrain term, or should it be replaced with another term such as "access card" or "pseudo-starter"?
-- Should "1.5-card starter" remain the preferred term for broad-condition starters?
+- Glossary follow-up: no glossary/terminology file was found during this update; surface the intended glossary path for Admin review before the next workstream.
+- Should the glossary live at `core_rules/010_terminology.md`, or should YGOBrain use a dedicated `glossary/` file?
+- Should 1.5-card starter examples explicitly say "requires any other card in hand" rather than broader category wording such as "any monster" or "any discard"?
 
 ## 16. Change Log
 
@@ -423,4 +425,9 @@ Notes: This module is a strategic terminology draft and requires Admin review.
 Status: DRAFTED
 Change: Created first draft of card role taxonomy module.
 Reason: YGOBrain needs standard role terminology before deeper engine, ratio, and probability modules are created.
+
+2026-06-02
+Status: DRAFTED
+Change: Recorded Admin terminology decisions for brick/garnet, starter-equivalent, and 1.5-card starter.
+Reason: Admin clarified core card-role terminology while keeping the module pending full review.
 ```
