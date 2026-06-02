@@ -4,7 +4,7 @@ Status: PLANNED
 Version: v0.2
 Category: decks
 Format: Yu-Gi-Oh TCG Advanced Format
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: YYYY-MM-DD
 
 ## 1. Purpose
@@ -74,7 +74,7 @@ Related Modules:
 
 ## 5. Source Approval Gate
 
-Before using a new decklist website, tournament result database, creator source, spreadsheet, or recurring data provider as a trusted source for this deck, ask Simeon for approval.
+Before using a new decklist website, tournament result database, creator source, spreadsheet, or recurring data provider as a trusted source for this deck, ask Admin for approval.
 
 Approved Source Families:
 
@@ -244,7 +244,7 @@ Weaknesses:
 
 Source Status:
 
-- [Tested / Simeon Verified / Source-Backed / Needs Review]
+- [Tested / Admin Verified / Source-Backed / Needs Review]
 
 ## 12. Chokepoints
 
@@ -370,12 +370,12 @@ Results:
 
 ## 19. Verification Gate
 
-This deck file cannot be marked VERIFIED until Simeon has reviewed or approved it.
+This deck file cannot be marked VERIFIED until Admin has reviewed or approved it.
 
 Verification Status:
 
 ```text
-NEEDS_SIMEON_REVIEW
+NEEDS_ADMIN_REVIEW
 ```
 
 Review Notes:
