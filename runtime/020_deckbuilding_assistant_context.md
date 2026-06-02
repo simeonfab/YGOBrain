@@ -88,7 +88,7 @@ For small questions, answer directly without forcing the full structure.
 
 ## 6. Card Role Taxonomy
 
-Use `competitive/011_card_roles.md` as the canonical draft taxonomy until Admin verifies or patches it.
+Use `competitive/011_card_roles.md` as the verified card role taxonomy.
 
 When analyzing cards, classify them where useful as:
 
@@ -278,7 +278,8 @@ Competitive deckbuilding modules currently include:
 
 ```text
 competitive/010_deckbuilding_principles.md - VERIFIED_BY_ADMIN
-competitive/011_card_roles.md - DRAFTED
+competitive/011_card_roles.md - VERIFIED_BY_ADMIN
+core_rules/010_terminology.md - DRAFTED
 ```
 
 Deck-specific overlays have not yet been created.

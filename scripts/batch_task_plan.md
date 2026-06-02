@@ -64,7 +64,8 @@ Created first content modules:
 
 ```text
 competitive/010_deckbuilding_principles.md - VERIFIED_BY_ADMIN
-competitive/011_card_roles.md - DRAFTED
+competitive/011_card_roles.md - VERIFIED_BY_ADMIN
+core_rules/010_terminology.md - DRAFTED
 analytics/010_analytics_principles.md - DRAFTED
 ```
 

@@ -1,6 +1,6 @@
 # 011 Card Roles
 
-Status: DRAFTED
+Status: VERIFIED
 Version: v0.1
 Category: competitive
 Scope: Standard YGOBrain card role taxonomy for Yu-Gi-Oh TCG Advanced Format deckbuilding analysis
@@ -79,121 +79,121 @@ Assumptions Used Instead of Asking:
 ```text
 Term: Card Role
 Definition: The practical job a card performs in a specific deck context.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Starter
 Definition: A card or card combination that can begin the deck's intended line of play.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: One-Card Starter
 Definition: A single card that can begin the deck's intended line without requiring another specific card in hand.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: 1.5-Card Starter
 Definition: One specific card that starts the deck's intended line only when paired with another card in hand, where the other card can be any card rather than a specific named card.
-Source Status: Admin Verified for terminology direction / Needs full module review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Two-Card Starter
 Definition: A starting line that requires two cards, usually because neither card starts the intended line alone.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Extender
 Definition: A card that continues, strengthens, protects, or rebuilds a play after a starter or partial line has begun.
-Source Status: Admin Verified for terminology direction / Needs full module review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Payoff
 Definition: A card or outcome that rewards the deck for successfully executing its plan, such as pressure, interruption, follow-up, damage, advantage, or board presence.
-Source Status: Admin Verified for formal term / Needs full module review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Engine Requirement
 Definition: A card that the engine needs in the deck, graveyard, banished zone, Extra Deck, or hand for lines to function, even if drawing it is not always desirable.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Brick
 Definition: A card that is weak, dead, or difficult to use in many opening hands.
-Source Status: Admin Verified for terminology direction / Needs full module review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Garnet
 Definition: A specific engine requirement that is bad or much worse to draw because the deck usually wants to access it from another location.
-Source Status: Admin Verified for terminology direction / Needs full module review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Non-Engine
 Definition: Cards included primarily to interact, defend, break boards, improve matchups, or support the deck without being part of the core engine.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Defensive Non-Engine
 Definition: Non-engine cards used mainly to prevent, interrupt, or reduce the opponent's progress.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Board Breaker
 Definition: A card used mainly to answer an established opponent board, especially when going second.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Hand Trap
 Definition: A card that can usually be used from the hand to interrupt or constrain the opponent during their turn.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Floodgate
 Definition: A card that restricts what one or both players can do, usually by limiting actions, card types, summons, effects, or zones.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Consistency Card
 Definition: A card included primarily to improve access to starters, engine pieces, playable hands, or specific role categories.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Flex Slot
 Definition: A card slot that can change based on metagame, matchup expectations, build preference, or testing results without breaking the deck's core plan.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Side Deck Card
 Definition: A card used in the side deck to change the deck's matchup plan, going-first plan, going-second plan, or answer profile after game one.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Follow-Up Card
 Definition: A card that helps continue pressure, rebuild after interruption, or play the next turn after the initial exchange.
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 ```
 
 ```text
 Term: Starter-Equivalent
 Definition: A candidate YGOBrain term for a card or package that does not literally start alone but functionally increases the deck's access to playable opening lines.
-Source Status: Admin Verified for formal term / Needs full module review
+Source Status: Admin Verified
 ```
 
 ## 7. Core Rules or Principles
@@ -204,7 +204,7 @@ Do not recommend cutting or adding a card until its role is understood.
 
 A card that looks low-impact in isolation may be important because it is a starter, engine requirement, bridge card, or follow-up card.
 
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 
 ### 7.2 A Card Can Have Multiple Roles
 
@@ -218,7 +218,7 @@ The same card might be:
 - a side deck card after game one
 - a flex slot in one format but core in another
 
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 
 ### 7.3 Starter Quality Matters
 
@@ -234,7 +234,7 @@ When classifying starters, note whether they are:
 - starters that require a specific card
 - starters that lock the deck into a narrow line
 
-Source Status: Inferred Not Verified / Needs Admin Review
+Source Status: Admin Verified
 
 ### 7.4 Brick and Garnet Should Be Separate Draft Terms
 
@@ -245,7 +245,7 @@ Admin confirmed YGOBrain should separate the terms:
 
 This distinction is useful because a card can be a brick without being a garnet.
 
-Source Status: Admin Verified for terminology direction / Needs full module review
+Source Status: Admin Verified
 
 ### 7.5 Starter-Equivalent Should Be a Formal Term
 
@@ -259,7 +259,7 @@ Example uses:
 
 Admin confirmed this should become formal YGOBrain terminology.
 
-Source Status: Admin Verified for formal term / Needs full module review
+Source Status: Admin Verified
 
 ## 8. Practical Application
 
@@ -310,7 +310,7 @@ Reasoning:
 - Calling Card A a starter by itself would overstate opening hand consistency.
 
 Source Status:
-- Inferred / Needs Review
+- Admin Verified
 
 ### Example 2 - Engine Requirement That Is Bad to Draw
 
@@ -324,7 +324,7 @@ Reasoning:
 - It supports the engine's ceiling but can reduce opening hand quality when drawn.
 
 Source Status:
-- Inferred / Needs Review
+- Admin Verified
 
 ### Example 3 - Post-Side Role Change
 
@@ -338,7 +338,7 @@ Reasoning:
 - Role classification should account for matchup and side pattern, not just the card's text.
 
 Source Status:
-- Inferred / Needs Review
+- Admin Verified
 
 ## 10. Common Mistakes
 
@@ -363,12 +363,12 @@ Source Status:
 
 ## 12. Verification Gate
 
-This module cannot be marked VERIFIED until Admin has reviewed or approved it.
+This module is marked VERIFIED because Admin has reviewed and accepted it.
 
 Verification Status:
 
 ```text
-NEEDS_ADMIN_REVIEW
+VERIFIED_BY_ADMIN
 ```
 
 Review Notes:
@@ -376,7 +376,7 @@ Review Notes:
 - Admin confirmed "brick" and "garnet" should remain separate YGOBrain terms.
 - Admin confirmed "starter-equivalent" should become formal terminology.
 - Admin clarified that "1.5-card starter" generally means one specific card that needs any other card in hand, rather than a specific named second card.
-- Confirm these terms in the glossary/terminology file before the next workstream.
+- Admin confirmed the full card role taxonomy module on 2026-06-02.
 
 ## 13. Validation Checklist
 
@@ -391,7 +391,7 @@ Before marking this module as VERIFIED, check:
 - [x] Edge cases are included where useful.
 - [x] Common mistakes are included where useful.
 - [ ] Related tests are created if needed.
-- [ ] Admin has reviewed or approved the module.
+- [x] Admin has reviewed or approved the module.
 
 ## 14. Sources
 
@@ -402,21 +402,20 @@ Source Type: ADMIN_VERIFICATION
 Authority Tier: Project-specific authority
 URL or Reference: Internal YGOBrain review
 Format: PROJECT_INTERNAL
-Date Checked: Pending
+Date Checked: 2026-06-02
 Relevant Claim: Card role terminology and taxonomy approval.
-Confidence: UNKNOWN until reviewed
-Verification Status: NEEDS_HUMAN_REVIEW
+Confidence: HIGH for project acceptance
+Verification Status: VERIFIED_BY_ADMIN
 Approval Status: APPROVED
 Approved Scope: Project acceptance, terminology approval, deckbuilding preferences, and final verification decisions.
 Approved By: Admin
-Notes: This module is a strategic terminology draft and requires Admin review.
+Notes: Admin reviewed and accepted this card role taxonomy module on 2026-06-02.
 ```
 
 ## 15. Open Questions
 
-- Glossary follow-up: no glossary/terminology file was found during this update; surface the intended glossary path for Admin review before the next workstream.
-- Should the glossary live at `core_rules/010_terminology.md`, or should YGOBrain use a dedicated `glossary/` file?
-- Should 1.5-card starter examples explicitly say "requires any other card in hand" rather than broader category wording such as "any monster" or "any discard"?
+- Add verified card role terms to `core_rules/010_terminology.md` for glossary review.
+- Create `competitive/012_engine_vs_non_engine.md` after Admin has reviewed the glossary surface.
 
 ## 16. Change Log
 
@@ -430,4 +429,9 @@ Reason: YGOBrain needs standard role terminology before deeper engine, ratio, an
 Status: DRAFTED
 Change: Recorded Admin terminology decisions for brick/garnet, starter-equivalent, and 1.5-card starter.
 Reason: Admin clarified core card-role terminology while keeping the module pending full review.
+
+2026-06-02
+Status: VERIFIED
+Change: Admin reviewed and accepted the card role taxonomy module.
+Reason: Admin confirmed card roles are verified.
 ```

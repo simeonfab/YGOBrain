@@ -215,6 +215,14 @@ Current competitive taxonomy module:
 competitive/011_card_roles.md
 ```
 
+That module is VERIFIED_BY_ADMIN.
+
+Current glossary module:
+
+```text
+core_rules/010_terminology.md
+```
+
 That module is DRAFTED and needs Admin review before it can be treated as verified.
 
 Current analytics foundation module:

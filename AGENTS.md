@@ -178,7 +178,7 @@ For setup or maintenance batches:
 
 ## 12. Current Foundation State
 
-YGOBrain has governance, templates, runtime files, source tracking, scaffold automation, one verified pilot competitive module, one draft competitive taxonomy module, and one draft analytics foundation module.
+YGOBrain has governance, templates, runtime files, source tracking, scaffold automation, verified competitive foundation modules, one draft glossary module, and one draft analytics foundation module.
 
 Current pilot content module:
 
@@ -192,6 +192,14 @@ Current competitive taxonomy module:
 
 ```text
 competitive/011_card_roles.md
+```
+
+This module is VERIFIED_BY_ADMIN.
+
+Current glossary module:
+
+```text
+core_rules/010_terminology.md
 ```
 
 This module is DRAFTED and needs Admin review.
