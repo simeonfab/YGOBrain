@@ -3,20 +3,20 @@
 Status: DRAFTED
 Version: v0.1
 Scope: Rules for creating, reviewing, clarifying, and verifying YGOBrain modules
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
 
 This file defines how YGOBrain modules should be created and reviewed.
 
-The goal is to make every module small, reviewable, useful, and explicitly verified by Simeon before it becomes trusted project knowledge.
+The goal is to make every module small, reviewable, useful, and explicitly verified by Admin before it becomes trusted project knowledge.
 
 ## 2. Core Rule
 
-For each module, the assistant drafts and Simeon verifies.
+For each module, the assistant drafts and Admin verifies.
 
-No substantive module should be treated as VERIFIED until Simeon has reviewed or approved it.
+No substantive module should be treated as VERIFIED until Admin has reviewed or approved it.
 
 ## 3. Module Creation Workflow
 
@@ -28,9 +28,9 @@ Use this workflow for every new module:
 4. Draft the module using the relevant template.
 5. Mark the module as DRAFTED, not VERIFIED.
 6. Summarize what was created.
-7. Ask Simeon to verify, correct, or approve it.
+7. Ask Admin to verify, correct, or approve it.
 8. Patch the module if needed.
-9. Only mark VERIFIED after Simeon approves.
+9. Only mark VERIFIED after Admin approves.
 
 ## 4. Clarifying Question Rule
 
@@ -40,7 +40,7 @@ Ask one question at a time by default.
 
 Ask two or three questions only when clearly efficient.
 
-Do not ask long question lists unless Simeon explicitly requests them.
+Do not ask long question lists unless Admin explicitly requests them.
 
 If a reasonable default already exists in governance, use the default rather than asking again.
 
@@ -51,7 +51,7 @@ Every new substantive module must include a verification gate.
 The assistant should clearly state:
 
 ```text
-Verification needed from Simeon before this module can be marked VERIFIED.
+Verification needed from Admin before this module can be marked VERIFIED.
 ```
 
 The module should remain in one of these statuses until approved:
@@ -64,7 +64,7 @@ UNDER_REVIEW
 
 ## 6. Review Burden Rule
 
-Simeon should verify, not rewrite from scratch.
+Admin should verify, not rewrite from scratch.
 
 The assistant should make each module:
 
@@ -87,7 +87,7 @@ Each module should distinguish:
 
 - official source-backed claims
 - community-supported claims
-- Simeon-verified claims
+- Admin-verified claims
 - assistant inference
 - claims needing source verification
 
@@ -105,7 +105,7 @@ Please verify whether this draft is directionally correct. If anything is wrong,
 
 ## 10. Patch Rule
 
-If Simeon corrects a module, the assistant should:
+If Admin corrects a module, the assistant should:
 
 1. identify the incorrect section
 2. patch the file
@@ -115,7 +115,7 @@ If Simeon corrects a module, the assistant should:
 
 ## 11. Approval Rule
 
-Only Simeon can approve substantive module verification unless he explicitly delegates verification for a defined category.
+Only Admin can approve substantive module verification unless explicitly delegated for a defined category.
 
 When approved, update the module status to VERIFIED and log the change where appropriate.
 
@@ -140,5 +140,5 @@ For simple placeholder files or scripts, full verification may be lighter, but m
 2026-06-02
 Status: DRAFTED
 Change: Created module creation and review policy.
-Reason: Simeon confirmed every module should be verified with him, with clarifying questions asked when needed.
+Reason: Admin confirmed every module should be verified with them, with clarifying questions asked when needed.
 ```
