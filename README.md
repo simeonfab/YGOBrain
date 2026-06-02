@@ -23,7 +23,7 @@ Current pilot module:
 competitive/010_deckbuilding_principles.md
 ```
 
-Status: DRAFTED. It requires Simeon review before it can become VERIFIED.
+Status: DRAFTED. It requires Admin review before it can become VERIFIED.
 
 ## Default Scope
 
@@ -84,17 +84,17 @@ runtime/060_sub_agent_task_template.md
 
 ## Core Principle
 
-The assistant drafts. Simeon verifies.
+The assistant drafts. Admin verifies.
 
-Assistant inference alone is not final authority. Official sources, trusted sources, and Simeon's review determine what becomes accepted knowledge.
+Assistant inference alone is not final authority. Official sources, trusted sources, and Admin review determine what becomes accepted knowledge.
 
 Sub-agent outputs are not automatically verified. The top-level agent must synthesize, check, and present final outputs for review where needed.
 
 ## Source Approval Rule
 
-New recurring source families, websites, databases, decklist providers, judge resources, creator sources, community resources, and data providers require Simeon approval before they become trusted YGOBrain inputs.
+New recurring source families, websites, databases, decklist providers, judge resources, creator sources, community resources, and data providers require Admin approval before they become trusted YGOBrain inputs.
 
-Once a source family is approved for a defined use case, individual entries from that source may be used within the approved scope without asking Simeon for every lookup.
+Once a source family is approved for a defined use case, individual entries from that source may be used within the approved scope without asking Admin for every lookup.
 
 ## Agent Workflow
 
@@ -117,7 +117,7 @@ The top-level agent is responsible for:
 - resolving contradictions
 - synthesizing outputs
 - updating repository files only when appropriate
-- asking Simeon for verification where needed
+- asking Admin for verification where needed
 
 ## Local Setup
 
@@ -163,4 +163,4 @@ Before large-scale agent-assisted content creation:
 4. Start analytics/010_analytics_principles.md or core_rules/010_terminology.md.
 ```
 
-All substantive content modules must remain DRAFTED or UNDER_REVIEW until Simeon approves them.
+All substantive content modules must remain DRAFTED or UNDER_REVIEW until Admin approves them.
