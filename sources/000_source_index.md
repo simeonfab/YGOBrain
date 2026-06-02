@@ -5,7 +5,7 @@ Version: v0.1
 Category: sources
 Scope: Central registry of YGOBrain sources and their current trust status
 Owner: Simeon Fabowale-Makinde
-Last Updated: 2026-05-28
+Last Updated: 2026-06-02
 
 ## 1. Purpose
 
@@ -19,10 +19,31 @@ Use this file alongside:
 
 ```text
 governance/002_source_hierarchy.md
+governance/007_sub_agent_workflow_policy.md
 templates/source_entry_template.md
 ```
 
-## 3. Authority Tiers
+## 3. Source Approval Principle
+
+At a top level, source families, websites, databases, and recurring data providers must be approved by Simeon before they become trusted YGOBrain inputs.
+
+Once a source family is approved for a defined use case, individual entries from that approved source may be used within that approved scope without asking Simeon about every lookup.
+
+Examples:
+
+```text
+Needs Simeon approval:
+- Should this website become an approved decklist source?
+- Should this judge resource become an approved ruling source?
+- Should this event database become an approved analytics source?
+
+Does not always need separate approval once source is approved:
+- Extract one deck list from the approved decklist website.
+- Check one card entry from the official database.
+- Use one event result from the approved event database.
+```
+
+## 4. Authority Tiers
 
 ```text
 Tier 1 — Official TCG Authority
@@ -33,7 +54,7 @@ Tier 5 — General Community Discussion
 Tier 6 — Assistant Inference
 ```
 
-## 4. Source Status Labels
+## 5. Source Status Labels
 
 ```text
 APPROVED
@@ -44,12 +65,72 @@ REJECTED
 NEEDS_REVIEW
 ```
 
-## 5. Official TCG Sources
+## 6. Approved Source Families
+
+### Official Konami TCG Source Family
+
+```text
+Source Family: Official Konami TCG Sources
+Approved Scope: Official TCG card text, official TCG announcements, official TCG Forbidden & Limited List, official TCG product and policy references where available.
+Approval Status: APPROVED
+Approved By: Simeon / YGOBrain foundation default
+Authority Tier: Tier 1 — Official TCG Authority
+Notes: This family is the highest-priority source family for TCG card text, legality, announcements, and official TCG material.
+```
+
+### Simeon Verification Source Family
+
+```text
+Source Family: Simeon Verification
+Approved Scope: Project acceptance, preferred terminology, deckbuilding preferences, approved source choices, and final verification decisions.
+Approval Status: APPROVED
+Approved By: Simeon
+Authority Tier: Project-specific authority
+Notes: Simeon is final arbiter for what enters YGOBrain. This does not override official rules.
+```
+
+## 7. Candidate or Limited Source Families
+
+### Official OCG Sources
+
+```text
+Source Family: Official OCG Sources
+Approved Scope: Informative support only when no TCG authority is available.
+Approval Status: LIMITED_USE
+Approved By: YGOBrain foundation default, subject to Simeon review for specific recurring usage.
+Authority Tier: Tier 2 — Official or Semi-Official Related Authority
+Notes: OCG sources may inform TCG reasoning but are not automatically definitive for TCG.
+```
+
+### Yugipedia
+
+```text
+Source Family: Yugipedia
+Approved Scope: Candidate for low-risk factual lookup, terminology, card information summaries, and research pointers.
+Approval Status: CANDIDATE
+Approved By: Pending Simeon review
+Authority Tier: Tier 4 — High-Quality Community Resource
+Notes: Useful for research and summaries. Important claims should be verified against higher-tier sources where practical.
+```
+
+### YGOrganization
+
+```text
+Source Family: YGOrganization
+Approved Scope: Candidate for Yu-Gi-Oh news, translations, OCG-related information, and rulings coverage.
+Approval Status: CANDIDATE
+Approved By: Pending Simeon review
+Authority Tier: Tier 4 — High-Quality Community Resource
+Notes: Useful for OCG-related information and translations. Treat TCG application carefully.
+```
+
+## 8. Official TCG Sources
 
 ### Konami Official Yu-Gi-Oh Card Database
 
 ```text
 Source Name: Konami Official Yu-Gi-Oh Card Database
+Source Family: Official Konami TCG Sources
 Source Type: OFFICIAL_CARD_DATABASE
 Authority Tier: Tier 1 — Official TCG Authority
 URL or Reference: https://www.db.yugioh-card.com/yugiohdb/
@@ -66,6 +147,7 @@ Notes: Preferred source for exact current card text where available. Use exact w
 
 ```text
 Source Name: Konami Official Yu-Gi-Oh TCG Website
+Source Family: Official Konami TCG Sources
 Source Type: OFFICIAL_ANNOUNCEMENT
 Authority Tier: Tier 1 — Official TCG Authority
 URL or Reference: https://www.yugioh-card.com/en/
@@ -82,6 +164,7 @@ Notes: Use for official TCG announcements and entry point to official resources.
 
 ```text
 Source Name: Konami Official Forbidden & Limited List
+Source Family: Official Konami TCG Sources
 Source Type: OFFICIAL_FORBIDDEN_LIMITED_LIST
 Authority Tier: Tier 1 — Official TCG Authority
 URL or Reference: https://www.yugioh-card.com/en/limited/
@@ -94,71 +177,21 @@ Project Status: APPROVED
 Notes: Time-sensitive. Must be checked when deckbuilding legality matters.
 ```
 
-## 6. Official or Semi-Official Related Sources
-
-### Official OCG Sources
-
-```text
-Source Name: Official OCG Sources
-Source Type: OCG_OFFICIAL_SOURCE
-Authority Tier: Tier 2 — Official or Semi-Official Related Authority
-URL or Reference: Various official OCG resources
-Format: OCG_INFORMATIVE_ONLY
-Date Checked: 2026-05-28
-Relevant Claim: OCG rulings and official OCG explanations.
-Confidence: MEDIUM for TCG use
-Verification Status: NEEDS_HUMAN_REVIEW for TCG application
-Project Status: LIMITED_USE
-Notes: Informative only for YGOBrain unless no TCG authority exists. Do not treat as definitive TCG authority without explicit qualification.
-```
-
-## 7. Judge-Level or Policy-Aware Sources
+## 9. Judge-Level or Policy-Aware Sources
 
 ```text
 SOURCE_NEEDED
 ```
 
-Candidate judge-level sources should be added only after review.
+Candidate judge-level sources should be proposed to Simeon before being used as trusted recurring sources.
 
-## 8. High-Quality Community Sources
-
-### Yugipedia
-
-```text
-Source Name: Yugipedia
-Source Type: COMMUNITY_DATABASE
-Authority Tier: Tier 4 — High-Quality Community Resource
-URL or Reference: https://yugipedia.com/
-Format: GENERAL_YUGIOH
-Date Checked: 2026-05-28
-Relevant Claim: Card information, rulings references, terminology, historical notes, and community-maintained explanations.
-Confidence: MEDIUM
-Verification Status: SUPPORTED_BY_COMMUNITY_SOURCE
-Project Status: CANDIDATE
-Notes: Useful for research and summaries. Important claims should be verified against higher-tier sources where practical.
-```
-
-### YGOrganization
-
-```text
-Source Name: YGOrganization
-Source Type: COMMUNITY_ARTICLE
-Authority Tier: Tier 4 — High-Quality Community Resource
-URL or Reference: https://ygorganization.com/
-Format: GENERAL_YUGIOH
-Date Checked: 2026-05-28
-Relevant Claim: News, translations, rulings coverage, and card information.
-Confidence: MEDIUM
-Verification Status: SUPPORTED_BY_COMMUNITY_SOURCE
-Project Status: CANDIDATE
-Notes: Useful for OCG-related information and translations. Treat TCG application carefully.
-```
-
-## 9. Competitive and Analytics Sources
+## 10. Competitive and Analytics Sources
 
 ```text
 SOURCE_NEEDED
 ```
+
+Candidate competitive or analytics source families must be approved by Simeon before being used as trusted recurring data inputs.
 
 Future candidates may include:
 
@@ -168,26 +201,47 @@ Future candidates may include:
 - reputable metagame breakdowns
 - Simeon's own testing data
 
-## 10. Simeon Verification
+## 11. Individual Source Entry Template
+
+Use this structure for individual sources:
+
+```text
+Source Name:
+Source Family:
+Source Type:
+Authority Tier:
+URL or Reference:
+Format:
+Date Checked:
+Relevant Claim:
+Confidence:
+Verification Status:
+Project Status:
+Notes:
+```
+
+## 12. Simeon Verification
 
 ```text
 Source Name: Simeon Verification
+Source Family: Simeon Verification
 Source Type: SIMEON_VERIFICATION
 Authority Tier: Project-specific authority
 URL or Reference: Internal YGOBrain review
 Format: PROJECT_INTERNAL
 Date Checked: Ongoing
-Relevant Claim: Simeon's approval of project content, deckbuilding preferences, and accepted interpretations.
+Relevant Claim: Simeon's approval of project content, source families, deckbuilding preferences, and accepted interpretations.
 Confidence: HIGH for project acceptance
 Verification Status: VERIFIED_BY_SIMEON
 Project Status: APPROVED
 Notes: Simeon is final arbiter for what enters YGOBrain. This does not override official rules.
 ```
 
-## 11. Assistant Inference
+## 13. Assistant Inference
 
 ```text
 Source Name: Assistant Inference
+Source Family: Assistant Inference
 Source Type: ASSISTANT_INFERENCE
 Authority Tier: Tier 6 — Assistant Inference
 URL or Reference: N/A
@@ -200,20 +254,26 @@ Project Status: LIMITED_USE
 Notes: Never final authority. Must be verified by source support or Simeon.
 ```
 
-## 12. Open Source Review Tasks
+## 14. Open Source Review Tasks
 
 - Add official TCG rulebook source entry.
 - Add official tournament policy source entry.
-- Identify acceptable judge-level sources.
-- Identify competitive decklist and event result sources.
+- Identify acceptable judge-level sources and ask Simeon before approving them.
+- Identify competitive decklist and event result sources and ask Simeon before approving them.
 - Decide whether Yugipedia is approved for low-risk factual lookup or remains candidate only.
 - Decide whether YGOrganization is approved for OCG translation support.
+- Create `sources/001_approved_source_families.md` if the approved-source-family list becomes too large for this index.
 
-## 13. Change Log
+## 15. Change Log
 
 ```text
 2026-05-28
 Status: DRAFTED
 Change: Created initial source index.
 Reason: YGOBrain needs a central source registry before rules, deckbuilding, and analytics modules are created.
+
+2026-06-02
+Status: DRAFTED
+Change: Added source family approval rules and explicit Simeon approval gate.
+Reason: Simeon clarified that recurring source websites, databases, and data providers should be approved at a top level before agents use them as trusted sources.
 ```
