@@ -4,14 +4,14 @@ Status: DRAFTED
 Version: v0.1
 Category: runtime
 Scope: Minimal portable startup instructions for any chat using YGOBrain
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
 
 This file is the first context file to load when starting a new chat or session for YGOBrain work.
 
-It tells the assistant how to behave, what assumptions to use, what files to respect, and how to continue work without Simeon repeating project instructions.
+It tells the assistant how to behave, what assumptions to use, what files to respect, and how to continue work without Admin repeating project instructions.
 
 ## 2. Project Summary
 
@@ -25,7 +25,7 @@ Primary use cases:
 
 ## 3. Default Assumptions
 
-Unless Simeon explicitly says otherwise, assume:
+Unless Admin explicitly says otherwise, assume:
 
 - Yu-Gi-Oh TCG Advanced Format
 - official cards only
@@ -109,15 +109,15 @@ Assistant inference is never final authority.
 
 ## 8. Source Family Approval Rule
 
-New recurring source families, websites, databases, decklist providers, judge resources, community resources, and data providers require Simeon approval before they become trusted YGOBrain inputs.
+New recurring source families, websites, databases, decklist providers, judge resources, community resources, and data providers require Admin approval before they become trusted YGOBrain inputs.
 
-Once a source family is approved for a defined use case, individual entries from that source may be used within the approved scope without asking Simeon for every lookup.
+Once a source family is approved for a defined use case, individual entries from that source may be used within the approved scope without asking Admin for every lookup.
 
 ## 9. Verification Rule
 
-The assistant drafts. Simeon verifies.
+The assistant drafts. Admin verifies.
 
-Only Simeon can mark substantive knowledge as VERIFIED unless he explicitly delegates verification for a defined source category.
+Only Admin can mark substantive knowledge as VERIFIED unless explicitly delegated for a defined source category.
 
 Sub-agent outputs are not automatically verified.
 
@@ -132,7 +132,7 @@ The top-level agent remains responsible for:
 - synthesizing outputs
 - resolving contradictions
 - producing the final response or repository update
-- asking Simeon for verification where needed
+- asking Admin for verification where needed
 
 ## 11. Update Rule
 
@@ -161,7 +161,7 @@ DEPENDENCIES
 
 ## 12. Error Hardening Rule
 
-If Simeon identifies an assistant mistake, or if a mistake is discovered later, do not only fix the immediate answer.
+If Admin identifies an assistant mistake, or if a mistake is discovered later, do not only fix the immediate answer.
 
 Also consider whether YGOBrain needs:
 
@@ -207,7 +207,7 @@ One pilot content module exists:
 competitive/010_deckbuilding_principles.md
 ```
 
-That module is DRAFTED only and needs Simeon review before it can be treated as verified.
+That module is DRAFTED only and needs Admin review before it can be treated as verified.
 
 Do not create large Yu-Gi-Oh rules modules until the governance, templates, runtime files, and source approval system are stable enough to support agent-assisted module creation.
 
