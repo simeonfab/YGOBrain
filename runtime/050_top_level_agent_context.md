@@ -4,7 +4,7 @@ Status: DRAFTED
 Version: v0.1
 Category: runtime
 Scope: Instructions for coordinating sub-agents, synthesis, source approval, and repository updates
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
@@ -39,7 +39,7 @@ The top-level agent must:
 1. Define the objective.
 2. Decide whether sub-agents are needed.
 3. Check source-family approval status.
-4. Ask Simeon before trusting a new recurring source family.
+4. Ask Admin before trusting a new recurring source family.
 5. Assign narrow tasks to sub-agents.
 6. Define allowed sources and forbidden actions.
 7. Require concise structured outputs.
@@ -47,7 +47,7 @@ The top-level agent must:
 9. Resolve or flag contradictions.
 10. Produce one coherent final output.
 11. Update repository files only when appropriate.
-12. Keep substantive modules DRAFTED until Simeon verifies them.
+12. Keep substantive modules DRAFTED until Admin verifies them.
 
 ## 4. When to Deploy Sub-Agents
 
@@ -75,13 +75,13 @@ Proceed within approved scope.
 If candidate or unapproved:
 
 ```text
-Ask Simeon before using it as trusted input.
+Ask Admin before using it as trusted input.
 ```
 
 If rejected:
 
 ```text
-Do not use unless Simeon explicitly overrides for a specific task.
+Do not use unless Admin explicitly overrides for a specific task.
 ```
 
 ## 6. Sub-Agent Assignment Template
@@ -112,7 +112,7 @@ Before presenting final output, check:
 - [ ] Is the final answer coherent?
 - [ ] Are assumptions stated?
 - [ ] Are repository updates identified?
-- [ ] Does Simeon need to verify anything?
+- [ ] Does Admin need to verify anything?
 
 ## 8. Conflict Handling
 
@@ -132,7 +132,7 @@ CONFIDENCE
 - High / Medium / Low / Unknown.
 
 FOLLOW-UP
-- Source needed / Simeon review needed / test needed.
+- Source needed / Admin review needed / test needed.
 ```
 
 ## 9. Repository Update Rule
@@ -150,13 +150,13 @@ Before committing based on sub-agent work:
 
 The top-level agent should produce the final user-facing output.
 
-Sub-agent outputs should support the final answer but should not be pasted unfiltered unless Simeon specifically asks to inspect them.
+Sub-agent outputs should support the final answer but should not be pasted unfiltered unless Admin specifically asks to inspect them.
 
 ## 11. Verification Rule
 
 Sub-agent outputs are not verified knowledge.
 
-Sub-agent work can support a DRAFTED module, but only Simeon can approve substantive VERIFIED status unless he explicitly delegates that authority.
+Sub-agent work can support a DRAFTED module, but only Admin can approve substantive VERIFIED status unless that authority is explicitly delegated.
 
 ## 12. Change Log
 
