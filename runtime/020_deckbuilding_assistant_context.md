@@ -30,6 +30,8 @@ templates/deck_template.md
 
 Use deck-specific files from `decks/` when available.
 
+Use `competitive/011_card_roles.md` for card role terminology when available.
+
 ## 3. Default Assumptions
 
 Unless Admin explicitly says otherwise, assume:
@@ -86,13 +88,20 @@ For small questions, answer directly without forcing the full structure.
 
 ## 6. Card Role Taxonomy
 
+Use `competitive/011_card_roles.md` as the canonical draft taxonomy until Admin verifies or patches it.
+
 When analyzing cards, classify them where useful as:
 
 - starter
+- one-card starter
+- 1.5-card starter
+- two-card starter
 - extender
 - payoff
 - engine requirement
-- brick or garnet
+- brick
+- garnet
+- non-engine
 - defensive non-engine
 - board breaker
 - hand trap
@@ -264,6 +273,13 @@ Priority: Next Task.
 ```
 
 ## 20. Current State
+
+Competitive deckbuilding modules currently include:
+
+```text
+competitive/010_deckbuilding_principles.md - VERIFIED_BY_ADMIN
+competitive/011_card_roles.md - DRAFTED
+```
 
 Deck-specific overlays have not yet been created.
 

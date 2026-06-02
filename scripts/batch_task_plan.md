@@ -55,7 +55,6 @@ Recommended first content modules:
 
 ```text
 core_rules/010_terminology.md
-competitive/011_card_roles.md
 competitive/012_engine_vs_non_engine.md
 competitive/013_ratios_and_consistency.md
 analytics/016_probability_and_consistency.md
@@ -65,6 +64,7 @@ Created first content modules:
 
 ```text
 competitive/010_deckbuilding_principles.md - VERIFIED_BY_ADMIN
+competitive/011_card_roles.md - DRAFTED
 analytics/010_analytics_principles.md - DRAFTED
 ```
 

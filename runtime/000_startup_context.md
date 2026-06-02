@@ -209,6 +209,14 @@ competitive/010_deckbuilding_principles.md
 
 That module is VERIFIED_BY_ADMIN as a first foundation module.
 
+Current competitive taxonomy module:
+
+```text
+competitive/011_card_roles.md
+```
+
+That module is DRAFTED and needs Admin review before it can be treated as verified.
+
 Current analytics foundation module:
 
 ```text
