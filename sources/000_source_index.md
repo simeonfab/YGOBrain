@@ -4,7 +4,7 @@ Status: DRAFTED
 Version: v0.1
 Category: sources
 Scope: Central registry of YGOBrain sources and their current trust status
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-06-02
 
 ## 1. Purpose
@@ -25,14 +25,14 @@ templates/source_entry_template.md
 
 ## 3. Source Approval Principle
 
-At a top level, source families, websites, databases, and recurring data providers must be approved by Simeon before they become trusted YGOBrain inputs.
+At a top level, source families, websites, databases, and recurring data providers must be approved by Admin before they become trusted YGOBrain inputs.
 
-Once a source family is approved for a defined use case, individual entries from that approved source may be used within that approved scope without asking Simeon about every lookup.
+Once a source family is approved for a defined use case, individual entries from that approved source may be used within that approved scope without asking Admin about every lookup.
 
 Examples:
 
 ```text
-Needs Simeon approval:
+Needs Admin approval:
 - Should this website become an approved decklist source?
 - Should this judge resource become an approved ruling source?
 - Should this event database become an approved analytics source?
@@ -73,20 +73,20 @@ NEEDS_REVIEW
 Source Family: Official Konami TCG Sources
 Approved Scope: Official TCG card text, official TCG announcements, official TCG Forbidden & Limited List, official TCG product and policy references where available.
 Approval Status: APPROVED
-Approved By: Simeon / YGOBrain foundation default
+Approved By: Admin / YGOBrain foundation default
 Authority Tier: Tier 1 — Official TCG Authority
 Notes: This family is the highest-priority source family for TCG card text, legality, announcements, and official TCG material.
 ```
 
-### Simeon Verification Source Family
+### Admin Verification Source Family
 
 ```text
-Source Family: Simeon Verification
+Source Family: Admin Verification
 Approved Scope: Project acceptance, preferred terminology, deckbuilding preferences, approved source choices, and final verification decisions.
 Approval Status: APPROVED
-Approved By: Simeon
+Approved By: Admin
 Authority Tier: Project-specific authority
-Notes: Simeon is final arbiter for what enters YGOBrain. This does not override official rules.
+Notes: Admin is final arbiter for what enters YGOBrain. This does not override official rules.
 ```
 
 ## 7. Candidate or Limited Source Families
@@ -97,7 +97,7 @@ Notes: Simeon is final arbiter for what enters YGOBrain. This does not override 
 Source Family: Official OCG Sources
 Approved Scope: Informative support only when no TCG authority is available.
 Approval Status: LIMITED_USE
-Approved By: YGOBrain foundation default, subject to Simeon review for specific recurring usage.
+Approved By: YGOBrain foundation default, subject to Admin review for specific recurring usage.
 Authority Tier: Tier 2 — Official or Semi-Official Related Authority
 Notes: OCG sources may inform TCG reasoning but are not automatically definitive for TCG.
 ```
@@ -108,7 +108,7 @@ Notes: OCG sources may inform TCG reasoning but are not automatically definitive
 Source Family: Yugipedia
 Approved Scope: Candidate for low-risk factual lookup, terminology, card information summaries, and research pointers.
 Approval Status: CANDIDATE
-Approved By: Pending Simeon review
+Approved By: Pending Admin review
 Authority Tier: Tier 4 — High-Quality Community Resource
 Notes: Useful for research and summaries. Important claims should be verified against higher-tier sources where practical.
 ```
@@ -119,7 +119,7 @@ Notes: Useful for research and summaries. Important claims should be verified ag
 Source Family: YGOrganization
 Approved Scope: Candidate for Yu-Gi-Oh news, translations, OCG-related information, and rulings coverage.
 Approval Status: CANDIDATE
-Approved By: Pending Simeon review
+Approved By: Pending Admin review
 Authority Tier: Tier 4 — High-Quality Community Resource
 Notes: Useful for OCG-related information and translations. Treat TCG application carefully.
 ```
@@ -183,7 +183,7 @@ Notes: Time-sensitive. Must be checked when deckbuilding legality matters.
 SOURCE_NEEDED
 ```
 
-Candidate judge-level sources should be proposed to Simeon before being used as trusted recurring sources.
+Candidate judge-level sources should be proposed to Admin before being used as trusted recurring sources.
 
 ## 10. Competitive and Analytics Sources
 
@@ -191,7 +191,7 @@ Candidate judge-level sources should be proposed to Simeon before being used as 
 SOURCE_NEEDED
 ```
 
-Candidate competitive or analytics source families must be approved by Simeon before being used as trusted recurring data inputs.
+Candidate competitive or analytics source families must be approved by Admin before being used as trusted recurring data inputs.
 
 Future candidates may include:
 
@@ -199,7 +199,7 @@ Future candidates may include:
 - topping deck list databases
 - tournament reports
 - reputable metagame breakdowns
-- Simeon's own testing data
+- Admin testing data
 
 ## 11. Individual Source Entry Template
 
@@ -220,21 +220,21 @@ Project Status:
 Notes:
 ```
 
-## 12. Simeon Verification
+## 12. Admin Verification
 
 ```text
-Source Name: Simeon Verification
-Source Family: Simeon Verification
-Source Type: SIMEON_VERIFICATION
+Source Name: Admin Verification
+Source Family: Admin Verification
+Source Type: ADMIN_VERIFICATION
 Authority Tier: Project-specific authority
 URL or Reference: Internal YGOBrain review
 Format: PROJECT_INTERNAL
 Date Checked: Ongoing
-Relevant Claim: Simeon's approval of project content, source families, deckbuilding preferences, and accepted interpretations.
+Relevant Claim: Admin approval of project content, source families, deckbuilding preferences, and accepted interpretations.
 Confidence: HIGH for project acceptance
-Verification Status: VERIFIED_BY_SIMEON
+Verification Status: VERIFIED_BY_ADMIN
 Project Status: APPROVED
-Notes: Simeon is final arbiter for what enters YGOBrain. This does not override official rules.
+Notes: Admin is final arbiter for what enters YGOBrain. This does not override official rules.
 ```
 
 ## 13. Assistant Inference
@@ -251,15 +251,15 @@ Relevant Claim: Draft reasoning, hypotheses, and proposed explanations.
 Confidence: LOW unless verified
 Verification Status: INFERRED_NOT_VERIFIED
 Project Status: LIMITED_USE
-Notes: Never final authority. Must be verified by source support or Simeon.
+Notes: Never final authority. Must be verified by source support or Admin.
 ```
 
 ## 14. Open Source Review Tasks
 
 - Add official TCG rulebook source entry.
 - Add official tournament policy source entry.
-- Identify acceptable judge-level sources and ask Simeon before approving them.
-- Identify competitive decklist and event result sources and ask Simeon before approving them.
+- Identify acceptable judge-level sources and ask Admin before approving them.
+- Identify competitive decklist and event result sources and ask Admin before approving them.
 - Decide whether Yugipedia is approved for low-risk factual lookup or remains candidate only.
 - Decide whether YGOrganization is approved for OCG translation support.
 - Create `sources/001_approved_source_families.md` if the approved-source-family list becomes too large for this index.
@@ -274,6 +274,6 @@ Reason: YGOBrain needs a central source registry before rules, deckbuilding, and
 
 2026-06-02
 Status: DRAFTED
-Change: Added source family approval rules and explicit Simeon approval gate.
-Reason: Simeon clarified that recurring source websites, databases, and data providers should be approved at a top level before agents use them as trusted sources.
+Change: Added source family approval rules and explicit Admin approval gate.
+Reason: Admin clarified that recurring source websites, databases, and data providers should be approved at a top level before agents use them as trusted sources.
 ```
