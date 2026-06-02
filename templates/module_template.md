@@ -44,13 +44,28 @@ Depends On:
 - governance/001_knowledge_architecture.md
 - governance/002_source_hierarchy.md
 - governance/003_response_methodology.md
+- governance/006_module_creation_and_review_policy.md
 
 Related Modules:
 
 - [Module path]
 - [Module path]
 
-## 5. Key Definitions
+## 5. Clarifying Questions
+
+Before drafting or finalizing this module, identify whether Simeon needs to answer any clarifying questions.
+
+Ask only questions that materially affect the module.
+
+Questions Needed:
+
+- [None / Question]
+
+Assumptions Used Instead of Asking:
+
+- [Assumption]
+
+## 6. Key Definitions
 
 Define important terms used in this module.
 
@@ -60,7 +75,7 @@ Definition:
 Source Status:
 ```
 
-## 6. Core Rules or Principles
+## 7. Core Rules or Principles
 
 State the main rules, principles, or framework.
 
@@ -76,7 +91,7 @@ Inferred Not Verified:
 Source Needed:
 ```
 
-## 7. Practical Application
+## 8. Practical Application
 
 Explain how this module should be used in actual work.
 
@@ -87,7 +102,7 @@ Examples:
 - how to analyze a statistic
 - how to update a file
 
-## 8. Examples
+## 9. Examples
 
 ### Example 1 — [Name]
 
@@ -117,7 +132,7 @@ Reasoning:
 Source Status:
 - [Officially Confirmed / Source-Backed / Inferred / Needs Review]
 
-## 9. Common Mistakes
+## 10. Common Mistakes
 
 List common errors this module should prevent.
 
@@ -125,7 +140,7 @@ List common errors this module should prevent.
 - [Mistake]
 - [Mistake]
 
-## 10. Edge Cases
+## 11. Edge Cases
 
 List important edge cases.
 
@@ -133,11 +148,27 @@ List important edge cases.
 - [Edge case]
 - [Edge case]
 
-## 11. Validation Checklist
+## 12. Verification Gate
+
+This module cannot be marked VERIFIED until Simeon has reviewed or approved it.
+
+Verification Status:
+
+```text
+NEEDS_SIMEON_REVIEW
+```
+
+Review Notes:
+
+- [Any review comments]
+
+## 13. Validation Checklist
 
 Before marking this module as VERIFIED, check:
 
 - [ ] Scope is clear.
+- [ ] Clarifying questions were asked if needed.
+- [ ] Important assumptions are stated.
 - [ ] Important terms are defined.
 - [ ] Claims are sourced or labelled as needing review.
 - [ ] Examples are included where useful.
@@ -146,7 +177,7 @@ Before marking this module as VERIFIED, check:
 - [ ] Related tests are created if needed.
 - [ ] Simeon has reviewed or approved the module.
 
-## 12. Sources
+## 14. Sources
 
 Use source entries where practical.
 
@@ -162,14 +193,14 @@ Confidence:
 Notes:
 ```
 
-## 13. Open Questions
+## 15. Open Questions
 
 Track unresolved questions here.
 
 - [Question]
 - [Question]
 
-## 14. Change Log
+## 16. Change Log
 
 ```text
 YYYY-MM-DD
