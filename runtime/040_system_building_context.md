@@ -5,7 +5,7 @@ Version: v0.1
 Category: runtime
 Scope: Runtime instructions for building and maintaining the YGOBrain repository
 Owner: Simeon Fabowale-Makinde
-Last Updated: 2026-05-28
+Last Updated: 2026-06-02
 
 ## 1. Purpose
 
@@ -25,6 +25,8 @@ governance/002_source_hierarchy.md
 governance/003_response_methodology.md
 governance/004_update_and_changelog_policy.md
 governance/005_error_correction_and_hardening.md
+governance/006_module_creation_and_review_policy.md
+governance/007_sub_agent_workflow_policy.md
 ```
 
 ## 3. System-Building Role
@@ -40,6 +42,7 @@ Primary goals:
 - keep changes small and reviewable
 - preserve source-of-truth discipline
 - avoid starting content modules before governance and templates are ready
+- use sub-agents only when parallel work will clearly improve speed, coverage, or review quality
 
 ## 4. Default Workflow
 
@@ -47,10 +50,12 @@ Use this workflow for system-building tasks:
 
 1. Identify the next required file or change.
 2. Create or update the smallest useful file.
-3. Commit directly to GitHub when access is available and appropriate.
-4. Provide a change summary.
-5. Assign priority.
-6. Identify dependencies and next recommended file.
+3. Check whether sub-agents are useful for the task.
+4. Check whether any new source family, website, database, or recurring data provider needs Simeon approval.
+5. Commit directly to GitHub when access is available and appropriate.
+6. Provide a change summary.
+7. Assign priority.
+8. Identify dependencies and next recommended file.
 
 ## 5. Question Discipline
 
@@ -99,6 +104,7 @@ When creating a new file:
 - include scope
 - include dependencies where useful
 - include a change log section where useful
+- include verification gates for substantive modules
 
 ## 9. Update Rule
 
@@ -110,7 +116,29 @@ When updating an existing file:
 - explain what changed
 - check whether related files need updates
 
-## 10. Governance Priority
+## 10. Sub-Agent Use Rule
+
+Use `governance/007_sub_agent_workflow_policy.md` before deploying or designing sub-agent workflows.
+
+Sub-agents are appropriate when the work can be split into useful parallel tasks such as:
+
+- source research
+- consistency review
+- test generation
+- data extraction
+- analytics interpretation
+- deckbuilding critique
+- module review
+
+The top-level agent remains responsible for synthesis, contradiction handling, repository updates, and Simeon verification.
+
+## 11. Source Approval Gate
+
+Before trusting a new source family, website, database, decklist provider, judge resource, or recurring data provider, ask Simeon for approval.
+
+Once a source is approved for a category, agents may use individual entries from that source within the approved scope without asking about each individual lookup.
+
+## 12. Governance Priority
 
 Governance and templates should be completed before large rules, deckbuilding, or analytics modules.
 
@@ -125,7 +153,7 @@ Recommended early build order:
 7. analytics backlog files
 8. deck overlays
 
-## 11. Current Established Structure
+## 13. Current Established Structure
 
 Top-level folders:
 
@@ -144,7 +172,7 @@ sources/
 scripts/
 ```
 
-## 12. Standard Change Summary
+## 14. Standard Change Summary
 
 Use this after every meaningful durable change:
 
@@ -169,7 +197,7 @@ DEPENDENCIES
 - Follow-up work required.
 ```
 
-## 13. Error Handling
+## 15. Error Handling
 
 If a system-building mistake occurs, apply the error correction and hardening policy.
 
@@ -182,27 +210,28 @@ Examples:
 - created too-large module
 - asked too many questions
 - skipped change summary
+- used an unapproved recurring source as trusted
+- deployed sub-agents without clear tasks
 
 Material errors should create either a correction, a preventative rule, a template update, a runtime update, or an error log entry.
 
-## 14. Do Not Start Content Too Early
+## 16. Do Not Start Content Too Early
 
 Do not create large Yu-Gi-Oh rules, deckbuilding, or analytics content until the relevant template and source rules exist.
 
 A small pilot module is acceptable once the module template and source index exist.
 
-## 15. Next Recommended System Files
+## 17. Next Recommended System Files
 
 After this file, useful next files include:
 
 ```text
-runtime/020_deckbuilding_assistant_context.md
-runtime/030_analytics_assistant_context.md
-runtime/010_ruling_assistant_context.md
-scripts/scaffold_ygo_brain.ps1
+sources/001_approved_source_families.md
+analytics/010_analytics_principles.md
+core_rules/010_terminology.md
 ```
 
-## 16. Completion Criteria for System Foundation v0.1
+## 18. Completion Criteria for System Foundation v0.1
 
 System foundation v0.1 is complete when the repository has:
 
@@ -211,7 +240,8 @@ System foundation v0.1 is complete when the repository has:
 - startup runtime file
 - system-building runtime file
 - source index
-- at least one task-specific runtime file
+- task-specific runtime files
+- sub-agent workflow policy
 - a clear next-module backlog
 
 After this, YGOBrain can start creating pilot content modules.
