@@ -3,7 +3,7 @@
 Status: DRAFTED
 Version: v0.1
 Scope: Update rules, changelog requirements, priority labels, and maintenance workflow
-Owner: Simeon Fabowale-Makinde
+Owner: Admin
 Last Updated: 2026-05-28
 
 ## 1. Purpose
@@ -33,7 +33,7 @@ When a canonical file and a derived runtime file conflict, the canonical file wi
 An update should be made or recommended when:
 
 - a rule, process, or source policy changes
-- Simeon identifies a mistake
+- Admin identifies a mistake
 - a recurring issue appears
 - a module needs clarification
 - a source becomes outdated or unreliable
@@ -154,7 +154,7 @@ Rewrite all governance files and add deckbuilding theory at the same time.
 
 ## 10. Reviewability Rule
 
-Updates should be easy for Simeon to verify.
+Updates should be easy for Admin to verify.
 
 Prefer:
 
@@ -223,7 +223,7 @@ PROPOSED -> DRAFTED -> REVIEWED -> APPLIED -> VERIFIED
 
 For simple changes, PROPOSED and DRAFTED may happen together.
 
-Only Simeon can mark a substantive knowledge update as VERIFIED unless he explicitly delegates that authority.
+Only Admin can mark a substantive knowledge update as VERIFIED unless verification is explicitly delegated.
 
 ## 14. Runtime Update Rule
 
