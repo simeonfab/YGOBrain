@@ -194,7 +194,7 @@ Small changes may be summarized in chat only unless they affect governance, sour
 Use this format:
 
 ```text
-## YYYY-MM-DD — Short Title
+## YYYY-MM-DD - Short Title
 
 Type:
 Priority:

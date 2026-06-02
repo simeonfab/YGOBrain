@@ -41,7 +41,7 @@ Source Family: Official Konami TCG Sources
 Approved Scope: Official TCG card text, official TCG announcements, official TCG Forbidden & Limited List, official TCG product and policy references where available.
 Approval Status: APPROVED
 Approved By: Admin / YGOBrain foundation default
-Authority Tier: Tier 1 — Official TCG Authority
+Authority Tier: Tier 1 - Official TCG Authority
 Allowed Use Cases:
 - card text lookup
 - TCG legality checks
@@ -79,7 +79,7 @@ Primary URL: https://www.yugiohmeta.com/
 Approved Scope: Yu-Gi-Oh tournament statistics, decklists, tournament results, metagame trends, and Yu-Gi-Oh news.
 Approval Status: APPROVED
 Approved By: Admin
-Authority Tier: Tier 4 — High-Quality Community Resource
+Authority Tier: Tier 4 - High-Quality Community Resource
 Allowed Use Cases:
 - tournament statistics
 - decklist research
@@ -101,7 +101,7 @@ Primary URL: https://db.ygoresources.com/
 Approved Scope: Card database lookup, card text research, card metadata, Q&A/rulings lookup, and API-backed querying where available.
 Approval Status: APPROVED
 Approved By: Admin
-Authority Tier: Tier 3 — Judge-Level or Policy-Aware Source / Tier 4 — High-Quality Community Resource depending on claim
+Authority Tier: Tier 3 - Judge-Level or Policy-Aware Source / Tier 4 - High-Quality Community Resource depending on claim
 Allowed Use Cases:
 - card database lookup
 - card metadata lookup
@@ -130,7 +130,7 @@ Source Family: Official OCG Sources
 Approved Scope: Informative support only when no TCG authority is available.
 Approval Status: LIMITED_USE
 Approved By: YGOBrain foundation default, confirmed by Admin
-Authority Tier: Tier 2 — Official or Semi-Official Related Authority
+Authority Tier: Tier 2 - Official or Semi-Official Related Authority
 Allowed Use Cases:
 - informative support
 - identifying likely intended mechanics
@@ -149,7 +149,7 @@ Primary URL: https://yugipedia.com/
 Approved Scope: Low-risk factual lookup, terminology, card information summaries, and research pointers.
 Approval Status: LIMITED_USE
 Approved By: Admin
-Authority Tier: Tier 4 — High-Quality Community Resource
+Authority Tier: Tier 4 - High-Quality Community Resource
 Allowed Use Cases:
 - quick lookup
 - card information summaries
@@ -171,7 +171,7 @@ Primary URL: https://ygorganization.com/
 Approved Scope: Yu-Gi-Oh news, translations, OCG-related information, and ruling pointers.
 Approval Status: LIMITED_USE
 Approved By: Admin
-Authority Tier: Tier 4 — High-Quality Community Resource
+Authority Tier: Tier 4 - High-Quality Community Resource
 Allowed Use Cases:
 - OCG translation support
 - Yu-Gi-Oh news research

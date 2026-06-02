@@ -30,7 +30,7 @@ error_logs/2026-06.md
 ## 3. Error Entry Format
 
 ```text
-## ERR-YYYY-MM-DD-001 — [Short Title]
+## ERR-YYYY-MM-DD-001 - [Short Title]
 
 Date:
 Reported By:
@@ -177,7 +177,7 @@ Before marking an error as VERIFIED_RESOLVED, check:
 ## 10. Example Entry
 
 ```text
-## ERR-2026-06-02-001 — Unapproved Decklist Source Used as Trusted
+## ERR-2026-06-02-001 - Unapproved Decklist Source Used as Trusted
 
 Date: 2026-06-02
 Reported By: Admin

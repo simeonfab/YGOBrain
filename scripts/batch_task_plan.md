@@ -28,31 +28,44 @@ This file lists the setup batch tasks that should be completed before using Code
 
 ## 3. Required Human Verification Before Large-Scale Agent Work
 
-- [ ] Admin reviews and accepts the setup batch.
-- [ ] Admin approves or rejects candidate source families.
-- [ ] Admin reviews `competitive/010_deckbuilding_principles.md`.
+- [x] Admin reviews and accepts the setup batch.
+- [x] Admin confirms no currently listed candidate source families require decision before continuing.
+- [x] Admin reviews and accepts `competitive/010_deckbuilding_principles.md`.
 
 ## 4. Source Approval Tasks
 
-- [ ] Decide whether Yugipedia is approved, limited-use, or candidate only.
-- [ ] Decide whether YGOrganization is approved, limited-use, or candidate only.
-- [ ] Identify and approve decklist source families.
-- [ ] Identify and approve tournament result source families.
-- [ ] Identify and approve judge/ruling source families.
-- [ ] Identify and approve metagame/statistics source families.
+- [x] Record Yugipedia as LIMITED_USE.
+- [x] Record YGOrganization as LIMITED_USE.
+- [x] Record Yu-Gi-Oh Meta as APPROVED for decklists, tournament results, metagame trends, tournament statistics, and Yu-Gi-Oh news.
+- [x] Record YGOResources Database/API as APPROVED for card database lookup, card text research, metadata, Q&A/rulings lookup, and API-backed querying.
+- [ ] Identify whether additional decklist source families are needed beyond Yu-Gi-Oh Meta.
+- [ ] Identify whether additional tournament result source families are needed beyond Yu-Gi-Oh Meta.
+- [ ] Identify whether additional judge/ruling source families are needed beyond YGOResources Database/API.
+- [ ] Identify whether additional metagame/statistics source families are needed beyond Yu-Gi-Oh Meta.
 - [ ] Identify whether creator/channel sources are allowed and under what scope.
+
+Current Proceed Rule:
+- Agent-assisted content work may proceed when an approved or limited-use source family covers the task's required source category.
+- If a task needs a source category not yet covered, pause and ask Admin for approval before treating the new source as trusted.
+- Admin may provide additional source families over time.
 
 ## 5. Next Content Modules After Setup Verification
 
 Recommended first content modules:
 
 ```text
-analytics/010_analytics_principles.md
 core_rules/010_terminology.md
 competitive/011_card_roles.md
 competitive/012_engine_vs_non_engine.md
 competitive/013_ratios_and_consistency.md
 analytics/016_probability_and_consistency.md
+```
+
+Created first content modules:
+
+```text
+competitive/010_deckbuilding_principles.md - VERIFIED_BY_ADMIN
+analytics/010_analytics_principles.md - DRAFTED
 ```
 
 All substantive content modules should remain DRAFTED or UNDER_REVIEW until Admin verifies them.

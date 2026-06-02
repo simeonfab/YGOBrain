@@ -22,6 +22,7 @@ Minimum context:
 ```text
 governance/002_source_hierarchy.md
 governance/007_sub_agent_workflow_policy.md
+sources/001_approved_source_families.md
 runtime/060_sub_agent_task_template.md
 ```
 

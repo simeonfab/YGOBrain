@@ -131,7 +131,7 @@ error_logs/2026-05.md
 Use this format:
 
 ```text
-## ERR-YYYY-MM-DD-001 — Short Title
+## ERR-YYYY-MM-DD-001 - Short Title
 
 Date:
 Reported By:

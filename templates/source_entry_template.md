@@ -29,6 +29,7 @@ Approved By:
 Authority Tier:
 Allowed Use Cases:
 Disallowed Use Cases:
+API Use Rules:
 Notes:
 ```
 
@@ -50,6 +51,8 @@ Approved Scope:
 Approved By:
 Notes:
 ```
+
+For API-backed or database-backed source families, include API use rules when relevant.
 
 ## 5. Source Type Options
 
@@ -79,12 +82,12 @@ ASSISTANT_INFERENCE
 Use the hierarchy from `governance/002_source_hierarchy.md`.
 
 ```text
-Tier 1 — Official TCG Authority
-Tier 2 — Official or Semi-Official Related Authority
-Tier 3 — Judge-Level or Policy-Aware Source
-Tier 4 — High-Quality Community Resource
-Tier 5 — General Community Discussion
-Tier 6 — Assistant Inference
+Tier 1 - Official TCG Authority
+Tier 2 - Official or Semi-Official Related Authority
+Tier 3 - Judge-Level or Policy-Aware Source
+Tier 4 - High-Quality Community Resource
+Tier 5 - General Community Discussion
+Tier 6 - Assistant Inference
 ```
 
 ## 7. Format Options
@@ -156,7 +159,7 @@ Notes: [Any limitations or context]
 Source Name: [Name]
 Source Family: [Source family]
 Source Type: OFFICIAL_CARD_DATABASE
-Authority Tier: Tier 1 — Official TCG Authority
+Authority Tier: Tier 1 - Official TCG Authority
 URL or Reference: [URL]
 Format: TCG_ADVANCED
 Date Checked: YYYY-MM-DD

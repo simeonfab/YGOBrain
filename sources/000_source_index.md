@@ -47,12 +47,12 @@ Does not always need separate approval once source is approved:
 ## 4. Authority Tiers
 
 ```text
-Tier 1 — Official TCG Authority
-Tier 2 — Official or Semi-Official Related Authority
-Tier 3 — Judge-Level or Policy-Aware Source
-Tier 4 — High-Quality Community Resource
-Tier 5 — General Community Discussion
-Tier 6 — Assistant Inference
+Tier 1 - Official TCG Authority
+Tier 2 - Official or Semi-Official Related Authority
+Tier 3 - Judge-Level or Policy-Aware Source
+Tier 4 - High-Quality Community Resource
+Tier 5 - General Community Discussion
+Tier 6 - Assistant Inference
 ```
 
 ## 5. Source Status Labels
@@ -75,7 +75,7 @@ Source Family: Official Konami TCG Sources
 Approved Scope: Official TCG card text, official TCG announcements, official TCG Forbidden & Limited List, official TCG product and policy references where available.
 Approval Status: APPROVED
 Approved By: Admin / YGOBrain foundation default
-Authority Tier: Tier 1 — Official TCG Authority
+Authority Tier: Tier 1 - Official TCG Authority
 Notes: This family is the highest-priority source family for TCG card text, legality, announcements, and official TCG material.
 ```
 
@@ -98,7 +98,7 @@ URL or Reference: https://www.yugiohmeta.com/
 Approved Scope: Tournament statistics, decklists, tournament results, metagame trends, and Yu-Gi-Oh news.
 Approval Status: APPROVED
 Approved By: Admin
-Authority Tier: Tier 4 — High-Quality Community Resource
+Authority Tier: Tier 4 - High-Quality Community Resource
 Notes: Approved for competitive and analytics use. Not a final ruling or official policy authority.
 ```
 
@@ -110,7 +110,7 @@ URL or Reference: https://db.ygoresources.com/
 Approved Scope: Card database lookup, card text research, card metadata, Q&A/rulings lookup, and API-backed querying where available.
 Approval Status: APPROVED
 Approved By: Admin
-Authority Tier: Tier 3 — Judge-Level or Policy-Aware Source / Tier 4 — High-Quality Community Resource depending on claim
+Authority Tier: Tier 3 - Judge-Level or Policy-Aware Source / Tier 4 - High-Quality Community Resource depending on claim
 Notes: Approved for database/API-assisted card and ruling research. Must not override official TCG sources. API use should avoid unnecessary full-database queries and should cache where practical.
 ```
 
@@ -123,7 +123,7 @@ Source Family: Official OCG Sources
 Approved Scope: Informative support only when no TCG authority is available.
 Approval Status: LIMITED_USE
 Approved By: YGOBrain foundation default, confirmed by Admin
-Authority Tier: Tier 2 — Official or Semi-Official Related Authority
+Authority Tier: Tier 2 - Official or Semi-Official Related Authority
 Notes: OCG sources may inform TCG reasoning but are not automatically definitive for TCG.
 ```
 
@@ -135,7 +135,7 @@ URL or Reference: https://yugipedia.com/
 Approved Scope: Low-risk factual lookup, terminology, card information summaries, and research pointers.
 Approval Status: LIMITED_USE
 Approved By: Admin
-Authority Tier: Tier 4 — High-Quality Community Resource
+Authority Tier: Tier 4 - High-Quality Community Resource
 Notes: Useful for research and summaries. Important claims should be verified against higher-tier sources where practical.
 ```
 
@@ -147,7 +147,7 @@ URL or Reference: https://ygorganization.com/
 Approved Scope: Yu-Gi-Oh news, translations, OCG-related information, and ruling pointers.
 Approval Status: LIMITED_USE
 Approved By: Admin
-Authority Tier: Tier 4 — High-Quality Community Resource
+Authority Tier: Tier 4 - High-Quality Community Resource
 Notes: Useful for OCG-related information and translations. Treat TCG application carefully.
 ```
 
@@ -159,7 +159,7 @@ Notes: Useful for OCG-related information and translations. Treat TCG applicatio
 Source Name: Konami Official Yu-Gi-Oh Card Database
 Source Family: Official Konami TCG Sources
 Source Type: OFFICIAL_CARD_DATABASE
-Authority Tier: Tier 1 — Official TCG Authority
+Authority Tier: Tier 1 - Official TCG Authority
 URL or Reference: https://www.db.yugioh-card.com/yugiohdb/
 Format: TCG_ADVANCED
 Date Checked: 2026-05-28
@@ -176,7 +176,7 @@ Notes: Preferred source for exact current card text where available. Use exact w
 Source Name: Konami Official Yu-Gi-Oh TCG Website
 Source Family: Official Konami TCG Sources
 Source Type: OFFICIAL_ANNOUNCEMENT
-Authority Tier: Tier 1 — Official TCG Authority
+Authority Tier: Tier 1 - Official TCG Authority
 URL or Reference: https://www.yugioh-card.com/en/
 Format: TCG_ADVANCED
 Date Checked: 2026-05-28
@@ -193,7 +193,7 @@ Notes: Use for official TCG announcements and entry point to official resources.
 Source Name: Konami Official Forbidden & Limited List
 Source Family: Official Konami TCG Sources
 Source Type: OFFICIAL_FORBIDDEN_LIMITED_LIST
-Authority Tier: Tier 1 — Official TCG Authority
+Authority Tier: Tier 1 - Official TCG Authority
 URL or Reference: https://www.yugioh-card.com/en/limited/
 Format: TCG_ADVANCED
 Date Checked: 2026-05-28
@@ -212,7 +212,7 @@ Notes: Time-sensitive. Must be checked when deckbuilding legality matters.
 Source Name: Yu-Gi-Oh Meta
 Source Family: Yu-Gi-Oh Meta
 Source Type: COMPETITIVE_EVENT_DATA / DECKLIST_SOURCE / COMMUNITY_DATABASE
-Authority Tier: Tier 4 — High-Quality Community Resource
+Authority Tier: Tier 4 - High-Quality Community Resource
 URL or Reference: https://www.yugiohmeta.com/
 Format: TCG_ADVANCED unless source entry indicates otherwise
 Date Checked: 2026-06-02
@@ -231,7 +231,7 @@ Notes: Use sample-size and context checks before making strategic conclusions.
 Source Name: YGOResources Database/API
 Source Family: YGOResources Database/API
 Source Type: COMMUNITY_DATABASE / JUDGE_RESOURCE / CARD_DATABASE_API
-Authority Tier: Tier 3 — Judge-Level or Policy-Aware Source / Tier 4 — High-Quality Community Resource depending on claim
+Authority Tier: Tier 3 - Judge-Level or Policy-Aware Source / Tier 4 - High-Quality Community Resource depending on claim
 URL or Reference: https://db.ygoresources.com/
 Format: GENERAL_YUGIOH / TCG_ADVANCED when applicable
 Date Checked: 2026-06-02
@@ -311,7 +311,7 @@ Notes: Admin is final arbiter for what enters YGOBrain. This does not override o
 Source Name: Assistant Inference
 Source Family: Assistant Inference
 Source Type: ASSISTANT_INFERENCE
-Authority Tier: Tier 6 — Assistant Inference
+Authority Tier: Tier 6 - Assistant Inference
 URL or Reference: N/A
 Format: PROJECT_INTERNAL
 Date Checked: Ongoing

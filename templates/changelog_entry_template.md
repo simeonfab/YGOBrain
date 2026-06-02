@@ -30,7 +30,7 @@ changelogs/2026-06.md
 ## 3. Changelog Entry Format
 
 ```text
-## YYYY-MM-DD — [Short Title]
+## YYYY-MM-DD - [Short Title]
 
 Type:
 - Added / Removed / Clarified / Corrected / Refactored / Deprecated / Superseded
@@ -141,7 +141,7 @@ Before finalizing a changelog entry, check:
 ## 7. Example Entry
 
 ```text
-## 2026-06-02 — Add Sub-Agent Workflow Policy
+## 2026-06-02 - Add Sub-Agent Workflow Policy
 
 Type:
 - Added

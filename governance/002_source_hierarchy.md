@@ -29,7 +29,7 @@ OCG, Master Duel, Rush Duel, Speed Duel, anime-only material, historic formats, 
 
 Use this source hierarchy by default.
 
-### Tier 1 — Official TCG Authority
+### Tier 1 - Official TCG Authority
 
 Highest priority.
 
@@ -43,7 +43,7 @@ Examples:
 
 Use Tier 1 as the preferred source of truth whenever available.
 
-### Tier 2 — Official or Semi-Official Related Authority
+### Tier 2 - Official or Semi-Official Related Authority
 
 Useful when Tier 1 does not directly answer the issue.
 
@@ -55,7 +55,7 @@ Examples:
 
 OCG sources may inform TCG reasoning, but they are not automatically authoritative for TCG. If used, mark them clearly as informative rather than definitive.
 
-### Tier 3 — Judge-Level or Policy-Aware Sources
+### Tier 3 - Judge-Level or Policy-Aware Sources
 
 Useful for interpretation, practical ruling expectations, and edge cases where official public sources are incomplete.
 
@@ -68,7 +68,7 @@ Examples:
 
 Tier 3 should be treated as strong support, not official truth, unless the source is explicitly endorsed by Konami or official policy.
 
-### Tier 4 — High-Quality Community Resources
+### Tier 4 - High-Quality Community Resources
 
 Useful for card text, examples, summaries, and initial research.
 
@@ -81,7 +81,7 @@ Examples:
 
 Tier 4 may be used as a working source, but important claims should be verified against higher-tier sources where practical.
 
-### Tier 5 — General Community Discussion
+### Tier 5 - General Community Discussion
 
 Useful only as weak evidence or a pointer toward better sources.
 
@@ -95,7 +95,7 @@ Examples:
 
 Tier 5 should not become final source of truth without corroboration.
 
-### Tier 6 — Assistant Inference
+### Tier 6 - Assistant Inference
 
 Lowest authority.
 

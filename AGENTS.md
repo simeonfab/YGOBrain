@@ -28,6 +28,8 @@ governance/004_update_and_changelog_policy.md
 governance/005_error_correction_and_hardening.md
 governance/006_module_creation_and_review_policy.md
 governance/007_sub_agent_workflow_policy.md
+sources/000_source_index.md
+sources/001_approved_source_families.md
 ```
 
 For task-specific work, also read the relevant runtime file:
@@ -176,12 +178,20 @@ For setup or maintenance batches:
 
 ## 12. Current Foundation State
 
-YGOBrain has governance, templates, runtime files, source tracking, scaffold automation, and one draft pilot content module.
+YGOBrain has governance, templates, runtime files, source tracking, scaffold automation, one verified pilot competitive module, and one draft analytics foundation module.
 
 Current pilot content module:
 
 ```text
 competitive/010_deckbuilding_principles.md
+```
+
+This module is VERIFIED_BY_ADMIN as a first foundation module.
+
+Current analytics foundation module:
+
+```text
+analytics/010_analytics_principles.md
 ```
 
 This module is DRAFTED and needs Admin review.

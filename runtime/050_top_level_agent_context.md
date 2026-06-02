@@ -21,6 +21,7 @@ Before using this file, load:
 runtime/000_startup_context.md
 governance/007_sub_agent_workflow_policy.md
 sources/000_source_index.md
+sources/001_approved_source_families.md
 ```
 
 Also load the relevant task-specific runtime file:

@@ -185,7 +185,7 @@ Known Ratio Tensions:
 
 ## 10. Standard Builds
 
-### Build A — [Name]
+### Build A - [Name]
 
 Purpose:
 
@@ -199,7 +199,7 @@ Key Cards:
 
 - 
 
-### Build B — [Name]
+### Build B - [Name]
 
 Purpose:
 
@@ -215,7 +215,7 @@ Key Cards:
 
 ## 11. Combo Lines
 
-### Combo 1 — [Name]
+### Combo 1 - [Name]
 
 Required Cards:
 
@@ -266,7 +266,7 @@ Recovery Lines:
 
 ## 13. Matchups
 
-### Matchup — [Deck Name]
+### Matchup - [Deck Name]
 
 Role:
 

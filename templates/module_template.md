@@ -104,7 +104,7 @@ Examples:
 
 ## 9. Examples
 
-### Example 1 — [Name]
+### Example 1 - [Name]
 
 Situation:
 - [Describe situation]
@@ -118,7 +118,7 @@ Reasoning:
 Source Status:
 - [Officially Confirmed / Source-Backed / Inferred / Needs Review]
 
-### Example 2 — [Name]
+### Example 2 - [Name]
 
 Situation:
 - [Describe situation]
@@ -183,13 +183,18 @@ Use source entries where practical.
 
 ```text
 Source Name:
+Source Family:
 Source Type:
-Tier:
+Authority Tier:
 URL or Reference:
 Format:
 Date Checked:
 Relevant Claim:
 Confidence:
+Verification Status:
+Approval Status:
+Approved Scope:
+Approved By:
 Notes:
 ```
 

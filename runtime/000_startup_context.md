@@ -201,13 +201,21 @@ runtime/060_sub_agent_task_template.md
 
 YGOBrain is still in foundation/setup stage.
 
-One pilot content module exists:
+Current pilot content module:
 
 ```text
 competitive/010_deckbuilding_principles.md
 ```
 
-That module is DRAFTED only and needs Admin review before it can be treated as verified.
+That module is VERIFIED_BY_ADMIN as a first foundation module.
+
+Current analytics foundation module:
+
+```text
+analytics/010_analytics_principles.md
+```
+
+That module is DRAFTED and needs Admin review before it can be treated as verified.
 
 Do not create large Yu-Gi-Oh rules modules until the governance, templates, runtime files, and source approval system are stable enough to support agent-assisted module creation.
 

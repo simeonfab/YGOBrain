@@ -27,18 +27,18 @@ The repository uses the following top-level folders:
 
 ```text
 YGOBrain/
-├── governance/
-├── core_rules/
-├── competitive/
-├── decks/
-├── analytics/
-├── tests/
-├── templates/
-├── runtime/
-├── changelogs/
-├── error_logs/
-├── sources/
-└── scripts/
+|-- governance/
+|-- core_rules/
+|-- competitive/
+|-- decks/
+|-- analytics/
+|-- tests/
+|-- templates/
+|-- runtime/
+|-- changelogs/
+|-- error_logs/
+|-- sources/
+`-- scripts/
 ```
 
 ## 3. Folder Responsibilities
@@ -396,13 +396,13 @@ Example:
 
 ```text
 decks/branded/
-├── 000_deck_overview.md
-├── 010_core_engine.md
-├── 020_standard_builds.md
-├── 030_combo_lines.md
-├── 040_chokepoints.md
-├── 050_matchups.md
-└── 060_tests.md
+|-- 000_deck_overview.md
+|-- 010_core_engine.md
+|-- 020_standard_builds.md
+|-- 030_combo_lines.md
+|-- 040_chokepoints.md
+|-- 050_matchups.md
+`-- 060_tests.md
 ```
 
 A single markdown file may be used for a deck while it is still small or experimental.

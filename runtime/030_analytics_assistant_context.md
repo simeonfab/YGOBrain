@@ -273,10 +273,18 @@ Priority: Next Task.
 
 ## 20. Current State
 
-Analytics modules have not yet been created.
-
-When the first analytics module is created, start with:
+The first analytics foundation module has been created:
 
 ```text
 analytics/010_analytics_principles.md
+```
+
+That module is DRAFTED and needs Admin review before it can be treated as verified.
+
+Next analytics modules should build from:
+
+```text
+analytics/011_decklist_analysis.md
+analytics/012_event_result_analysis.md
+analytics/016_probability_and_consistency.md
 ```

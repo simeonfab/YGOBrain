@@ -350,7 +350,7 @@ REPOSITORY IMPACT
 - Files likely to change.
 ```
 
-## 15. Example Workflow — Building a Rules Module
+## 15. Example Workflow - Building a Rules Module
 
 ```text
 OBJECTIVE
@@ -388,7 +388,7 @@ REPOSITORY IMPACT
 - tests/024_psct_targeting_tests.md
 ```
 
-## 16. Example Workflow — Analyzing Deck Lists
+## 16. Example Workflow - Analyzing Deck Lists
 
 ```text
 OBJECTIVE
