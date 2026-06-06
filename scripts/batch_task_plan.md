@@ -1,7 +1,7 @@
 # Batch Task Plan
 
 Status: DRAFTED
-Version: v0.2
+Version: v0.3
 Category: scripts
 Scope: Checklist for completing YGOBrain setup before large-scale agent-assisted content creation
 Owner: Admin
@@ -68,8 +68,17 @@ Current Proceed Rule:
 - [x] Create `runtime/070_card_lookup_context.md`.
 - [x] Create `runtime/080_card_recommendation_context.md`.
 - [x] Create `governance/010_card_database_schema.md`.
+- [x] Create `competitive/020_card_tagging_framework.md`.
+- [x] Create `templates/card_tag_template.md`.
+- [x] Create `tests/card_lookup_eval_template.md`.
+- [x] Create `tests/card_recommendation_eval_template.md`.
+- [x] Create `tests/card_discovery_eval_template.md`.
+- [x] Create `tests/001_card_eval_plan.md`.
 - [ ] Admin reviews and verifies card knowledge architecture files.
 - [ ] Admin reviews and verifies `governance/010_card_database_schema.md`.
+- [ ] Admin reviews and verifies `competitive/020_card_tagging_framework.md`.
+- [ ] Admin reviews and verifies `templates/card_tag_template.md`.
+- [ ] Admin reviews and verifies card eval framework files.
 - [ ] Define local card database physical storage format.
 - [ ] Define local card database storage path.
 - [ ] Define update/cache script requirements.
@@ -77,6 +86,9 @@ Current Proceed Rule:
 - [ ] Define fuzzy lookup approach.
 - [ ] Define strategic tag storage and review workflow.
 - [ ] Add card lookup/recommendation routes to `runtime/090_retrieval_manifest.md` if needed.
+- [ ] Create actual card lookup eval cases after local database implementation exists.
+- [ ] Create actual card recommendation eval cases after local database implementation exists.
+- [ ] Create actual card discovery eval cases after local database implementation exists.
 
 ## 7. Next Content Modules After Setup Verification
 
@@ -102,6 +114,7 @@ competitive/015_chokepoints.md - DRAFTED
 competitive/016_interruption_layering.md - DRAFTED
 competitive/017_going_first_vs_second.md - DRAFTED
 competitive/018_side_deck_theory.md - DRAFTED
+competitive/020_card_tagging_framework.md - DRAFTED
 analytics/010_analytics_principles.md - DRAFTED
 ```
 
@@ -138,4 +151,9 @@ Reason: Admin requested retrieval-first YGOBrain and separation of card facts, s
 Status: DRAFTED
 Change: Added card database schema completion and implementation follow-ups.
 Reason: Admin requested local card database schema architecture to support exact lookup, fuzzy lookup, recommendations, discovery, and analytics.
+
+2026-06-06
+Status: DRAFTED
+Change: Added card tagging framework and card eval framework tasks.
+Reason: Admin requested strategic card discovery by function and evaluation scaffolds for card lookup, recommendation, discovery, and source discipline.
 ```
