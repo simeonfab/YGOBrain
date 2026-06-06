@@ -67,10 +67,15 @@ Current Proceed Rule:
 - [x] Create `governance/009_card_knowledge_architecture.md`.
 - [x] Create `runtime/070_card_lookup_context.md`.
 - [x] Create `runtime/080_card_recommendation_context.md`.
+- [x] Create `governance/010_card_database_schema.md`.
 - [ ] Admin reviews and verifies card knowledge architecture files.
-- [ ] Define local card database format and storage path.
+- [ ] Admin reviews and verifies `governance/010_card_database_schema.md`.
+- [ ] Define local card database physical storage format.
+- [ ] Define local card database storage path.
 - [ ] Define update/cache script requirements.
 - [ ] Define card database query interface.
+- [ ] Define fuzzy lookup approach.
+- [ ] Define strategic tag storage and review workflow.
 - [ ] Add card lookup/recommendation routes to `runtime/090_retrieval_manifest.md` if needed.
 
 ## 7. Next Content Modules After Setup Verification
@@ -128,4 +133,9 @@ Reason: Admin requested a complete setup checklist before using agents in Codex 
 Status: DRAFTED
 Change: Added retrieval-first architecture tasks and card knowledge architecture tasks.
 Reason: Admin requested retrieval-first YGOBrain and separation of card facts, strategic reasoning, and rulings.
+
+2026-06-06
+Status: DRAFTED
+Change: Added card database schema completion and implementation follow-ups.
+Reason: Admin requested local card database schema architecture to support exact lookup, fuzzy lookup, recommendations, discovery, and analytics.
 ```
