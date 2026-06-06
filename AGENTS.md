@@ -1,10 +1,23 @@
 # AGENTS.md
 
 Status: DRAFTED
-Version: v0.1
+Version: v0.2
 Scope: Top-level instructions for Codex, Claude-style agents, and other coding or research agents working in YGOBrain
 Owner: Admin
-Last Updated: 2026-06-02
+Last Updated: 2026-06-06
+Applies To: Agent and Codex workflows in the YGOBrain repository
+Task Modes: ruling, deckbuilding, analytics, system-building
+Keywords: agents, Codex, retrieval-first, source discipline, metadata, sub-agents
+Depends On:
+- runtime/000_startup_context.md
+- runtime/090_retrieval_manifest.md
+- governance/008_retrieval_architecture.md
+Source Tier: Project runtime
+Verification Status: NEEDS_ADMIN_REVIEW
+Retrieval Priority: HIGH
+Related Modules:
+- runtime/050_top_level_agent_context.md
+- runtime/060_sub_agent_task_template.md
 
 ## 1. Purpose
 
@@ -12,14 +25,25 @@ This file tells agents how to work inside the YGOBrain repository.
 
 YGOBrain is a markdown knowledge system for Yu-Gi-Oh TCG Advanced Format deckbuilding, analytics, and rulings assistance.
 
-Agents must preserve the repository's governance, source approval, review, and verification rules.
+Agents must preserve the repository's governance, source approval, review, verification, retrieval, and metadata rules.
 
 ## 2. Required Reading Before Work
 
-Before making substantive changes, agents should read:
+Before making substantive changes, agents should read only the minimal foundation required for the task.
+
+Default start:
 
 ```text
 runtime/000_startup_context.md
+runtime/090_retrieval_manifest.md
+governance/008_retrieval_architecture.md
+```
+
+Then retrieve task-specific files using the retrieval manifest.
+
+For governance or system-building tasks, also read the relevant governance files:
+
+```text
 governance/000_system_operating_rules.md
 governance/001_knowledge_architecture.md
 governance/002_source_hierarchy.md
@@ -32,7 +56,7 @@ sources/000_source_index.md
 sources/001_approved_source_families.md
 ```
 
-For task-specific work, also read the relevant runtime file:
+For task-specific work, read only the relevant runtime file:
 
 ```text
 runtime/010_ruling_assistant_context.md
@@ -43,7 +67,23 @@ runtime/050_top_level_agent_context.md
 runtime/060_sub_agent_task_template.md
 ```
 
-## 3. Default Scope
+## 3. Retrieval-First Agent Rule
+
+Agents must not recursively load the full repository by default.
+
+Agents should:
+
+1. inspect `runtime/090_retrieval_manifest.md`
+2. classify the task mode
+3. fetch only files relevant to the task
+4. preserve canonical-vs-runtime distinction
+5. maintain metadata when creating or updating modules
+6. identify which files informed major conclusions
+7. avoid treating DRAFTED or UNDER_REVIEW modules as verified
+
+Full-repo scans are allowed only for explicit repository-wide audit, migration, cleanup, consistency, validation, or refactor tasks.
+
+## 4. Default Scope
 
 Unless Admin explicitly says otherwise, assume:
 
@@ -64,13 +104,13 @@ Out of scope unless explicitly requested:
 - unofficial simulator behaviour
 - custom cards
 
-## 4. Core Working Principle
+## 5. Core Working Principle
 
 The assistant drafts. Admin verifies.
 
 Agents may draft, research, test, extract data, and propose changes, but substantive YGOBrain knowledge must not be marked VERIFIED unless Admin approves it.
 
-## 5. Source Family Approval Rule
+## 6. Source Family Approval Rule
 
 Agents must not independently promote new recurring sources to trusted status.
 
@@ -78,7 +118,7 @@ New source families, websites, databases, decklist providers, tournament result 
 
 Once a source family is approved for a defined use case, individual entries from that approved source may be used within scope without asking Admin for each lookup.
 
-## 6. Sub-Agent Rule
+## 7. Sub-Agent Rule
 
 Use sub-agents only when parallel work will improve speed, coverage, checking, or synthesis.
 
@@ -102,7 +142,7 @@ Sub-agents must have:
 
 The top-level agent remains responsible for synthesis and final output.
 
-## 7. Repository Update Rules
+## 8. Repository Update Rules
 
 When changing files:
 
@@ -111,10 +151,12 @@ When changing files:
 - avoid broad rewrites unless necessary
 - preserve file naming conventions
 - keep modules reviewable
-- include metadata in new files
+- include retrieval metadata in new knowledge modules
+- maintain metadata when updating knowledge modules
+- include status, source tier, verification status, retrieval priority, and related modules where relevant
 - keep content modules as DRAFTED unless Admin verifies them
 
-## 8. Required Change Summary
+## 9. Required Change Summary
 
 After meaningful durable changes, report:
 
@@ -139,11 +181,12 @@ DEPENDENCIES
 - Follow-up work required.
 ```
 
-## 9. Module Creation Rules
+## 10. Module Creation Rules
 
 Every substantive module should:
 
 - use the relevant template
+- include retrieval metadata
 - include status metadata
 - include assumptions
 - include dependencies
@@ -151,7 +194,7 @@ Every substantive module should:
 - include verification gate
 - remain DRAFTED or UNDER_REVIEW until Admin verifies it
 
-## 10. Do Not Do
+## 11. Do Not Do
 
 Do not:
 
@@ -159,53 +202,40 @@ Do not:
 - use unapproved recurring sources as trusted
 - silently rewrite established files
 - create giant unreviewable modules
+- recursively load the entire repo without a repository-wide reason
 - mix TCG with OCG/Master Duel unless explicitly requested
 - treat assistant inference as final authority
 - merge sub-agent outputs without top-level synthesis
 - ignore contradictions between agents or sources
+- treat retrieved content as automatically correct if status/source hierarchy conflicts
 
-## 11. Recommended Batch Flow
+## 12. Recommended Batch Flow
 
 For setup or maintenance batches:
 
-1. Read startup and relevant runtime context.
-2. Identify files to update.
-3. Apply small, focused changes.
-4. Create missing foundation files.
-5. Summarize changes.
-6. List remaining work.
-7. Ask Admin for verification where needed.
+1. Read startup context and retrieval manifest.
+2. Identify task mode.
+3. Retrieve only relevant files.
+4. Apply small, focused changes.
+5. Create missing foundation files when needed.
+6. Summarize changes.
+7. List remaining work.
+8. Ask Admin for verification where needed.
 
-## 12. Current Foundation State
+## 13. Current Foundation State
 
-YGOBrain has governance, templates, runtime files, source tracking, scaffold automation, verified competitive foundation modules, verified glossary modules, several draft competitive foundation modules, and one draft analytics foundation module.
+YGOBrain has governance, templates, runtime files, source tracking, scaffold automation, verified competitive foundation modules, verified glossary modules, several draft competitive foundation modules, one draft analytics foundation module, and retrieval-first architecture scaffolding.
 
-Current pilot content module:
+Current verified foundation modules:
 
 ```text
 competitive/010_deckbuilding_principles.md
-```
-
-This module is VERIFIED_BY_ADMIN as a first foundation module.
-
-Current competitive taxonomy module:
-
-```text
 competitive/011_card_roles.md
-```
-
-This module is VERIFIED_BY_ADMIN.
-
-Current glossary modules:
-
-```text
 glossary/000_official_rules_terms.md
 glossary/010_deckbuilding_terms.md
 ```
 
-These modules are VERIFIED_BY_ADMIN.
-
-Current competitive draft modules:
+Current draft competitive modules:
 
 ```text
 competitive/012_engine_vs_non_engine.md
@@ -217,12 +247,13 @@ competitive/017_going_first_vs_second.md
 competitive/018_side_deck_theory.md
 ```
 
-These modules are DRAFTED and need Admin review.
-
-Current analytics foundation module:
+Current retrieval-first files:
 
 ```text
-analytics/010_analytics_principles.md
+governance/008_retrieval_architecture.md
+runtime/090_retrieval_manifest.md
+tests/000_eval_plan.md
+tests/eval_test_template.md
 ```
 
-This module is DRAFTED and needs Admin review.
+These retrieval/eval files are DRAFTED and need Admin review.
