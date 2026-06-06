@@ -1,34 +1,33 @@
-# 010 Terminology
+# 010 Deckbuilding Terms
 
 Status: DRAFTED
 Version: v0.1
-Category: core_rules
-Scope: Shared YGOBrain glossary for reusable Yu-Gi-Oh TCG Advanced Format terminology
+Category: glossary
+Scope: Glossary surface for strategic deckbuilding terminology used by YGOBrain
 Owner: Admin
-Last Updated: 2026-06-02
+Last Updated: 2026-06-06
 
 ## 1. Purpose
 
-This module is the shared YGOBrain glossary surface.
+This file is the dedicated glossary surface for strategic deckbuilding terminology.
 
-It exists so future deckbuilding, analytics, ruling, testing, and deck overlay modules can use stable terminology instead of redefining common terms in every file.
+It exists so competitive modules, deck overlays, analytics notes, and runtime prompts can use stable terms without redefining them every time.
 
 ## 2. Scope
 
-This module covers:
+This glossary covers:
 
-- shared YGOBrain terminology
+- strategic deckbuilding shorthand
 - verified card-role terms from `competitive/011_card_roles.md`
-- source module references for glossary terms
-- review status for glossary placement and structure
+- source module references for deckbuilding terms
+- future links to deckbuilding terminology tests
 
-This module does not cover:
+This glossary does not cover:
 
-- full official rule explanations
+- official rules terminology
 - card-specific rulings
 - archetype-specific terminology
-- full PSCT analysis
-- ratio or probability methodology
+- full ratio or probability methodology
 
 ## 3. Default Assumptions
 
@@ -36,9 +35,8 @@ Unless stated otherwise, assume:
 
 - Yu-Gi-Oh TCG Advanced Format
 - official cards only
-- current official card text
-- TCG rulings and policy are preferred
-- OCG information is informative only when TCG authority is unavailable
+- strategic terms are YGOBrain project terminology unless explicitly marked official
+- Admin Verification is project authority for accepted strategic terminology
 
 ## 4. Dependencies
 
@@ -47,7 +45,6 @@ Depends On:
 - governance/000_system_operating_rules.md
 - governance/001_knowledge_architecture.md
 - governance/002_source_hierarchy.md
-- governance/003_response_methodology.md
 - governance/006_module_creation_and_review_policy.md
 - competitive/011_card_roles.md
 
@@ -56,23 +53,8 @@ Related Modules:
 - competitive/010_deckbuilding_principles.md
 - competitive/012_engine_vs_non_engine.md
 - competitive/013_ratios_and_consistency.md
-- analytics/010_analytics_principles.md
 
-## 5. Clarifying Questions
-
-Questions Needed:
-
-- None for this first glossary surface.
-
-Assumptions Used Instead of Asking:
-
-- `core_rules/010_terminology.md` is the glossary path to review before the next workstream.
-- Verified card-role terms can be listed here with their source module noted.
-- This glossary remains DRAFTED until Admin reviews the glossary structure and location.
-
-## 6. Key Definitions
-
-### 6.1 Deckbuilding Role Terms
+## 5. Key Definitions
 
 ```text
 Term: Card Role
@@ -214,85 +196,39 @@ Source Module: competitive/011_card_roles.md
 Source Status: VERIFIED_BY_ADMIN
 ```
 
-## 7. Core Rules or Principles
-
-### 7.1 Glossary Terms Should Point Back to Source Modules
-
-The glossary should not replace source modules.
-
-Each term should identify where the definition came from so future updates can patch the canonical module and then update this glossary.
-
-Source Status: Inferred Not Verified / Needs Admin Review
-
-### 7.2 Verified Terms Can Still Need Better Examples
-
-A term can be accepted while still needing more examples, tests, or archetype-specific applications later.
-
-Source Status: Inferred Not Verified / Needs Admin Review
-
-## 8. Practical Application
+## 6. Practical Application
 
 Use this file when:
 
-- checking whether a term already exists
-- deciding whether a future module needs a new term
-- aligning competitive, analytics, and deck overlay language
-- preparing runtime context for portable chats
+- checking whether a strategic deckbuilding term already exists
+- aligning terminology across competitive modules and deck overlays
+- preparing future runtime context
+- deciding whether a new deckbuilding term needs Admin review
 
-Before creating a new recurring term:
+Before creating a new recurring strategic term:
 
 1. Check this glossary.
-2. Check the relevant source module.
-3. Add the term to the most appropriate canonical module first.
-4. Add or update the glossary entry after the module is drafted or verified.
+2. Check the relevant competitive source module.
+3. Draft or update the term in the most appropriate competitive module.
+4. Add or update the glossary entry with source status.
 
-## 9. Examples
+## 7. Tests
 
-### Example 1 - Checking a Deckbuilding Term
+In YGOBrain, a terminology test means a small validation case in `tests/` that checks whether an assistant uses a term correctly.
 
-Situation:
-- A future deck module wants to use "starter-equivalent."
+Example:
 
-Answer:
-- Use the glossary entry and source module `competitive/011_card_roles.md`.
+```text
+Scenario: A card only starts a line when paired with any other card in hand.
+Expected Classification: 1.5-card starter.
+Failure Mode: Assistant incorrectly calls it a one-card starter or two-card starter requiring a specific named card.
+```
 
-Reasoning:
-- The term is already accepted for YGOBrain deckbuilding language.
+This glossary does not link to tests yet because terminology tests have not been created.
 
-Source Status:
-- VERIFIED_BY_ADMIN from `competitive/011_card_roles.md`
+## 8. Verification Gate
 
-### Example 2 - Adding a New Term
-
-Situation:
-- A future module needs a repeated term that is not in this glossary.
-
-Answer:
-- Draft the term in the relevant module first, then add it to the glossary with source status.
-
-Reasoning:
-- This prevents glossary entries from becoming detached from reviewable source modules.
-
-Source Status:
-- Inferred / Needs Review
-
-## 10. Common Mistakes
-
-- Treating the glossary as a replacement for source modules.
-- Adding terms without source status.
-- Adding terms without a source module.
-- Mixing official rules terms with YGOBrain strategic shorthand without labels.
-- Treating a draft glossary term as verified.
-
-## 11. Edge Cases
-
-- A term may be verified for YGOBrain strategy but not be an official rules term.
-- A term may be useful in deckbuilding but misleading in ruling analysis.
-- A term may need separate definitions across competitive, analytics, and rules contexts.
-
-## 12. Verification Gate
-
-This module cannot be marked VERIFIED until Admin has reviewed or approved it.
+This glossary cannot be marked VERIFIED until Admin has reviewed or approved it.
 
 Verification Status:
 
@@ -302,43 +238,10 @@ NEEDS_ADMIN_REVIEW
 
 Review Notes:
 
-- Confirm whether `core_rules/010_terminology.md` is the correct glossary location.
-- Confirm whether verified card-role terms should live here or in a dedicated glossary folder.
-- Confirm whether future official rules terms should share this glossary or use separate rules modules.
+- Confirm whether this split glossary structure is correct.
+- Confirm whether terminology tests should be created in a later small batch.
 
-## 13. Validation Checklist
-
-Before marking this module as VERIFIED, check:
-
-- [x] Scope is clear.
-- [x] Clarifying questions were asked if needed.
-- [x] Important assumptions are stated.
-- [x] Important terms are defined.
-- [x] Claims are sourced or labelled as needing review.
-- [x] Examples are included where useful.
-- [x] Edge cases are included where useful.
-- [x] Common mistakes are included where useful.
-- [ ] Related tests are created if needed.
-- [ ] Admin has reviewed or approved the module.
-
-## 14. Sources
-
-```text
-Source Name: Admin Verification
-Source Family: Admin Verification
-Source Type: ADMIN_VERIFICATION
-Authority Tier: Project-specific authority
-URL or Reference: Internal YGOBrain review
-Format: PROJECT_INTERNAL
-Date Checked: Pending
-Relevant Claim: Glossary structure and term placement approval.
-Confidence: UNKNOWN until reviewed
-Verification Status: NEEDS_HUMAN_REVIEW
-Approval Status: APPROVED
-Approved Scope: Project acceptance, terminology approval, deckbuilding preferences, and final verification decisions.
-Approved By: Admin
-Notes: This glossary module is drafted for Admin review before the next competitive workstream.
-```
+## 9. Sources
 
 ```text
 Source Name: 011 Card Roles
@@ -347,7 +250,7 @@ Source Type: PROJECT_MODULE
 Authority Tier: Project-specific authority
 URL or Reference: competitive/011_card_roles.md
 Format: PROJECT_INTERNAL
-Date Checked: 2026-06-02
+Date Checked: 2026-06-06
 Relevant Claim: Verified card role terminology.
 Confidence: HIGH for project acceptance
 Verification Status: VERIFIED_BY_ADMIN
@@ -357,17 +260,16 @@ Approved By: Admin
 Notes: Card role terms are listed from the verified card role module.
 ```
 
-## 15. Open Questions
+## 10. Open Questions
 
-- Should this file remain in `core_rules/`, or should a dedicated `glossary/` folder be created?
-- Should official rules terminology and strategic deckbuilding terminology be separated into different glossary sections or files?
-- Should glossary entries link to tests once terminology tests exist?
+- Which terminology tests should be created first after this glossary structure is accepted?
+- Should analytics terms get a third glossary file, such as `glossary/020_analytics_terms.md`, after analytics modules are verified?
 
-## 16. Change Log
+## 11. Change Log
 
 ```text
-2026-06-02
+2026-06-06
 Status: DRAFTED
-Change: Created first glossary surface with verified card-role terms.
-Reason: Admin requested glossary visibility before the next workstream.
+Change: Created separate deckbuilding glossary surface with verified card-role terms.
+Reason: Admin requested a dedicated glossary and separation between official rules terminology and strategic deckbuilding terminology.
 ```

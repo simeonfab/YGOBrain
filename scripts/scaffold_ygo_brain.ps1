@@ -12,6 +12,7 @@ $Directories = @(
     "competitive",
     "decks",
     "analytics",
+    "glossary",
     "tests",
     "templates",
     "runtime",

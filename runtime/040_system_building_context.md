@@ -163,6 +163,7 @@ core_rules/
 competitive/
 decks/
 analytics/
+glossary/
 tests/
 templates/
 runtime/
@@ -228,7 +229,8 @@ After this file, useful next files include:
 ```text
 sources/001_approved_source_families.md
 analytics/010_analytics_principles.md
-core_rules/010_terminology.md
+glossary/000_official_rules_terms.md
+glossary/010_deckbuilding_terms.md
 ```
 
 ## 18. Completion Criteria for System Foundation v0.1

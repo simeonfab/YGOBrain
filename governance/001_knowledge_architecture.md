@@ -32,6 +32,7 @@ YGOBrain/
 |-- competitive/
 |-- decks/
 |-- analytics/
+|-- glossary/
 |-- tests/
 |-- templates/
 |-- runtime/
@@ -124,6 +125,18 @@ Examples:
 
 This folder supports turning deck, event, and performance data into decisions.
 
+### glossary/
+
+Contains shared terminology files split by domain.
+
+Examples:
+
+- official rules terminology
+- strategic deckbuilding terminology
+- analytics terminology when needed
+
+Glossary files should point back to their source modules and should not replace canonical rules, competitive, or analytics modules.
+
 ### tests/
 
 Contains validation examples and edge cases.
@@ -209,6 +222,7 @@ Canonical knowledge belongs in:
 - competitive/
 - decks/
 - analytics/
+- glossary/
 - sources/
 - tests/
 
@@ -335,7 +349,6 @@ templates/error_log_entry_template.md
 The initial core rules backlog should begin with:
 
 ```text
-core_rules/010_terminology.md
 core_rules/011_zones.md
 core_rules/012_card_types.md
 core_rules/013_turn_structure.md

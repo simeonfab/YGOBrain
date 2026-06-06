@@ -32,6 +32,8 @@ Use deck-specific files from `decks/` when available.
 
 Use `competitive/011_card_roles.md` for card role terminology when available.
 
+Use `glossary/010_deckbuilding_terms.md` for the deckbuilding glossary when available.
+
 ## 3. Default Assumptions
 
 Unless Admin explicitly says otherwise, assume:
@@ -279,7 +281,7 @@ Competitive deckbuilding modules currently include:
 ```text
 competitive/010_deckbuilding_principles.md - VERIFIED_BY_ADMIN
 competitive/011_card_roles.md - VERIFIED_BY_ADMIN
-core_rules/010_terminology.md - DRAFTED
+glossary/010_deckbuilding_terms.md - DRAFTED
 ```
 
 Deck-specific overlays have not yet been created.

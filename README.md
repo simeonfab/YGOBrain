@@ -13,7 +13,7 @@ It is designed to help with:
 Status: Foundation build
 Version: v0.1
 
-The repository currently contains governance, templates, runtime context files, source tracking, scaffold automation, verified competitive foundation modules, one draft glossary module, and one draft analytics foundation module.
+The repository currently contains governance, templates, runtime context files, source tracking, scaffold automation, verified competitive foundation modules, draft glossary modules, and one draft analytics foundation module.
 
 The repository does not yet contain verified full Yu-Gi-Oh rules logic, deck modules, or verified analytics modules.
 
@@ -33,13 +33,14 @@ competitive/011_card_roles.md
 
 Status: VERIFIED_BY_ADMIN.
 
-Current glossary module:
+Current glossary modules:
 
 ```text
-core_rules/010_terminology.md
+glossary/000_official_rules_terms.md
+glossary/010_deckbuilding_terms.md
 ```
 
-Status: DRAFTED. It requires Admin review before it can become VERIFIED.
+Status: DRAFTED. They require Admin review before they can become VERIFIED.
 
 Current analytics foundation module:
 
@@ -77,6 +78,7 @@ governance/   System rules and operating policies
 core_rules/   Yu-Gi-Oh rules, PSCT, timing, chains, legality
 competitive/  Deckbuilding and competitive theory
 analytics/    Event, matchup, deck list, and testing analysis
+glossary/     Shared terminology split by rules and strategy
 decks/        Deck-specific overlays
 tests/        Validation examples and edge cases
 templates/    Reusable markdown templates
@@ -184,7 +186,7 @@ Before large-scale agent-assisted content creation:
 1. Verify setup batch changes.
 2. Approve initial source families.
 3. Add additional source families over time when a task needs them.
-4. Review core_rules/010_terminology.md and analytics/010_analytics_principles.md before starting the next dependent workstream.
+4. Review glossary/000_official_rules_terms.md, glossary/010_deckbuilding_terms.md, and analytics/010_analytics_principles.md before starting the next dependent workstream.
 ```
 
 All substantive content modules must remain DRAFTED or UNDER_REVIEW until Admin approves them.

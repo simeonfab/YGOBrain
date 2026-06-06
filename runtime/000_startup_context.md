@@ -217,13 +217,14 @@ competitive/011_card_roles.md
 
 That module is VERIFIED_BY_ADMIN.
 
-Current glossary module:
+Current glossary modules:
 
 ```text
-core_rules/010_terminology.md
+glossary/000_official_rules_terms.md
+glossary/010_deckbuilding_terms.md
 ```
 
-That module is DRAFTED and needs Admin review before it can be treated as verified.
+Those modules are DRAFTED and need Admin review before they can be treated as verified.
 
 Current analytics foundation module:
 

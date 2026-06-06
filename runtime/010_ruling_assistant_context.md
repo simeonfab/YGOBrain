@@ -30,6 +30,8 @@ sources/000_source_index.md
 
 Use relevant core rules modules from `core_rules/` when available.
 
+Use `glossary/000_official_rules_terms.md` for rules-facing terminology when available.
+
 ## 3. Default Assumptions
 
 Unless Admin explicitly says otherwise, assume:
@@ -208,10 +210,15 @@ Priority: Next Task.
 
 Core rules modules have not yet been created.
 
+Rules glossary modules currently include:
+
+```text
+glossary/000_official_rules_terms.md - DRAFTED
+```
+
 When the first ruling module is created, start with foundational modules such as:
 
 ```text
-core_rules/010_terminology.md
 core_rules/020_psct_overview.md
 core_rules/021_psct_punctuation.md
 core_rules/024_psct_targeting.md

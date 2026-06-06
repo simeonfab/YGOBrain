@@ -414,7 +414,7 @@ Notes: Admin reviewed and accepted this card role taxonomy module on 2026-06-02.
 
 ## 15. Open Questions
 
-- Add verified card role terms to `core_rules/010_terminology.md` for glossary review.
+- Add verified card role terms to `glossary/010_deckbuilding_terms.md` for glossary review.
 - Create `competitive/012_engine_vs_non_engine.md` after Admin has reviewed the glossary surface.
 
 ## 16. Change Log
