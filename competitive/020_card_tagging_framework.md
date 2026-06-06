@@ -62,7 +62,170 @@ Risk tags
 
 A single card can have many tags across multiple families.
 
-## 4. Role Tags
+## 4. Global vs Contextual Tags
+
+YGOBrain must distinguish global tags from contextual tags.
+
+This distinction is critical because some tags describe what a card factually or mechanically is, while other tags describe what a card does inside a specific deck, archetype, build, matchup, or format.
+
+### 4.1 Global Tags
+
+Global tags can be assigned to the card itself.
+
+They usually include factual tags and mechanical function tags.
+
+Examples:
+
+```text
+LIGHT
+DARK
+Fiend
+Spellcaster
+search
+discard
+destroy
+special_summon
+```
+
+Global tags can support broad search and filtering.
+
+Examples:
+
+```text
+Find LIGHT Fiend cards.
+Find cards that discard.
+Find cards that special summon.
+Find cards that destroy monsters.
+```
+
+Global tags are still subject to source and confidence rules. A factual tag should come from card facts in the local card database. A mechanical function tag may be proposed by card text search but may still need review if wording or practical use is ambiguous.
+
+### 4.2 Contextual Tags
+
+Contextual tags should not be treated as always true for the card.
+
+They must include context metadata.
+
+They usually include role tags, risk tags, and strategic synergy tags.
+
+Examples:
+
+```text
+starter
+extender
+payoff
+engine_requirement
+brick
+garnet
+engine_bridge
+bad_in_multiples
+poor_going_first
+poor_going_second
+conflicts_with_engine
+```
+
+Contextual tags should usually be attached to one of:
+
+```text
+deck
+archetype
+build
+matchup
+format
+side-deck context
+```
+
+YGOBrain should not say:
+
+```text
+This card is a starter.
+```
+
+unless the statement is explicitly scoped.
+
+Prefer:
+
+```text
+This card is a starter in [deck/build/context].
+This card is a candidate starter for [deck/build/context].
+This card has function tags that may make it starter-relevant.
+```
+
+### 4.3 Mixed Synergy Tags
+
+Some synergy tags are factual/global. Others are strategic/contextual.
+
+Examples:
+
+```text
+LIGHT
+- Factual/global when it comes from the card's Attribute.
+
+Fiend
+- Factual/global when it comes from the card's race/type.
+
+Spellcaster
+- Factual/global when it comes from the card's race/type.
+
+GY_focused
+- Usually strategic/contextual unless defined by a specific mechanical rule.
+
+engine_bridge
+- Strategic/contextual. It only makes sense when the connected engines are named.
+```
+
+### 4.4 Database Implication
+
+The local card database should separate global tags from contextual tags.
+
+Suggested structure:
+
+```text
+card_global_tags:
+- card_id
+- tag
+- tag_family
+- source
+- confidence
+- verification_status
+
+card_contextual_tags:
+- card_id
+- tag
+- tag_family
+- context_type
+- context_name
+- deck_file
+- source
+- confidence
+- verification_status
+- notes
+```
+
+### 4.5 Recommendation Implication
+
+When recommending cards, use global tags to find candidates, then assign contextual role and risk tags only after evaluating the specific deck plan.
+
+Example:
+
+A card may globally have:
+
+```text
+discard
+special_summon
+LIGHT
+Fiend
+```
+
+But only contextually have:
+
+```text
+extender in White Forest Fiend build
+brick risk in low-discard builds
+engine_bridge in builds using X and Y engines
+```
+
+## 5. Role Tags
 
 Role tags describe what the card does in a deck plan.
 
@@ -99,9 +262,9 @@ payoff
 - Converts engine progress into advantage, disruption, board presence, or win pressure.
 ```
 
-Role tags are usually context-dependent and should often be deck-specific.
+Role tags are usually contextual and should normally be deck-specific, archetype-specific, build-specific, or format-specific.
 
-## 5. Function Tags
+## 6. Function Tags
 
 Function tags describe the mechanical action or utility the card provides.
 
@@ -149,9 +312,11 @@ mill
 - The card sends cards from deck to graveyard or otherwise loads graveyard resources.
 ```
 
-Function tags may be proposed by database text search, but trusted assignment requires review.
+Function tags may often be global because they describe what the card text mechanically does.
 
-## 6. Risk Tags
+Function tags may be proposed by database text search, but trusted assignment requires review where wording, timing, cost/effect distinction, or practical use is ambiguous.
+
+## 7. Risk Tags
 
 Risk tags describe how a card can harm hand quality, sequencing, or deck performance.
 
@@ -189,9 +354,9 @@ situational
 - Card is powerful only under narrow board, matchup, timing, or hand conditions.
 ```
 
-Risk tags should be used carefully. A card can be risky in one deck and excellent in another.
+Risk tags are usually contextual. A card can be risky in one deck and excellent in another.
 
-## 7. Synergy Tags
+## 8. Synergy Tags
 
 Synergy tags describe what the card works with or supports.
 
@@ -227,36 +392,38 @@ Examples:
 
 ```text
 LIGHT
-- Relevant when a deck searches, summons, discards, or benefits from LIGHT cards.
+- Factual/global when it comes from the card's Attribute. Contextual when describing why a deck values LIGHT cards.
 
 Fiend
-- Relevant when a deck has Fiend-specific searchers, summons, restrictions, or payoffs.
+- Factual/global when it comes from the card's race/type. Contextual when describing why a deck values Fiend cards.
 
 GY_focused
-- Relevant when a card loads, uses, revives, banishes from, or gains value from the graveyard.
+- Usually strategic/contextual. Relevant when a card loads, uses, revives, banishes from, or gains value from the graveyard in a meaningful deck context.
 
 engine_bridge
-- Card connects two engines or lets one engine access another.
+- Strategic/contextual. The connected engines must be named.
 ```
 
 Some synergy tags come directly from card facts, such as LIGHT or Fiend. Others require strategic interpretation, such as engine_bridge or GY_focused.
 
-## 8. How Tags Should Be Assigned
+## 9. How Tags Should Be Assigned
 
 Use this workflow:
 
 1. Retrieve exact card facts from the local card database.
-2. Identify candidate tags from card facts, text search, and known deck context.
-3. Separate database-derived tags from strategic interpretation tags.
-4. Assign context: global, archetype-specific, deck-specific, format-specific, or build-specific.
-5. Assign confidence.
-6. Record source and reasoning.
-7. Mark Admin verification status.
-8. Use tags for discovery or recommendation only within their approved context.
+2. Identify candidate global tags from factual fields and mechanical text search.
+3. Identify candidate contextual tags from known deck, archetype, build, matchup, or format context.
+4. Separate database-derived tags from strategic interpretation tags.
+5. Separate global tags from contextual tags.
+6. For contextual tags, assign context type and context name.
+7. Assign confidence.
+8. Record source and reasoning.
+9. Mark Admin verification status.
+10. Use tags for discovery or recommendation only within their approved context.
 
 Do not assign trusted strategic tags from model memory alone.
 
-## 9. Context Scope
+## 10. Context Scope
 
 Every strategic tag should have a context.
 
@@ -264,7 +431,7 @@ Use:
 
 ```text
 global
-- broadly true across decks and formats
+- broadly true across decks and formats; usually factual or mechanical
 
 archetype_specific
 - applies to a named archetype
@@ -282,7 +449,9 @@ side_context
 - applies mainly before or after side decking
 ```
 
-## 10. Confidence Model
+Role and risk tags should generally not use `global` unless Admin explicitly verifies that the global scope is valid and not misleading.
+
+## 11. Confidence Model
 
 Use confidence values:
 
@@ -311,7 +480,7 @@ UNKNOWN
 
 Only Admin review or a clearly delegated validation process should move a strategic tag to HIGH confidence.
 
-## 11. Admin Verification
+## 12. Admin Verification
 
 Admin verification should answer:
 
@@ -336,7 +505,7 @@ LIMITED_USE
 
 Unverified tags can be used for exploration but must be labelled as unverified.
 
-## 12. Card Discovery Examples
+## 13. Card Discovery Examples
 
 ### Example 1 - LIGHT Fiend Extenders
 
@@ -356,6 +525,13 @@ Optional filters:
 - GY_focused
 ```
 
+Tag interpretation:
+
+```text
+LIGHT and Fiend are global/factual tags.
+extender is contextual and must be scoped to a deck, archetype, build, or format.
+```
+
 ### Example 2 - Discard Outlets
 
 Search logic:
@@ -371,6 +547,14 @@ Function tags:
 Risk checks:
 - requires_discard
 - bad_in_multiples
+```
+
+Tag interpretation:
+
+```text
+discard may be global/mechanical.
+discard_outlet may require review if usefulness depends on deck context.
+bad_in_multiples is contextual.
 ```
 
 ### Example 3 - Convert Bricks Into Value
@@ -410,6 +594,14 @@ Synergy tags:
 - engine_bridge
 ```
 
+Tag interpretation:
+
+```text
+search may be global/mechanical.
+starter and starter subtype tags are contextual.
+engine_bridge is contextual.
+```
+
 ### Example 5 - Engine Bridges
 
 Search logic:
@@ -428,20 +620,23 @@ Context:
 - deck_specific or build_specific
 ```
 
-## 13. Failure Modes to Avoid
+## 14. Failure Modes to Avoid
 
 Avoid:
 
 - treating database-derived text matches as verified strategic tags
-- assigning global tags where the tag is deck-specific
-- tagging a card as starter without defining the context
+- assigning global tags where the tag is deck-specific or build-specific
+- tagging a card as starter without defining the deck/build/context
+- saying "this card is a starter" without scope when the correct statement is contextual
+- treating risk tags such as brick, garnet, bad_in_multiples, poor_going_first, or poor_going_second as globally true without context
+- treating strategic synergy tags such as engine_bridge as globally true
 - ignoring risk tags when recommending cards
 - treating LOW confidence tags as established facts
 - using tags without retrieving card facts
 - using model memory to tag cards without database support
 - letting tags override official rulings or legality
 
-## 14. Relationship to Database Schema
+## 15. Relationship to Database Schema
 
 The local card database should store raw facts separately from strategic tags.
 
@@ -451,20 +646,43 @@ Recommended separation:
 card_facts
 - imported, database-backed fields
 
-card_tags
-- YGOBrain strategic tags and metadata
+card_global_tags
+- factual or mechanical tags that can be attached to the card itself
+
+card_contextual_tags
+- role, risk, and strategic synergy tags scoped to a deck, archetype, build, matchup, or format
 
 card_tag_reviews
 - Admin verification, review notes, confidence, source, date
 ```
 
+Suggested contextual tag fields:
+
+```text
+card_id
+tag
+tag_family
+context_type
+context_name
+deck_file
+source
+confidence
+verification_status
+notes
+```
+
 This module defines the strategic tagging logic, not physical implementation.
 
-## 15. Change Log
+## 16. Change Log
 
 ```text
 2026-06-06
 Status: DRAFTED
 Change: Created card tagging framework.
 Reason: Admin requested a framework that lets AI discover cards by function rather than only by name.
+
+2026-06-06
+Status: DRAFTED
+Change: Added global vs contextual tag rules.
+Reason: Admin clarified that function and factual synergy tags can often be global, while role/risk/strategic synergy tags usually need explicit deck, archetype, build, matchup, or format context.
 ```
