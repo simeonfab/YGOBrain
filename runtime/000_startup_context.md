@@ -224,7 +224,15 @@ glossary/000_official_rules_terms.md
 glossary/010_deckbuilding_terms.md
 ```
 
-Those modules are DRAFTED and need Admin review before they can be treated as verified.
+Those modules are VERIFIED_BY_ADMIN.
+
+Current competitive draft module:
+
+```text
+competitive/012_engine_vs_non_engine.md
+```
+
+That module is DRAFTED and needs Admin review before it can be treated as verified.
 
 Current analytics foundation module:
 

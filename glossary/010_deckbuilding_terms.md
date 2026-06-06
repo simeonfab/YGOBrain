@@ -1,6 +1,6 @@
 # 010 Deckbuilding Terms
 
-Status: DRAFTED
+Status: VERIFIED
 Version: v0.1
 Category: glossary
 Scope: Glossary surface for strategic deckbuilding terminology used by YGOBrain
@@ -228,18 +228,18 @@ This glossary does not link to tests yet because terminology tests have not been
 
 ## 8. Verification Gate
 
-This glossary cannot be marked VERIFIED until Admin has reviewed or approved it.
+This glossary is marked VERIFIED because Admin has reviewed and accepted the split glossary structure.
 
 Verification Status:
 
 ```text
-NEEDS_ADMIN_REVIEW
+VERIFIED_BY_ADMIN
 ```
 
 Review Notes:
 
-- Confirm whether this split glossary structure is correct.
-- Confirm whether terminology tests should be created in a later small batch.
+- Admin reviewed and accepted the split glossary structure on 2026-06-06.
+- Terminology tests may be created in a later small batch.
 
 ## 9. Sources
 
@@ -272,4 +272,9 @@ Notes: Card role terms are listed from the verified card role module.
 Status: DRAFTED
 Change: Created separate deckbuilding glossary surface with verified card-role terms.
 Reason: Admin requested a dedicated glossary and separation between official rules terminology and strategic deckbuilding terminology.
+
+2026-06-06
+Status: VERIFIED
+Change: Admin reviewed and accepted the deckbuilding glossary structure.
+Reason: Admin confirmed the dedicated glossary split is good.
 ```

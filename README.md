@@ -13,7 +13,7 @@ It is designed to help with:
 Status: Foundation build
 Version: v0.1
 
-The repository currently contains governance, templates, runtime context files, source tracking, scaffold automation, verified competitive foundation modules, draft glossary modules, and one draft analytics foundation module.
+The repository currently contains governance, templates, runtime context files, source tracking, scaffold automation, verified competitive foundation modules, verified glossary modules, one draft competitive module, and one draft analytics foundation module.
 
 The repository does not yet contain verified full Yu-Gi-Oh rules logic, deck modules, or verified analytics modules.
 
@@ -40,7 +40,15 @@ glossary/000_official_rules_terms.md
 glossary/010_deckbuilding_terms.md
 ```
 
-Status: DRAFTED. They require Admin review before they can become VERIFIED.
+Status: VERIFIED_BY_ADMIN.
+
+Current competitive draft module:
+
+```text
+competitive/012_engine_vs_non_engine.md
+```
+
+Status: DRAFTED. It requires Admin review before it can become VERIFIED.
 
 Current analytics foundation module:
 
@@ -186,7 +194,7 @@ Before large-scale agent-assisted content creation:
 1. Verify setup batch changes.
 2. Approve initial source families.
 3. Add additional source families over time when a task needs them.
-4. Review glossary/000_official_rules_terms.md, glossary/010_deckbuilding_terms.md, and analytics/010_analytics_principles.md before starting the next dependent workstream.
+4. Review competitive/012_engine_vs_non_engine.md and analytics/010_analytics_principles.md before starting the next dependent workstream.
 ```
 
 All substantive content modules must remain DRAFTED or UNDER_REVIEW until Admin approves them.

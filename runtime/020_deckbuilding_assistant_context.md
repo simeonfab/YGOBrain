@@ -281,7 +281,8 @@ Competitive deckbuilding modules currently include:
 ```text
 competitive/010_deckbuilding_principles.md - VERIFIED_BY_ADMIN
 competitive/011_card_roles.md - VERIFIED_BY_ADMIN
-glossary/010_deckbuilding_terms.md - DRAFTED
+glossary/010_deckbuilding_terms.md - VERIFIED_BY_ADMIN
+competitive/012_engine_vs_non_engine.md - DRAFTED
 ```
 
 Deck-specific overlays have not yet been created.

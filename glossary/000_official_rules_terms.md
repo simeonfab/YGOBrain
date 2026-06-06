@@ -1,6 +1,6 @@
 # 000 Official Rules Terms
 
-Status: DRAFTED
+Status: VERIFIED
 Version: v0.1
 Category: glossary
 Scope: Glossary surface for official Yu-Gi-Oh TCG rules terminology used by YGOBrain
@@ -36,12 +36,12 @@ Future rules terms should usually be added only after the relevant rules module 
 
 ## 4. Verification Gate
 
-This glossary cannot be marked VERIFIED until Admin has reviewed or approved it.
+This glossary is marked VERIFIED because Admin has reviewed and accepted the split glossary structure.
 
 Verification Status:
 
 ```text
-NEEDS_ADMIN_REVIEW
+VERIFIED_BY_ADMIN
 ```
 
 ## 5. Sources
@@ -53,14 +53,14 @@ Source Type: ADMIN_VERIFICATION
 Authority Tier: Project-specific authority
 URL or Reference: Internal YGOBrain review
 Format: PROJECT_INTERNAL
-Date Checked: Pending
+Date Checked: 2026-06-06
 Relevant Claim: Glossary structure and term placement approval.
-Confidence: UNKNOWN until reviewed
-Verification Status: NEEDS_HUMAN_REVIEW
+Confidence: HIGH for project acceptance
+Verification Status: VERIFIED_BY_ADMIN
 Approval Status: APPROVED
 Approved Scope: Project acceptance, terminology approval, and final verification decisions.
 Approved By: Admin
-Notes: Admin requested a dedicated glossary with official rules terminology separated from strategic deckbuilding terminology.
+Notes: Admin reviewed and accepted the dedicated glossary split on 2026-06-06.
 ```
 
 ## 6. Open Questions
@@ -75,4 +75,9 @@ Notes: Admin requested a dedicated glossary with official rules terminology sepa
 Status: DRAFTED
 Change: Created separate official rules glossary surface.
 Reason: Admin requested a dedicated glossary and separation between official rules terminology and strategic deckbuilding terminology.
+
+2026-06-06
+Status: VERIFIED
+Change: Admin reviewed and accepted the official rules glossary structure.
+Reason: Admin confirmed the dedicated glossary split is good.
 ```
