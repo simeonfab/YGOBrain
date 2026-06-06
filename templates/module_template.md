@@ -2,10 +2,25 @@
 
 Status: PLANNED
 Version: v0.1
-Category: [governance / core_rules / competitive / analytics / decks / tests / sources / runtime]
+Category: [governance / core_rules / competitive / analytics / decks / tests / sources / runtime / glossary]
 Scope: [What this module covers]
 Owner: Admin
 Last Updated: YYYY-MM-DD
+Applies To: [Formats, workflows, or repo areas this module applies to]
+Task Modes: [ruling / deckbuilding / analytics / system-building]
+Keywords: [comma-separated retrieval keywords]
+Depends On:
+- governance/000_system_operating_rules.md
+- governance/001_knowledge_architecture.md
+- governance/002_source_hierarchy.md
+- governance/003_response_methodology.md
+- governance/006_module_creation_and_review_policy.md
+Source Tier: [Official TCG / Approved Source / Project Governance / Strategic Framework / Assistant Draft]
+Verification Status: NEEDS_ADMIN_REVIEW
+Retrieval Priority: [HIGH / MEDIUM / LOW]
+Related Modules:
+- [Module path]
+- [Module path]
 
 ## 1. Purpose
 
@@ -40,18 +55,38 @@ Unless stated otherwise, assume:
 
 Depends On:
 
-- governance/000_system_operating_rules.md
-- governance/001_knowledge_architecture.md
-- governance/002_source_hierarchy.md
-- governance/003_response_methodology.md
-- governance/006_module_creation_and_review_policy.md
+- [Dependency already listed in metadata]
 
 Related Modules:
 
-- [Module path]
-- [Module path]
+- [Related module already listed in metadata]
 
-## 5. Clarifying Questions
+## 5. Retrieval Metadata Notes
+
+Use the metadata block at the top of this file to support retrieval-first YGOBrain.
+
+Metadata guidance:
+
+```text
+Status: PLANNED / DRAFTED / UNDER_REVIEW / VERIFIED / VERIFIED_BY_ADMIN / DEPRECATED / SUPERSEDED
+Version: semantic or simple project version
+Category: repo category
+Scope: concise module boundary
+Owner: Admin
+Last Updated: YYYY-MM-DD
+Applies To: format, workflow, or repo area
+Task Modes: ruling, deckbuilding, analytics, system-building
+Keywords: terms retrieval should match
+Depends On: direct dependencies only
+Source Tier: source authority or project authority level
+Verification Status: VERIFIED_BY_ADMIN / NEEDS_ADMIN_REVIEW / INFERRED_NOT_VERIFIED / SOURCE_NEEDED
+Retrieval Priority: HIGH / MEDIUM / LOW
+Related Modules: useful adjacent modules
+```
+
+Do not use metadata to inflate context. Metadata should help select files, not replace module content.
+
+## 6. Clarifying Questions
 
 Before drafting or finalizing this module, identify whether Admin needs to answer any clarifying questions.
 
@@ -65,7 +100,7 @@ Assumptions Used Instead of Asking:
 
 - [Assumption]
 
-## 6. Key Definitions
+## 7. Key Definitions
 
 Define important terms used in this module.
 
@@ -75,7 +110,7 @@ Definition:
 Source Status:
 ```
 
-## 7. Core Rules or Principles
+## 8. Core Rules or Principles
 
 State the main rules, principles, or framework.
 
@@ -91,7 +126,7 @@ Inferred Not Verified:
 Source Needed:
 ```
 
-## 8. Practical Application
+## 9. Practical Application
 
 Explain how this module should be used in actual work.
 
@@ -102,7 +137,7 @@ Examples:
 - how to analyze a statistic
 - how to update a file
 
-## 9. Examples
+## 10. Examples
 
 ### Example 1 - [Name]
 
@@ -132,7 +167,7 @@ Reasoning:
 Source Status:
 - [Officially Confirmed / Source-Backed / Inferred / Needs Review]
 
-## 10. Common Mistakes
+## 11. Common Mistakes
 
 List common errors this module should prevent.
 
@@ -140,7 +175,7 @@ List common errors this module should prevent.
 - [Mistake]
 - [Mistake]
 
-## 11. Edge Cases
+## 12. Edge Cases
 
 List important edge cases.
 
@@ -148,7 +183,7 @@ List important edge cases.
 - [Edge case]
 - [Edge case]
 
-## 12. Verification Gate
+## 13. Verification Gate
 
 This module cannot be marked VERIFIED until Admin has reviewed or approved it.
 
@@ -162,11 +197,12 @@ Review Notes:
 
 - [Any review comments]
 
-## 13. Validation Checklist
+## 14. Validation Checklist
 
 Before marking this module as VERIFIED, check:
 
 - [ ] Scope is clear.
+- [ ] Retrieval metadata is complete.
 - [ ] Clarifying questions were asked if needed.
 - [ ] Important assumptions are stated.
 - [ ] Important terms are defined.
@@ -177,7 +213,7 @@ Before marking this module as VERIFIED, check:
 - [ ] Related tests are created if needed.
 - [ ] Admin has reviewed or approved the module.
 
-## 14. Sources
+## 15. Sources
 
 Use source entries where practical.
 
@@ -198,14 +234,14 @@ Approved By:
 Notes:
 ```
 
-## 15. Open Questions
+## 16. Open Questions
 
 Track unresolved questions here.
 
 - [Question]
 - [Question]
 
-## 16. Change Log
+## 17. Change Log
 
 ```text
 YYYY-MM-DD
