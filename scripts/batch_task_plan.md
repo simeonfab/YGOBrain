@@ -1,11 +1,11 @@
 # Batch Task Plan
 
 Status: DRAFTED
-Version: v0.1
+Version: v0.2
 Category: scripts
 Scope: Checklist for completing YGOBrain setup before large-scale agent-assisted content creation
 Owner: Admin
-Last Updated: 2026-06-02
+Last Updated: 2026-06-06
 
 ## 1. Purpose
 
@@ -49,7 +49,31 @@ Current Proceed Rule:
 - If a task needs a source category not yet covered, pause and ask Admin for approval before treating the new source as trusted.
 - Admin may provide additional source families over time.
 
-## 5. Next Content Modules After Setup Verification
+## 5. Retrieval-First Architecture Tasks
+
+- [x] Create `governance/008_retrieval_architecture.md`.
+- [x] Create `runtime/090_retrieval_manifest.md`.
+- [x] Update `runtime/000_startup_context.md` with retrieval-first rule.
+- [x] Update `AGENTS.md` with retrieval-first agent guidance.
+- [x] Update `templates/module_template.md` with retrieval metadata fields.
+- [x] Create `tests/eval_test_template.md`.
+- [x] Create `tests/000_eval_plan.md`.
+- [ ] Admin reviews and verifies retrieval-first architecture files.
+- [ ] Gradually add retrieval metadata to high-priority existing modules.
+- [ ] Create first small eval batch from `tests/000_eval_plan.md`.
+
+## 6. Card Knowledge Architecture Tasks
+
+- [x] Create `governance/009_card_knowledge_architecture.md`.
+- [x] Create `runtime/070_card_lookup_context.md`.
+- [x] Create `runtime/080_card_recommendation_context.md`.
+- [ ] Admin reviews and verifies card knowledge architecture files.
+- [ ] Define local card database format and storage path.
+- [ ] Define update/cache script requirements.
+- [ ] Define card database query interface.
+- [ ] Add card lookup/recommendation routes to `runtime/090_retrieval_manifest.md` if needed.
+
+## 7. Next Content Modules After Setup Verification
 
 Recommended first content modules:
 
@@ -78,7 +102,7 @@ analytics/010_analytics_principles.md - DRAFTED
 
 All substantive content modules should remain DRAFTED or UNDER_REVIEW until Admin verifies them.
 
-## 6. Agent Batch Rules
+## 8. Agent Batch Rules
 
 When using agents for future batches:
 
@@ -86,16 +110,22 @@ When using agents for future batches:
 - read `runtime/000_startup_context.md`
 - read `runtime/050_top_level_agent_context.md`
 - use `runtime/060_sub_agent_task_template.md` for sub-agent work
+- use `runtime/090_retrieval_manifest.md` to avoid context bloat
 - use only approved source families as trusted inputs
 - mark candidate sources clearly
 - keep modules small and reviewable
 - provide a change summary after durable changes
 
-## 7. Change Log
+## 9. Change Log
 
 ```text
 2026-06-02
 Status: DRAFTED
 Change: Created batch task plan.
 Reason: Admin requested a complete setup checklist before using agents in Codex for content generation.
+
+2026-06-06
+Status: DRAFTED
+Change: Added retrieval-first architecture tasks and card knowledge architecture tasks.
+Reason: Admin requested retrieval-first YGOBrain and separation of card facts, strategic reasoning, and rulings.
 ```
