@@ -56,7 +56,6 @@ Recommended first content modules:
 ```text
 glossary/000_official_rules_terms.md
 glossary/010_deckbuilding_terms.md
-competitive/013_ratios_and_consistency.md
 analytics/016_probability_and_consistency.md
 ```
 
@@ -68,6 +67,12 @@ competitive/011_card_roles.md - VERIFIED_BY_ADMIN
 glossary/000_official_rules_terms.md - VERIFIED_BY_ADMIN
 glossary/010_deckbuilding_terms.md - VERIFIED_BY_ADMIN
 competitive/012_engine_vs_non_engine.md - DRAFTED
+competitive/013_ratios_and_consistency.md - DRAFTED
+competitive/014_starters_extenders_payoffs.md - DRAFTED
+competitive/015_chokepoints.md - DRAFTED
+competitive/016_interruption_layering.md - DRAFTED
+competitive/017_going_first_vs_second.md - DRAFTED
+competitive/018_side_deck_theory.md - DRAFTED
 analytics/010_analytics_principles.md - DRAFTED
 ```
 

@@ -226,13 +226,19 @@ glossary/010_deckbuilding_terms.md
 
 Those modules are VERIFIED_BY_ADMIN.
 
-Current competitive draft module:
+Current competitive draft modules:
 
 ```text
 competitive/012_engine_vs_non_engine.md
+competitive/013_ratios_and_consistency.md
+competitive/014_starters_extenders_payoffs.md
+competitive/015_chokepoints.md
+competitive/016_interruption_layering.md
+competitive/017_going_first_vs_second.md
+competitive/018_side_deck_theory.md
 ```
 
-That module is DRAFTED and needs Admin review before it can be treated as verified.
+Those modules are DRAFTED and need Admin review before they can be treated as verified.
 
 Current analytics foundation module:
 
