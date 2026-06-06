@@ -1,7 +1,7 @@
 # Batch Task Plan
 
 Status: DRAFTED
-Version: v0.3
+Version: v0.4
 Category: scripts
 Scope: Checklist for completing YGOBrain setup before large-scale agent-assisted content creation
 Owner: Admin
@@ -58,7 +58,7 @@ Current Proceed Rule:
 - [x] Update `templates/module_template.md` with retrieval metadata fields.
 - [x] Create `tests/eval_test_template.md`.
 - [x] Create `tests/000_eval_plan.md`.
-- [ ] Admin reviews and verifies retrieval-first architecture files.
+- [x] Admin reviews and verifies retrieval-first architecture files.
 - [ ] Gradually add retrieval metadata to high-priority existing modules.
 - [ ] Create first small eval batch from `tests/000_eval_plan.md`.
 
@@ -74,11 +74,11 @@ Current Proceed Rule:
 - [x] Create `tests/card_recommendation_eval_template.md`.
 - [x] Create `tests/card_discovery_eval_template.md`.
 - [x] Create `tests/001_card_eval_plan.md`.
-- [ ] Admin reviews and verifies card knowledge architecture files.
-- [ ] Admin reviews and verifies `governance/010_card_database_schema.md`.
-- [ ] Admin reviews and verifies `competitive/020_card_tagging_framework.md`.
-- [ ] Admin reviews and verifies `templates/card_tag_template.md`.
-- [ ] Admin reviews and verifies card eval framework files.
+- [x] Admin reviews and verifies card knowledge architecture files.
+- [x] Admin reviews and verifies `governance/010_card_database_schema.md`.
+- [x] Admin reviews and verifies `competitive/020_card_tagging_framework.md`.
+- [x] Admin reviews and verifies `templates/card_tag_template.md`.
+- [x] Admin reviews and verifies card eval framework files.
 - [ ] Define local card database physical storage format.
 - [ ] Define local card database storage path.
 - [ ] Define update/cache script requirements.
@@ -114,7 +114,7 @@ competitive/015_chokepoints.md - DRAFTED
 competitive/016_interruption_layering.md - DRAFTED
 competitive/017_going_first_vs_second.md - DRAFTED
 competitive/018_side_deck_theory.md - DRAFTED
-competitive/020_card_tagging_framework.md - DRAFTED
+competitive/020_card_tagging_framework.md - VERIFIED_BY_ADMIN
 analytics/010_analytics_principles.md - DRAFTED
 ```
 
@@ -156,4 +156,9 @@ Reason: Admin requested local card database schema architecture to support exact
 Status: DRAFTED
 Change: Added card tagging framework and card eval framework tasks.
 Reason: Admin requested strategic card discovery by function and evaluation scaffolds for card lookup, recommendation, discovery, and source discipline.
+
+2026-06-06
+Status: VERIFIED_BY_ADMIN
+Change: Marked reviewed retrieval-first, card knowledge, card database schema, card tagging, and card eval framework items as verified in the batch task plan.
+Reason: Admin confirmed all surfaced review items were verified.
 ```
