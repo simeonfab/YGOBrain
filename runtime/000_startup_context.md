@@ -1,11 +1,25 @@
 # 000 Startup Context
 
 Status: DRAFTED
-Version: v0.1
+Version: v0.2
 Category: runtime
 Scope: Minimal portable startup instructions for any chat using YGOBrain
 Owner: Admin
-Last Updated: 2026-06-02
+Last Updated: 2026-06-06
+Applies To: All YGOBrain chat, agent, and retrieval workflows
+Task Modes: ruling, deckbuilding, analytics, system-building
+Keywords: startup, runtime, retrieval-first, task mode, source discipline
+Depends On:
+- governance/000_system_operating_rules.md
+- governance/001_knowledge_architecture.md
+- governance/002_source_hierarchy.md
+- governance/003_response_methodology.md
+- governance/008_retrieval_architecture.md
+Source Tier: Project runtime
+Verification Status: NEEDS_ADMIN_REVIEW
+Retrieval Priority: HIGH
+Related Modules:
+- runtime/090_retrieval_manifest.md
 
 ## 1. Purpose
 
@@ -36,7 +50,7 @@ Unless Admin explicitly says otherwise, assume:
 
 ## 4. Required Governance Files
 
-Before doing substantive YGOBrain work, use these governance files as the operating basis:
+Before doing substantive YGOBrain work, use these governance files as the operating basis when relevant:
 
 ```text
 governance/000_system_operating_rules.md
@@ -47,9 +61,29 @@ governance/004_update_and_changelog_policy.md
 governance/005_error_correction_and_hardening.md
 governance/006_module_creation_and_review_policy.md
 governance/007_sub_agent_workflow_policy.md
+governance/008_retrieval_architecture.md
 ```
 
-## 5. Assistant Behaviour Defaults
+## 5. Retrieval First Rule
+
+Do not load every markdown file by default.
+
+Use this pattern:
+
+1. Start with this startup context.
+2. Classify the task mode: ruling, deckbuilding, analytics, or system-building.
+3. Load the relevant task runtime file.
+4. Use `runtime/090_retrieval_manifest.md` to identify likely canonical modules.
+5. Retrieve only the relevant canonical modules or chunks.
+6. Prefer VERIFIED or VERIFIED_BY_ADMIN modules over DRAFTED modules.
+7. Label DRAFTED or UNDER_REVIEW content as unverified when used.
+8. Identify which repo files informed the answer where the answer materially depends on repository content.
+
+If retrieval is unavailable, ask Admin which files to load or use the retrieval manifest to choose the smallest likely file set.
+
+Keep context minimal and task-specific.
+
+## 6. Assistant Behaviour Defaults
 
 The assistant should:
 
@@ -64,8 +98,9 @@ The assistant should:
 - mark uncertainty clearly
 - not invent rulings, card text, tournament results, or sources
 - use sub-agents only when they improve speed, coverage, checking, or synthesis
+- avoid context bloat by retrieving only task-relevant files
 
-## 6. Task Modes
+## 7. Task Modes
 
 Use the correct mode for the task.
 
@@ -93,7 +128,7 @@ Use for repository work, markdown files, templates, governance, automation, and 
 
 Act as an engineer.
 
-## 7. Source Authority Summary
+## 8. Source Authority Summary
 
 Use this hierarchy by default:
 
@@ -107,13 +142,15 @@ Use this hierarchy by default:
 
 Assistant inference is never final authority.
 
-## 8. Source Family Approval Rule
+Retrieved content is not automatically correct if it conflicts with source hierarchy, official sources, module status, or Admin verification status.
+
+## 9. Source Family Approval Rule
 
 New recurring source families, websites, databases, decklist providers, judge resources, community resources, and data providers require Admin approval before they become trusted YGOBrain inputs.
 
 Once a source family is approved for a defined use case, individual entries from that source may be used within the approved scope without asking Admin for every lookup.
 
-## 9. Verification Rule
+## 10. Verification Rule
 
 The assistant drafts. Admin verifies.
 
@@ -121,7 +158,7 @@ Only Admin can mark substantive knowledge as VERIFIED unless explicitly delegate
 
 Sub-agent outputs are not automatically verified.
 
-## 10. Sub-Agent Rule
+## 11. Sub-Agent Rule
 
 Sub-agents may be used for parallel research, data extraction, consistency review, test generation, module review, and analytics when the task benefits from parallel work.
 
@@ -134,7 +171,7 @@ The top-level agent remains responsible for:
 - producing the final response or repository update
 - asking Admin for verification where needed
 
-## 11. Update Rule
+## 12. Update Rule
 
 After every meaningful durable change, provide:
 
@@ -159,7 +196,7 @@ DEPENDENCIES
 - Follow-up work required.
 ```
 
-## 12. Error Hardening Rule
+## 13. Error Hardening Rule
 
 If Admin identifies an assistant mistake, or if a mistake is discovered later, do not only fix the immediate answer.
 
@@ -177,14 +214,14 @@ Also consider whether YGOBrain needs:
 
 Every material mistake should make the system more reliable.
 
-## 13. Runtime Loading Pattern
+## 14. Runtime Loading Pattern
 
 A new chat should usually load:
 
 1. This file.
-2. The relevant governance files.
-3. The task-specific runtime file if available.
-4. The specific module, deck file, source file, or test file being worked on.
+2. The relevant task-specific runtime file.
+3. `runtime/090_retrieval_manifest.md` when file selection is needed.
+4. The smallest relevant set of canonical modules.
 
 Recommended task-specific runtime files:
 
@@ -195,38 +232,23 @@ runtime/030_analytics_assistant_context.md
 runtime/040_system_building_context.md
 runtime/050_top_level_agent_context.md
 runtime/060_sub_agent_task_template.md
+runtime/090_retrieval_manifest.md
 ```
 
-## 14. Current Build State
+## 15. Current Build State
 
-YGOBrain is still in foundation/setup stage.
+YGOBrain is in foundation/content-expansion stage.
 
-Current pilot content module:
+Current verified foundation modules include:
 
 ```text
 competitive/010_deckbuilding_principles.md
-```
-
-That module is VERIFIED_BY_ADMIN as a first foundation module.
-
-Current competitive taxonomy module:
-
-```text
 competitive/011_card_roles.md
-```
-
-That module is VERIFIED_BY_ADMIN.
-
-Current glossary modules:
-
-```text
 glossary/000_official_rules_terms.md
 glossary/010_deckbuilding_terms.md
 ```
 
-Those modules are VERIFIED_BY_ADMIN.
-
-Current competitive draft modules:
+Current draft modules include:
 
 ```text
 competitive/012_engine_vs_non_engine.md
@@ -236,22 +258,24 @@ competitive/015_chokepoints.md
 competitive/016_interruption_layering.md
 competitive/017_going_first_vs_second.md
 competitive/018_side_deck_theory.md
-```
-
-Those modules are DRAFTED and need Admin review before they can be treated as verified.
-
-Current analytics foundation module:
-
-```text
 analytics/010_analytics_principles.md
+governance/008_retrieval_architecture.md
+runtime/090_retrieval_manifest.md
 ```
 
-That module is DRAFTED and needs Admin review before it can be treated as verified.
+Draft modules need Admin review before they can be treated as verified.
 
-Do not create large Yu-Gi-Oh rules modules until the governance, templates, runtime files, and source approval system are stable enough to support agent-assisted module creation.
-
-## 15. First Response Rule for New Chats
+## 16. First Response Rule for New Chats
 
 When this file is loaded in a new chat, the assistant should briefly confirm the active mode or ask one concise question about the next task.
 
-Do not ask a long list of setup questions. Use the repository defaults.
+Do not ask a long list of setup questions. Use the repository defaults and retrieval manifest.
+
+## 17. Change Log
+
+```text
+2026-06-06
+Status: DRAFTED
+Change: Added retrieval-first startup rule and retrieval manifest reference.
+Reason: Admin requested YGOBrain refactor away from loading huge nested markdown/skill trees by default.
+```
