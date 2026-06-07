@@ -1,17 +1,35 @@
 # Batch Task Plan
 
 Status: DRAFTED
-Version: v0.5
+Version: v0.6
 Category: scripts
-Scope: Checklist for completing YGOBrain setup before large-scale agent-assisted content creation
+Scope: Checklist for completing ResolveYGO setup before large-scale agent-assisted content creation
 Owner: Admin
 Last Updated: 2026-06-07
 
 ## 1. Purpose
 
-This file lists the setup batch tasks that should be completed before using Codex or other multi-agent workflows to create substantial YGOBrain content modules.
+This file lists the setup batch tasks that should be completed before using Codex or other multi-agent workflows to create substantial ResolveYGO content modules.
 
-## 2. Completed Setup Batch Items
+Project naming rule:
+
+- ResolveYGO is the product/project name moving forward.
+- YGOBrain is legacy naming and should be migrated gradually.
+- Until the repository/folder migration is complete, avoid creating new permanent references to YGOBrain unless referring to legacy files, paths, or repository history.
+
+## 2. Naming Migration Tasks
+
+- [x] Admin confirmed new project/product name: ResolveYGO.
+- [ ] Decide whether the GitHub repository should be renamed from `YGOBrain` to `ResolveYGO`.
+- [ ] Decide whether the local canonical folder should become `C:\Users\simeo\Documents\ResolveYGO`.
+- [ ] Resolve the current split where implementation files exist in `ResolveYGO` but architecture/tracker files exist in `YGOBrain`.
+- [ ] Create a controlled rename plan before bulk replacing naming across docs/code.
+- [ ] Update README and startup/runtime files to use ResolveYGO as the current name.
+- [ ] Update governance docs to use ResolveYGO as the current name where appropriate.
+- [ ] Preserve legacy references only where they refer to old repo/folder history.
+- [ ] After rename/migration, verify all Codex prompts point to the correct canonical path.
+
+## 3. Completed Setup Batch Items
 
 - [x] Update `runtime/000_startup_context.md` with module review and sub-agent policies.
 - [x] Update `README.md` with agent workflow and current foundation status.
@@ -26,13 +44,13 @@ This file lists the setup batch tasks that should be completed before using Code
 - [x] Create `sources/001_approved_source_families.md`.
 - [x] Create this batch task plan.
 
-## 3. Required Human Verification Before Large-Scale Agent Work
+## 4. Required Human Verification Before Large-Scale Agent Work
 
 - [x] Admin reviews and accepts the setup batch.
 - [x] Admin confirms no currently listed candidate source families require decision before continuing.
 - [x] Admin reviews and accepts `competitive/010_deckbuilding_principles.md`.
 
-## 4. Source Approval Tasks
+## 5. Source Approval Tasks
 
 - [x] Record Yugipedia as LIMITED_USE.
 - [x] Record YGOrganization as LIMITED_USE.
@@ -49,7 +67,7 @@ Current Proceed Rule:
 - If a task needs a source category not yet covered, pause and ask Admin for approval before treating the new source as trusted.
 - Admin may provide additional source families over time.
 
-## 5. Retrieval-First Architecture Tasks
+## 6. Retrieval-First Architecture Tasks
 
 - [x] Create `governance/008_retrieval_architecture.md`.
 - [x] Create `runtime/090_retrieval_manifest.md`.
@@ -62,7 +80,7 @@ Current Proceed Rule:
 - [ ] Gradually add retrieval metadata to high-priority existing modules.
 - [ ] Create first small eval batch from `tests/000_eval_plan.md`.
 
-## 6. Card Knowledge Architecture Tasks
+## 7. Card Knowledge Architecture Tasks
 
 - [x] Create `governance/009_card_knowledge_architecture.md`.
 - [x] Create `runtime/070_card_lookup_context.md`.
@@ -90,11 +108,19 @@ Current Proceed Rule:
 - [ ] Create actual card recommendation eval cases after local database implementation exists.
 - [ ] Create actual card discovery eval cases after local database implementation exists.
 
-## 7. Phase 2 Card Database Implementation Review
+## 8. Phase 2 Card Database Implementation Review
 
 Phase 2 implementation was reported by Codex, but the implementation files are not present in this `YGOBrain` repository after pulling `origin/main` on 2026-06-07.
 
-Implementation not yet present in this repository:
+Implementation was later found in:
+
+```text
+C:\Users\simeo\Documents\ResolveYGO
+```
+
+Implementation still needs to be ported into the canonical repository/folder after the naming decision is settled.
+
+Implementation not yet present in the current `YGOBrain` repository:
 
 - [ ] Add TypeScript project setup and npm scripts.
 - [ ] Add Supabase migration for `cards`, `card_localizations`, `card_stats`, `card_properties`, `card_enrichment`, and `card_import_logs`.
@@ -105,22 +131,23 @@ Implementation not yet present in this repository:
 - [ ] Add on-demand YGOResources enrichment service with cache-first behaviour.
 - [ ] Add prompt-injection data wrapper and source-discipline labels.
 - [ ] Add Vitest test suite with mocked Supabase/API calls.
-- [ ] Confirm `npm.cmd run build` passes in this repository.
-- [ ] Confirm `npm.cmd run test` passes in this repository.
+- [ ] Confirm `npm.cmd run build` passes in the canonical repository.
+- [ ] Confirm `npm.cmd run test` passes in the canonical repository.
 
 Current review result:
 
 - [x] Ran `git status` before pull: clean on `main`.
 - [x] Ran `git pull`: fast-forwarded to `origin/main`.
 - [x] Ran `git status` after pull: clean on `main`.
-- [x] Checked requested implementation file paths: implementation files are absent.
+- [x] Checked requested implementation file paths: implementation files are absent from `YGOBrain`.
 - [x] Ran `npm.cmd run build`: failed because `package.json` is absent.
 - [x] Ran `npm.cmd run test`: failed because `package.json` is absent.
+- [x] Located implementation files in `C:\Users\simeo\Documents\ResolveYGO`.
 
 Review still required before live use:
 
-- [ ] Land Phase 2 implementation files in this repository.
-- [ ] Review Phase 2 implementation for architecture compliance after files exist.
+- [ ] Land/port Phase 2 implementation files into the canonical repository/folder.
+- [ ] Review Phase 2 implementation for architecture compliance after files exist in the canonical repository/folder.
 - [ ] Review Supabase migration before applying to a live Supabase project.
 - [ ] Confirm RLS policies allow authenticated read access only and no client writes.
 - [ ] Review importer against the `yugioh-card-history` repository structure.
@@ -134,7 +161,7 @@ Review still required before live use:
 - [ ] Apply Supabase migration to live project only after review.
 - [ ] Run importer against live project only after migration review and application.
 
-## 8. Next Content Modules After Setup Verification
+## 9. Next Content Modules After Setup Verification
 
 Recommended first content modules:
 
@@ -164,7 +191,7 @@ analytics/010_analytics_principles.md - DRAFTED
 
 All substantive content modules should remain DRAFTED or UNDER_REVIEW until Admin verifies them.
 
-## 9. Agent Batch Rules
+## 10. Agent Batch Rules
 
 When using agents for future batches:
 
@@ -178,8 +205,9 @@ When using agents for future batches:
 - keep modules small and reviewable
 - provide a change summary after durable changes
 - automatically update this batch task plan after meaningful durable changes
+- use ResolveYGO as the current project name in new work unless referring to legacy files/paths/history
 
-## 10. Change Log
+## 11. Change Log
 
 ```text
 2026-06-02
@@ -211,4 +239,9 @@ Reason: Admin confirmed all surfaced review items were verified.
 Status: DRAFTED
 Change: Added Phase 2 card database implementation completion and review tasks.
 Reason: Admin requested automatic tracking of completed implementation work and remaining review/live integration tasks.
+
+2026-06-07
+Status: DRAFTED
+Change: Added ResolveYGO naming migration tasks.
+Reason: Admin confirmed ResolveYGO is the project/product name moving forward and YGOBrain naming caused implementation split across folders.
 ```
