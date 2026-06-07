@@ -1,11 +1,11 @@
 # Batch Task Plan
 
 Status: DRAFTED
-Version: v0.4
+Version: v0.5
 Category: scripts
 Scope: Checklist for completing YGOBrain setup before large-scale agent-assisted content creation
 Owner: Admin
-Last Updated: 2026-06-06
+Last Updated: 2026-06-07
 
 ## 1. Purpose
 
@@ -79,18 +79,52 @@ Current Proceed Rule:
 - [x] Admin reviews and verifies `competitive/020_card_tagging_framework.md`.
 - [x] Admin reviews and verifies `templates/card_tag_template.md`.
 - [x] Admin reviews and verifies card eval framework files.
-- [ ] Define local card database physical storage format.
-- [ ] Define local card database storage path.
-- [ ] Define update/cache script requirements.
-- [ ] Define card database query interface.
-- [ ] Define fuzzy lookup approach.
-- [ ] Define strategic tag storage and review workflow.
+- [x] Create local card database physical storage format via Supabase migration.
+- [x] Define local card database storage path via Supabase tables.
+- [x] Define update/cache script requirements through card-history importer and enrichment service.
+- [x] Define card database query interface through lookup/search service.
+- [x] Define fuzzy lookup approach using pg_trgm and local full-text search.
+- [x] Define strategic tag storage and review workflow through schema support.
 - [ ] Add card lookup/recommendation routes to `runtime/090_retrieval_manifest.md` if needed.
 - [ ] Create actual card lookup eval cases after local database implementation exists.
 - [ ] Create actual card recommendation eval cases after local database implementation exists.
 - [ ] Create actual card discovery eval cases after local database implementation exists.
 
-## 7. Next Content Modules After Setup Verification
+## 7. Phase 2 Card Database Implementation Review
+
+Phase 2 implementation has been created locally and reported by Codex.
+
+Completed in Phase 2:
+
+- [x] Add TypeScript project setup and npm scripts.
+- [x] Add Supabase migration for `cards`, `card_localizations`, `card_stats`, `card_properties`, `card_enrichment`, and `card_import_logs`.
+- [x] Add RLS read policies for authenticated users and no client write policies.
+- [x] Add pg_trgm fuzzy lookup and local full-text search support.
+- [x] Add card-history importer with UTF-8 JSON parsing, ID validation, source metadata, property splitting, Link arrow storage, and import logging.
+- [x] Add local lookup/search service.
+- [x] Add on-demand YGOResources enrichment service with cache-first behaviour.
+- [x] Add prompt-injection data wrapper and source-discipline labels.
+- [x] Add Vitest test suite with mocked Supabase/API calls.
+- [x] Confirm `npm.cmd run build` passes.
+- [x] Confirm `npm.cmd run test` passes with 4 files and 21 tests.
+
+Review still required before live use:
+
+- [ ] Review Phase 2 implementation for architecture compliance.
+- [ ] Review Supabase migration before applying to a live Supabase project.
+- [ ] Confirm RLS policies allow authenticated read access only and no client writes.
+- [ ] Review importer against the `yugioh-card-history` repository structure.
+- [ ] Confirm lookup/search service uses local database first.
+- [ ] Confirm enrichment service only calls YGOResources when local/enrichment cache data is missing.
+- [ ] Confirm `/data/card/<id>` enrichment is not overclaimed as full ruling/Q&A coverage.
+- [ ] Design Q&A-ID discovery flow before using `/data/qa/<id>`.
+- [ ] Keep banlist, legality, and release_info as safe stubs until documented approved endpoints exist.
+- [ ] Add actual eval cases now that lookup/search/enrichment code exists.
+- [ ] Review npm vulnerabilities manually; do not run `npm audit fix --force` blindly.
+- [ ] Apply Supabase migration to live project only after review.
+- [ ] Run importer against live project only after migration review and application.
+
+## 8. Next Content Modules After Setup Verification
 
 Recommended first content modules:
 
@@ -120,7 +154,7 @@ analytics/010_analytics_principles.md - DRAFTED
 
 All substantive content modules should remain DRAFTED or UNDER_REVIEW until Admin verifies them.
 
-## 8. Agent Batch Rules
+## 9. Agent Batch Rules
 
 When using agents for future batches:
 
@@ -133,8 +167,9 @@ When using agents for future batches:
 - mark candidate sources clearly
 - keep modules small and reviewable
 - provide a change summary after durable changes
+- automatically update this batch task plan after meaningful durable changes
 
-## 9. Change Log
+## 10. Change Log
 
 ```text
 2026-06-02
@@ -161,4 +196,9 @@ Reason: Admin requested strategic card discovery by function and evaluation scaf
 Status: VERIFIED_BY_ADMIN
 Change: Marked reviewed retrieval-first, card knowledge, card database schema, card tagging, and card eval framework items as verified in the batch task plan.
 Reason: Admin confirmed all surfaced review items were verified.
+
+2026-06-07
+Status: DRAFTED
+Change: Added Phase 2 card database implementation completion and review tasks.
+Reason: Admin requested automatic tracking of completed implementation work and remaining review/live integration tasks.
 ```
