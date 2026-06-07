@@ -92,25 +92,35 @@ Current Proceed Rule:
 
 ## 7. Phase 2 Card Database Implementation Review
 
-Phase 2 implementation has been created locally and reported by Codex.
+Phase 2 implementation was reported by Codex, but the implementation files are not present in this `YGOBrain` repository after pulling `origin/main` on 2026-06-07.
 
-Completed in Phase 2:
+Implementation not yet present in this repository:
 
-- [x] Add TypeScript project setup and npm scripts.
-- [x] Add Supabase migration for `cards`, `card_localizations`, `card_stats`, `card_properties`, `card_enrichment`, and `card_import_logs`.
-- [x] Add RLS read policies for authenticated users and no client write policies.
-- [x] Add pg_trgm fuzzy lookup and local full-text search support.
-- [x] Add card-history importer with UTF-8 JSON parsing, ID validation, source metadata, property splitting, Link arrow storage, and import logging.
-- [x] Add local lookup/search service.
-- [x] Add on-demand YGOResources enrichment service with cache-first behaviour.
-- [x] Add prompt-injection data wrapper and source-discipline labels.
-- [x] Add Vitest test suite with mocked Supabase/API calls.
-- [x] Confirm `npm.cmd run build` passes.
-- [x] Confirm `npm.cmd run test` passes with 4 files and 21 tests.
+- [ ] Add TypeScript project setup and npm scripts.
+- [ ] Add Supabase migration for `cards`, `card_localizations`, `card_stats`, `card_properties`, `card_enrichment`, and `card_import_logs`.
+- [ ] Add RLS read policies for authenticated users and no client write policies.
+- [ ] Add pg_trgm fuzzy lookup and local full-text search support.
+- [ ] Add card-history importer with UTF-8 JSON parsing, ID validation, source metadata, property splitting, Link arrow storage, and import logging.
+- [ ] Add local lookup/search service.
+- [ ] Add on-demand YGOResources enrichment service with cache-first behaviour.
+- [ ] Add prompt-injection data wrapper and source-discipline labels.
+- [ ] Add Vitest test suite with mocked Supabase/API calls.
+- [ ] Confirm `npm.cmd run build` passes in this repository.
+- [ ] Confirm `npm.cmd run test` passes in this repository.
+
+Current review result:
+
+- [x] Ran `git status` before pull: clean on `main`.
+- [x] Ran `git pull`: fast-forwarded to `origin/main`.
+- [x] Ran `git status` after pull: clean on `main`.
+- [x] Checked requested implementation file paths: implementation files are absent.
+- [x] Ran `npm.cmd run build`: failed because `package.json` is absent.
+- [x] Ran `npm.cmd run test`: failed because `package.json` is absent.
 
 Review still required before live use:
 
-- [ ] Review Phase 2 implementation for architecture compliance.
+- [ ] Land Phase 2 implementation files in this repository.
+- [ ] Review Phase 2 implementation for architecture compliance after files exist.
 - [ ] Review Supabase migration before applying to a live Supabase project.
 - [ ] Confirm RLS policies allow authenticated read access only and no client writes.
 - [ ] Review importer against the `yugioh-card-history` repository structure.
@@ -119,8 +129,8 @@ Review still required before live use:
 - [ ] Confirm `/data/card/<id>` enrichment is not overclaimed as full ruling/Q&A coverage.
 - [ ] Design Q&A-ID discovery flow before using `/data/qa/<id>`.
 - [ ] Keep banlist, legality, and release_info as safe stubs until documented approved endpoints exist.
-- [ ] Add actual eval cases now that lookup/search/enrichment code exists.
-- [ ] Review npm vulnerabilities manually; do not run `npm audit fix --force` blindly.
+- [ ] Add actual eval cases after local database implementation exists.
+- [ ] Review npm vulnerabilities manually after npm dependencies exist; do not run `npm audit fix --force` blindly.
 - [ ] Apply Supabase migration to live project only after review.
 - [ ] Run importer against live project only after migration review and application.
 
