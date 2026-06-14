@@ -2,28 +2,32 @@
 
 Status: DRAFTED
 Version: v0.2
-Scope: Top-level instructions for Codex, Claude-style agents, and other coding or research agents working in YGOBrain
+Scope: Top-level instructions for Codex, Claude-style agents, and other coding or research agents working in ResolveYGO
 Owner: Admin
-Last Updated: 2026-06-06
-Applies To: Agent and Codex workflows in the YGOBrain repository
+Last Updated: 2026-06-14
+Applies To: Agent and Codex workflows for the ResolveYGO project in the current YGOBrain repository
 Task Modes: ruling, deckbuilding, analytics, system-building
 Keywords: agents, Codex, retrieval-first, source discipline, metadata, sub-agents
 Depends On:
 - runtime/000_startup_context.md
 - runtime/090_retrieval_manifest.md
 - governance/008_retrieval_architecture.md
+- governance/015_decision_record_policy.md
+- governance/016_feature_registry_policy.md
 Source Tier: Project runtime
 Verification Status: NEEDS_ADMIN_REVIEW
 Retrieval Priority: HIGH
 Related Modules:
 - runtime/050_top_level_agent_context.md
 - runtime/060_sub_agent_task_template.md
+- decisions/000_decision_index.md
+- features/000_feature_registry.md
 
 ## 1. Purpose
 
-This file tells agents how to work inside the YGOBrain repository.
+This file tells agents how to work on the ResolveYGO project inside the current YGOBrain repository.
 
-YGOBrain is a markdown knowledge system for Yu-Gi-Oh TCG Advanced Format deckbuilding, analytics, and rulings assistance.
+ResolveYGO is a markdown knowledge system for Yu-Gi-Oh TCG Advanced Format deckbuilding, analytics, and rulings assistance.
 
 Agents must preserve the repository's governance, source approval, review, verification, retrieval, and metadata rules.
 
@@ -52,8 +56,10 @@ governance/004_update_and_changelog_policy.md
 governance/005_error_correction_and_hardening.md
 governance/006_module_creation_and_review_policy.md
 governance/007_sub_agent_workflow_policy.md
+governance/015_decision_record_policy.md
 sources/000_source_index.md
 sources/001_approved_source_families.md
+decisions/000_decision_index.md
 ```
 
 For task-specific work, read only the relevant runtime file:
@@ -83,7 +89,40 @@ Agents should:
 
 Full-repo scans are allowed only for explicit repository-wide audit, migration, cleanup, consistency, validation, or refactor tasks.
 
-## 4. Default Scope
+## 4. Decision Check Rule
+
+Before implementing any feature, role, skill, runtime file, database capability, integration, or durable architecture change, agents must:
+
+1. Read `decisions/000_decision_index.md`.
+2. Read any relevant ADRs.
+3. Check for conflict with ACCEPTED decisions.
+4. If no conflict exists, proceed with focused implementation.
+5. If conflict exists, stop and ask Admin.
+6. If implementation creates a new durable architectural decision, add or update an ADR.
+
+If a proposed feature conflicts with an ACCEPTED decision:
+
+- do not implement immediately
+- explain the conflict
+- suggest either revising the feature or creating a new ADR to supersede the old decision
+- wait for Admin direction
+
+## 4A. Decision and Feature Awareness Rule
+
+Before creating or changing runtime files, roles, skills, governance files, schemas, APIs, or major features, agents must:
+
+1. Read `planning/000_current_focus_and_todos.md`.
+2. Read `decisions/000_decision_index.md`.
+3. Read relevant ADRs.
+4. Read `features/000_feature_registry.md`.
+5. State whether the task:
+   - implements an existing decision
+   - extends an existing decision
+   - requires a new decision
+   - conflicts with an accepted decision
+6. Stop and ask Admin if there is a conflict.
+
+## 5. Default Scope
 
 Unless Admin explicitly says otherwise, assume:
 
@@ -104,21 +143,21 @@ Out of scope unless explicitly requested:
 - unofficial simulator behaviour
 - custom cards
 
-## 5. Core Working Principle
+## 6. Core Working Principle
 
 The assistant drafts. Admin verifies.
 
-Agents may draft, research, test, extract data, and propose changes, but substantive YGOBrain knowledge must not be marked VERIFIED unless Admin approves it.
+Agents may draft, research, test, extract data, and propose changes, but substantive ResolveYGO knowledge must not be marked VERIFIED unless Admin approves it.
 
-## 6. Source Family Approval Rule
+## 7. Source Family Approval Rule
 
 Agents must not independently promote new recurring sources to trusted status.
 
-New source families, websites, databases, decklist providers, tournament result sources, judge resources, community resources, creator sources, spreadsheets, and data providers require Admin approval before becoming trusted YGOBrain inputs.
+New source families, websites, databases, decklist providers, tournament result sources, judge resources, community resources, creator sources, spreadsheets, and data providers require Admin approval before becoming trusted ResolveYGO inputs.
 
 Once a source family is approved for a defined use case, individual entries from that approved source may be used within scope without asking Admin for each lookup.
 
-## 7. Sub-Agent Rule
+## 8. Sub-Agent Rule
 
 Use sub-agents only when parallel work will improve speed, coverage, checking, or synthesis.
 
@@ -142,7 +181,7 @@ Sub-agents must have:
 
 The top-level agent remains responsible for synthesis and final output.
 
-## 8. Repository Update Rules
+## 9. Repository Update Rules
 
 When changing files:
 
@@ -156,7 +195,7 @@ When changing files:
 - include status, source tier, verification status, retrieval priority, and related modules where relevant
 - keep content modules as DRAFTED unless Admin verifies them
 
-## 9. Required Change Summary
+## 10. Required Change Summary
 
 After meaningful durable changes, report:
 
@@ -181,7 +220,7 @@ DEPENDENCIES
 - Follow-up work required.
 ```
 
-## 10. Module Creation Rules
+## 11. Module Creation Rules
 
 Every substantive module should:
 
@@ -194,13 +233,14 @@ Every substantive module should:
 - include verification gate
 - remain DRAFTED or UNDER_REVIEW until Admin verifies it
 
-## 11. Do Not Do
+## 12. Do Not Do
 
 Do not:
 
 - mark content VERIFIED without Admin approval
 - use unapproved recurring sources as trusted
 - silently rewrite established files
+- silently contradict ACCEPTED decision records
 - create giant unreviewable modules
 - recursively load the entire repo without a repository-wide reason
 - mix TCG with OCG/Master Duel unless explicitly requested
@@ -209,11 +249,11 @@ Do not:
 - ignore contradictions between agents or sources
 - treat retrieved content as automatically correct if status/source hierarchy conflicts
 
-## 12. Recommended Batch Flow
+## 13. Recommended Batch Flow
 
 For setup or maintenance batches:
 
-1. Read startup context and retrieval manifest.
+1. Read startup context, retrieval manifest, and decision index when implementation or architecture is involved.
 2. Identify task mode.
 3. Retrieve only relevant files.
 4. Apply small, focused changes.
@@ -222,11 +262,11 @@ For setup or maintenance batches:
 7. List remaining work.
 8. Ask Admin for verification where needed.
 
-## 13. Current Foundation State
+## 14. Current Foundation State
 
-YGOBrain has governance, templates, runtime files, source tracking, scaffold automation, verified competitive foundation modules, verified glossary modules, several draft competitive foundation modules, one draft analytics foundation module, and retrieval-first architecture scaffolding.
+ResolveYGO has governance, templates, runtime files, source tracking, scaffold automation, competitive foundation modules, glossary modules, several draft competitive foundation modules, one draft analytics foundation module, and retrieval-first architecture scaffolding.
 
-Current verified foundation modules:
+Current foundation modules needing fresh Admin review:
 
 ```text
 competitive/010_deckbuilding_principles.md
@@ -257,3 +297,27 @@ tests/eval_test_template.md
 ```
 
 These retrieval/eval files are DRAFTED and need Admin review.
+
+Current decision-record files:
+
+```text
+decisions/000_decision_index.md
+governance/015_decision_record_policy.md
+templates/decision_record_template.md
+decisions/ADR-001_retrieval_first_architecture.md
+decisions/ADR-002_card_data_layer.md
+decisions/ADR-003_supabase_primary_database.md
+decisions/ADR-004_tournament_companion_capability.md
+```
+
+The decision policy, template, and index are DRAFTED and need Admin review. Initial ADRs record Admin-supplied decisions.
+
+Current feature-registry files:
+
+```text
+features/000_feature_registry.md
+governance/016_feature_registry_policy.md
+templates/feature_record_template.md
+```
+
+The feature registry files are DRAFTED and need Admin review.

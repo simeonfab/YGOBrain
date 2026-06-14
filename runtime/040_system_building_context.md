@@ -3,13 +3,13 @@
 Status: DRAFTED
 Version: v0.1
 Category: runtime
-Scope: Runtime instructions for building and maintaining the YGOBrain repository
+Scope: Runtime instructions for building and maintaining the ResolveYGO project in the current YGOBrain repository
 Owner: Admin
-Last Updated: 2026-06-02
+Last Updated: 2026-06-14
 
 ## 1. Purpose
 
-This file is the task-specific runtime context for system-building work in YGOBrain.
+This file is the task-specific runtime context for system-building work in ResolveYGO.
 
 Use this file when creating, updating, organizing, or maintaining governance files, templates, source files, runtime files, tests, scripts, and repository structure.
 
@@ -27,6 +27,11 @@ governance/004_update_and_changelog_policy.md
 governance/005_error_correction_and_hardening.md
 governance/006_module_creation_and_review_policy.md
 governance/007_sub_agent_workflow_policy.md
+governance/015_decision_record_policy.md
+governance/016_feature_registry_policy.md
+planning/000_current_focus_and_todos.md
+decisions/000_decision_index.md
+features/000_feature_registry.md
 ```
 
 ## 3. System-Building Role
@@ -49,15 +54,39 @@ Primary goals:
 Use this workflow for system-building tasks:
 
 1. Identify the next required file or change.
-2. Create or update the smallest useful file.
-3. Check whether sub-agents are useful for the task.
-4. Check whether any new source family, website, database, or recurring data provider needs Admin approval.
-5. Commit directly to GitHub when access is available and appropriate.
-6. Provide a change summary.
-7. Assign priority.
-8. Identify dependencies and next recommended file.
+2. Check `planning/000_current_focus_and_todos.md`.
+3. Check `decisions/000_decision_index.md` before implementing features or architecture changes.
+4. Read any relevant ADRs and identify conflicts with ACCEPTED decisions.
+5. Check `features/000_feature_registry.md`.
+6. State whether the task implements an existing decision, extends an existing decision, requires a new decision, or conflicts with an accepted decision.
+7. Create or update the smallest useful file.
+8. Check whether sub-agents are useful for the task.
+9. Check whether any new source family, website, database, or recurring data provider needs Admin approval.
+10. Commit directly to GitHub when access is available and appropriate.
+11. Provide a change summary.
+12. Assign priority.
+13. Identify dependencies and next recommended file.
 
-## 5. Question Discipline
+## 5. Decision And Feature Awareness
+
+System-building work must check the current focus, decision index, relevant ADRs, and feature registry before implementation.
+
+New roles, skills, runtime files, database sources, database capabilities, schemas, APIs, major features, and architecture changes require decision-log awareness.
+
+Agents must not continue from chat memory where repository context exists. Retrieve current repository files instead.
+
+Use the feature registry to identify whether a request implements an existing feature, extends an existing feature, or creates a new capability.
+
+If adding a feature from a casual idea, first classify whether it is:
+
+- minor content update
+- new capability
+- architecture decision
+- implementation task
+
+If the feature conflicts with an ACCEPTED decision, do not implement immediately. Explain the conflict and suggest either revising the feature or creating a new ADR to supersede the old decision.
+
+## 6. Question Discipline
 
 Ask one question at a time by default.
 
@@ -65,7 +94,7 @@ Do not ask Admin long setup lists.
 
 Use established repository defaults unless the decision is genuinely blocked.
 
-## 6. PowerShell First Rule
+## 7. PowerShell First Rule
 
 If Admin needs to do local work, provide PowerShell commands first.
 
@@ -79,7 +108,7 @@ cd YGOBrain
 git pull
 ```
 
-## 7. GitHub Direct Update Rule
+## 8. GitHub Direct Update Rule
 
 When GitHub access is available and Admin has approved the action, prefer direct repository updates for simple file creation and edits.
 
@@ -93,7 +122,7 @@ PRIORITY
 DEPENDENCIES
 ```
 
-## 8. File Creation Rule
+## 9. File Creation Rule
 
 When creating a new file:
 
@@ -106,7 +135,7 @@ When creating a new file:
 - include a change log section where useful
 - include verification gates for substantive modules
 
-## 9. Update Rule
+## 10. Update Rule
 
 When updating an existing file:
 
@@ -116,7 +145,7 @@ When updating an existing file:
 - explain what changed
 - check whether related files need updates
 
-## 10. Sub-Agent Use Rule
+## 11. Sub-Agent Use Rule
 
 Use `governance/007_sub_agent_workflow_policy.md` before deploying or designing sub-agent workflows.
 
@@ -132,13 +161,13 @@ Sub-agents are appropriate when the work can be split into useful parallel tasks
 
 The top-level agent remains responsible for synthesis, contradiction handling, repository updates, and Admin verification.
 
-## 11. Source Approval Gate
+## 12. Source Approval Gate
 
 Before trusting a new source family, website, database, decklist provider, judge resource, or recurring data provider, ask Admin for approval.
 
 Once a source is approved for a category, agents may use individual entries from that source within the approved scope without asking about each individual lookup.
 
-## 12. Governance Priority
+## 13. Governance Priority
 
 Governance and templates should be completed before large rules, deckbuilding, or analytics modules.
 
@@ -153,7 +182,7 @@ Recommended early build order:
 7. analytics backlog files
 8. deck overlays
 
-## 13. Current Established Structure
+## 14. Current Established Structure
 
 Top-level folders:
 
@@ -171,9 +200,12 @@ changelogs/
 error_logs/
 sources/
 scripts/
+decisions/
+features/
+planning/
 ```
 
-## 14. Standard Change Summary
+## 15. Standard Change Summary
 
 Use this after every meaningful durable change:
 
@@ -198,7 +230,7 @@ DEPENDENCIES
 - Follow-up work required.
 ```
 
-## 15. Error Handling
+## 16. Error Handling
 
 If a system-building mistake occurs, apply the error correction and hardening policy.
 
@@ -216,13 +248,13 @@ Examples:
 
 Material errors should create either a correction, a preventative rule, a template update, a runtime update, or an error log entry.
 
-## 16. Do Not Start Content Too Early
+## 17. Do Not Start Content Too Early
 
 Do not create large Yu-Gi-Oh rules, deckbuilding, or analytics content until the relevant template and source rules exist.
 
 A small pilot module is acceptable once the module template and source index exist.
 
-## 17. Next Recommended System Files
+## 18. Next Recommended System Files
 
 After this file, useful next files include:
 
@@ -233,7 +265,7 @@ glossary/000_official_rules_terms.md
 glossary/010_deckbuilding_terms.md
 ```
 
-## 18. Completion Criteria for System Foundation v0.1
+## 19. Completion Criteria for System Foundation v0.1
 
 System foundation v0.1 is complete when the repository has:
 
@@ -244,6 +276,8 @@ System foundation v0.1 is complete when the repository has:
 - source index
 - task-specific runtime files
 - sub-agent workflow policy
+- decision record system
+- feature registry
 - a clear next-module backlog
 
-After this, YGOBrain can start creating pilot content modules.
+After this, ResolveYGO can start creating pilot content modules.

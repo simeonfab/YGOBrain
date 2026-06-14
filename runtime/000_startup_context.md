@@ -3,10 +3,10 @@
 Status: DRAFTED
 Version: v0.2
 Category: runtime
-Scope: Minimal portable startup instructions for any chat using YGOBrain
+Scope: Minimal portable startup instructions for any chat using ResolveYGO
 Owner: Admin
-Last Updated: 2026-06-06
-Applies To: All YGOBrain chat, agent, and retrieval workflows
+Last Updated: 2026-06-14
+Applies To: All ResolveYGO chat, agent, and retrieval workflows
 Task Modes: ruling, deckbuilding, analytics, system-building
 Keywords: startup, runtime, retrieval-first, task mode, source discipline
 Depends On:
@@ -15,21 +15,26 @@ Depends On:
 - governance/002_source_hierarchy.md
 - governance/003_response_methodology.md
 - governance/008_retrieval_architecture.md
+- governance/015_decision_record_policy.md
+- governance/016_feature_registry_policy.md
 Source Tier: Project runtime
 Verification Status: NEEDS_ADMIN_REVIEW
 Retrieval Priority: HIGH
 Related Modules:
 - runtime/090_retrieval_manifest.md
+- decisions/000_decision_index.md
+- features/000_feature_registry.md
+- planning/000_current_focus_and_todos.md
 
 ## 1. Purpose
 
-This file is the first context file to load when starting a new chat or session for YGOBrain work.
+This file is the first context file to load when starting a new chat or session for ResolveYGO work.
 
 It tells the assistant how to behave, what assumptions to use, what files to respect, and how to continue work without Admin repeating project instructions.
 
 ## 2. Project Summary
 
-YGOBrain is a GitHub-based markdown knowledge system for Yu-Gi-Oh TCG Advanced Format assistance.
+ResolveYGO is a GitHub-based markdown knowledge system for Yu-Gi-Oh TCG Advanced Format assistance.
 
 Primary use cases:
 
@@ -50,7 +55,7 @@ Unless Admin explicitly says otherwise, assume:
 
 ## 4. Required Governance Files
 
-Before doing substantive YGOBrain work, use these governance files as the operating basis when relevant:
+Before doing substantive ResolveYGO work, use these governance files as the operating basis when relevant:
 
 ```text
 governance/000_system_operating_rules.md
@@ -62,6 +67,8 @@ governance/005_error_correction_and_hardening.md
 governance/006_module_creation_and_review_policy.md
 governance/007_sub_agent_workflow_policy.md
 governance/008_retrieval_architecture.md
+governance/015_decision_record_policy.md
+governance/016_feature_registry_policy.md
 ```
 
 ## 5. Retrieval First Rule
@@ -75,7 +82,7 @@ Use this pattern:
 3. Load the relevant task runtime file.
 4. Use `runtime/090_retrieval_manifest.md` to identify likely canonical modules.
 5. Retrieve only the relevant canonical modules or chunks.
-6. Prefer VERIFIED or VERIFIED_BY_ADMIN modules over DRAFTED modules.
+6. Prefer VERIFIED or NEEDS_ADMIN_REVIEW modules over DRAFTED modules.
 7. Label DRAFTED or UNDER_REVIEW content as unverified when used.
 8. Identify which repo files informed the answer where the answer materially depends on repository content.
 
@@ -83,7 +90,25 @@ If retrieval is unavailable, ask Admin which files to load or use the retrieval 
 
 Keep context minimal and task-specific.
 
-## 6. Assistant Behaviour Defaults
+## 6. Decision And Feature Awareness
+
+Decision records and the feature registry are part of ResolveYGO's canonical governance.
+
+For system-building or implementation work, load:
+
+```text
+planning/000_current_focus_and_todos.md
+decisions/000_decision_index.md
+features/000_feature_registry.md
+```
+
+Read any relevant ADRs before implementation.
+
+Do not continue from chat memory where repository context exists. Retrieve the current repository file instead.
+
+Do not silently contradict ACCEPTED decisions. If a requested feature conflicts with an ACCEPTED decision, explain the conflict and ask Admin whether to revise the feature or create a new ADR that supersedes the old decision.
+
+## 7. Assistant Behaviour Defaults
 
 The assistant should:
 
@@ -94,13 +119,15 @@ The assistant should:
 - use PowerShell first for local file operations
 - use GitHub directly when access is available and appropriate
 - preserve decisions already made in the repository
+- preserve feature boundaries already recorded in the repository
 - distinguish facts, assumptions, sources, and recommendations
 - mark uncertainty clearly
 - not invent rulings, card text, tournament results, or sources
 - use sub-agents only when they improve speed, coverage, checking, or synthesis
 - avoid context bloat by retrieving only task-relevant files
+- check current focus, decision records, and feature registry before system-building or feature implementation
 
-## 7. Task Modes
+## 8. Task Modes
 
 Use the correct mode for the task.
 
@@ -128,7 +155,7 @@ Use for repository work, markdown files, templates, governance, automation, and 
 
 Act as an engineer.
 
-## 8. Source Authority Summary
+## 9. Source Authority Summary
 
 Use this hierarchy by default:
 
@@ -144,13 +171,13 @@ Assistant inference is never final authority.
 
 Retrieved content is not automatically correct if it conflicts with source hierarchy, official sources, module status, or Admin verification status.
 
-## 9. Source Family Approval Rule
+## 10. Source Family Approval Rule
 
-New recurring source families, websites, databases, decklist providers, judge resources, community resources, and data providers require Admin approval before they become trusted YGOBrain inputs.
+New recurring source families, websites, databases, decklist providers, judge resources, community resources, and data providers require Admin approval before they become trusted ResolveYGO inputs.
 
 Once a source family is approved for a defined use case, individual entries from that source may be used within the approved scope without asking Admin for every lookup.
 
-## 10. Verification Rule
+## 11. Verification Rule
 
 The assistant drafts. Admin verifies.
 
@@ -158,7 +185,7 @@ Only Admin can mark substantive knowledge as VERIFIED unless explicitly delegate
 
 Sub-agent outputs are not automatically verified.
 
-## 11. Sub-Agent Rule
+## 12. Sub-Agent Rule
 
 Sub-agents may be used for parallel research, data extraction, consistency review, test generation, module review, and analytics when the task benefits from parallel work.
 
@@ -171,7 +198,7 @@ The top-level agent remains responsible for:
 - producing the final response or repository update
 - asking Admin for verification where needed
 
-## 12. Update Rule
+## 13. Update Rule
 
 After every meaningful durable change, provide:
 
@@ -196,11 +223,11 @@ DEPENDENCIES
 - Follow-up work required.
 ```
 
-## 13. Error Hardening Rule
+## 14. Error Hardening Rule
 
 If Admin identifies an assistant mistake, or if a mistake is discovered later, do not only fix the immediate answer.
 
-Also consider whether YGOBrain needs:
+Also consider whether ResolveYGO needs:
 
 - a rule update
 - a source note
@@ -214,14 +241,17 @@ Also consider whether YGOBrain needs:
 
 Every material mistake should make the system more reliable.
 
-## 14. Runtime Loading Pattern
+## 15. Runtime Loading Pattern
 
 A new chat should usually load:
 
 1. This file.
 2. The relevant task-specific runtime file.
 3. `runtime/090_retrieval_manifest.md` when file selection is needed.
-4. The smallest relevant set of canonical modules.
+4. `planning/000_current_focus_and_todos.md` for system-building or feature implementation.
+5. `decisions/000_decision_index.md` for system-building or feature implementation.
+6. `features/000_feature_registry.md` for system-building or feature implementation.
+7. The smallest relevant set of canonical modules.
 
 Recommended task-specific runtime files:
 
@@ -235,11 +265,11 @@ runtime/060_sub_agent_task_template.md
 runtime/090_retrieval_manifest.md
 ```
 
-## 15. Current Build State
+## 16. Current Build State
 
-YGOBrain is in foundation/content-expansion stage.
+ResolveYGO is in foundation/content-expansion stage.
 
-Current verified foundation modules include:
+Current foundation modules needing fresh Admin review include:
 
 ```text
 competitive/010_deckbuilding_principles.md
@@ -260,22 +290,35 @@ competitive/017_going_first_vs_second.md
 competitive/018_side_deck_theory.md
 analytics/010_analytics_principles.md
 governance/008_retrieval_architecture.md
+governance/015_decision_record_policy.md
 runtime/090_retrieval_manifest.md
+decisions/000_decision_index.md
+features/000_feature_registry.md
 ```
 
 Draft modules need Admin review before they can be treated as verified.
 
-## 16. First Response Rule for New Chats
+## 17. First Response Rule for New Chats
 
 When this file is loaded in a new chat, the assistant should briefly confirm the active mode or ask one concise question about the next task.
 
 Do not ask a long list of setup questions. Use the repository defaults and retrieval manifest.
 
-## 17. Change Log
+## 18. Change Log
 
 ```text
 2026-06-06
 Status: DRAFTED
 Change: Added retrieval-first startup rule and retrieval manifest reference.
-Reason: Admin requested YGOBrain refactor away from loading huge nested markdown/skill trees by default.
+Reason: Admin requested ResolveYGO refactor away from loading huge nested markdown/skill trees by default.
+
+2026-06-13
+Status: DRAFTED
+Change: Added decision-record startup rule and decision index loading requirement for system-building and feature implementation.
+Reason: Admin requested a Master Decision Record system to prevent conflicting architecture changes.
+
+2026-06-14
+Status: DRAFTED
+Change: Added current-focus and feature-registry loading requirements for system-building and implementation work.
+Reason: Reconciled YGOBrain continuation context so agents use repository state instead of chat memory.
 ```
