@@ -1,20 +1,22 @@
 # 000 Current Focus And TODOs
 
 Status: DRAFTED
-Version: v0.1
+Version: v0.2
 Category: planning
 Scope: Current ResolveYGO/YGOBrain continuation state and near-term implementation queue
 Owner: Admin
-Last Updated: 2026-06-14
+Last Updated: 2026-06-19
 Applies To: Continue Existing Project mode, implementation planning, reconciliation, and system-building
 Task Modes: system-building
-Keywords: current focus, todos, continuation, YGOBrain, ResolveYGO, ResolveOS, planning
+Keywords: current focus, todos, continuation, YGOBrain, ResolveYGO, ResolveOS, planning, Supabase, card database, backend phase 1
 Depends On:
 - AGENTS.md
 - runtime/000_startup_context.md
 - runtime/040_system_building_context.md
 - decisions/000_decision_index.md
 - features/000_feature_registry.md
+- planning/001_project_identity_and_chat_model.md
+- planning/002_supabase_card_database_phase_1_spec.md
 Source Tier: Project runtime
 Verification Status: NEEDS_ADMIN_REVIEW
 Retrieval Priority: HIGH
@@ -24,6 +26,7 @@ Related Modules:
 - templates/decision_record_template.md
 - templates/feature_record_template.md
 - planning/001_project_identity_and_chat_model.md
+- planning/002_supabase_card_database_phase_1_spec.md
 
 ## 1. Current Mode
 
@@ -94,15 +97,16 @@ Feature registry files are DRAFTED and need Admin review.
 
 ## 4. Current Guardrails
 
-- Do not start Supabase implementation until Admin explicitly requests it.
+- Do not start Supabase implementation until Admin explicitly approves delegation from the Phase 1 specification.
 - Do not start Tournament Companion implementation until Admin explicitly requests it.
 - Do not create duplicate ADRs or feature records when existing records cover the work.
-- Before implementation, check current focus, decision index, relevant ADRs, and feature registry.
+- Before implementation, check current focus, decision index, relevant ADRs, feature registry, and `planning/002_supabase_card_database_phase_1_spec.md` where card database work is involved.
 - Stop and ask Admin if a requested implementation conflicts with an accepted decision.
 - Use ResolveYGO as the operating/project name.
 - Treat YGOBrain as the current GitHub repository and legacy name until Admin approves a separate repository rename.
 - Consolidate implementation and Git work into one canonical Implementation Engineer / Git chat.
 - Deprecated or duplicate implementation chats should not continue implementation after useful context is captured.
+- Implementation Engineer must not create tickets, broaden scope, or start unrelated backend/frontend work from the Phase 1 planning file.
 
 ## 5. Reconciled State
 
@@ -135,7 +139,16 @@ runtime/000_startup_context.md
 runtime/040_system_building_context.md
 planning/000_current_focus_and_todos.md
 planning/001_project_identity_and_chat_model.md
+planning/002_supabase_card_database_phase_1_spec.md
 ```
+
+Current backend planning artifact:
+
+```text
+planning/002_supabase_card_database_phase_1_spec.md
+```
+
+This file defines the proposed Phase 1 Supabase card database scope. It is DRAFTED and needs Admin review before implementation delegation.
 
 ## 6. Current Card Data Architecture
 
@@ -153,8 +166,8 @@ It is not sufficient by itself for:
 
 - rulings
 - Q&A
-- banlists
-- legality
+- confirmed current banlist status without approved freshness/source handling
+- confirmed current legality without approved freshness/source handling
 - set/release data
 
 Current intended flow:
@@ -174,30 +187,32 @@ Core rule:
 - Do not enrich every candidate card during broad search.
 - Narrow candidates first, then enrich selected cards if needed.
 - Do not run background enrichment unless it is explicitly configured as a sync job.
+- Banlist and legality fields may exist in the Phase 1 card schema, but must remain nullable/untrusted until populated from approved source/freshness metadata.
 
 ## 7. Immediate TODOs
 
 Immediate:
 
-- Admin should identify the canonical Implementation Engineer / Git chat going forward.
-- Deprecated or duplicate implementation chats should be used only to recover historical context, then hand off into the canonical chat and repository files.
+- Admin review of `planning/002_supabase_card_database_phase_1_spec.md`.
 - Admin review of decision policy, decision template, decision index, and initial ADRs.
 - Admin review of feature registry policy, feature template, and initial feature registry.
-- Commit and push the governance, planning, decision, feature, and runtime-context consolidation work.
+- Admin should identify the canonical Implementation Engineer / Git chat going forward.
+- Deprecated or duplicate implementation chats should be used only to recover historical context, then hand off into the canonical chat and repository files.
 
 Priority 1:
 
-1. Complete Feature Registry implementation.
-2. Plan Supabase Card Database Phase 1 before starting implementation.
-3. Plan YGOResources enrichment layer after local-first card database boundaries are confirmed.
+1. Approve, revise, or reject `planning/002_supabase_card_database_phase_1_spec.md`.
+2. If approved, produce a narrow Implementation Engineer task for Supabase Card Database Phase 1.
+3. Complete Feature Registry implementation.
+4. Plan YGOResources enrichment layer after local-first card database boundaries are confirmed.
 
 Priority 2:
 
-4. Create ADR-006 Knowledge Source Hierarchy.
+5. Create ADR-006 Knowledge Source Hierarchy.
 
 Priority 3:
 
-5. Plan Tournament Companion capability.
+6. Plan Tournament Companion capability.
 
 Likely future files:
 
@@ -224,7 +239,7 @@ Required future capabilities:
 
 Priority 4:
 
-6. Plan tournament storage.
+7. Plan tournament storage.
 
 Suggested entities:
 
@@ -248,11 +263,12 @@ This storage should eventually support:
 ## 8. Recommended Resume Order
 
 ```text
-1. Review feature registry
-2. ADR-006 Knowledge Source Hierarchy
-3. Supabase Card Database Phase 1 planning
-4. API Enrichment Layer planning
-5. Tournament Companion planning
+1. Admin review of planning/002_supabase_card_database_phase_1_spec.md
+2. If approved: narrow Implementation Engineer task for Supabase Card Database Phase 1
+3. Feature Registry implementation/review
+4. ADR-006 Knowledge Source Hierarchy
+5. API Enrichment Layer planning
+6. Tournament Companion planning
 ```
 
 ## 9. Change Log
@@ -272,4 +288,9 @@ Reason: Admin requested final project naming and chat operating model consolidat
 Status: DRAFTED
 Change: Reconciled remote current-focus card-data priorities with local governance, decision, feature, and chat consolidation records.
 Reason: Remote main added a current-focus file before the governance consolidation commit was pushed.
+
+2026-06-19
+Status: DRAFTED
+Change: Updated current focus to reference the Supabase Card Database Phase 1 planning specification as the active backend planning artifact.
+Reason: Admin approved creating a durable GitHub planning file for Phase 1 backend scope, including banlist status as a core but source-guarded field.
 ```
