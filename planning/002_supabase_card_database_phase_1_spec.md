@@ -1,9 +1,9 @@
 # 002 Supabase Card Database Phase 1 Spec
 
-Status: DRAFTED
-Version: v0.1
+Status: VERIFIED
+Version: v0.2
 Category: planning
-Scope: Phase 1 backend specification for the ResolveYGO Supabase card database foundation
+Scope: Approved Phase 1 backend specification for the ResolveYGO Supabase card database foundation
 Owner: Admin
 Last Updated: 2026-06-19
 Applies To: Supabase card database, card fact storage, exact lookup, fuzzy lookup, text search, metadata search, source/freshness tracking, MVP backend readiness
@@ -11,6 +11,7 @@ Task Modes: system-building
 Keywords: Supabase, card database, card facts, lookup, fuzzy lookup, banlist, legality, YGOResources, backend phase 1
 Depends On:
 - planning/000_current_focus_and_todos.md
+- planning/003_supabase_card_database_phase_1_implementation_task.md
 - decisions/000_decision_index.md
 - decisions/ADR-002_card_data_layer.md
 - decisions/ADR-003_supabase_primary_database.md
@@ -21,7 +22,7 @@ Depends On:
 - governance/014_card_enrichment_schema.md
 - sources/001_approved_source_families.md
 Source Tier: Project planning
-Verification Status: NEEDS_ADMIN_REVIEW
+Verification Status: ADMIN_CONFIRMED
 Retrieval Priority: HIGH
 Related Modules:
 - runtime/070_card_lookup_context.md
@@ -30,9 +31,9 @@ Related Modules:
 
 ## 1. Purpose
 
-This file defines the Phase 1 backend scope for the ResolveYGO Supabase card database foundation.
+This file defines the approved Phase 1 backend scope for the ResolveYGO Supabase card database foundation.
 
-It turns the existing card-data architecture into an implementation-ready planning specification, without authorising implementation by itself.
+It turns the existing card-data architecture into an implementation-ready planning specification. Implementation must still follow the narrow task boundary in `planning/003_supabase_card_database_phase_1_implementation_task.md`.
 
 Phase 1 should create the minimum backend card-data foundation needed for ResolveYGO MVP:
 
@@ -48,11 +49,11 @@ Import card facts
 
 ## 2. Status And Guardrail
 
-Status: DRAFTED.
+Status: VERIFIED.
 
-This specification does not approve implementation.
+Admin approved this Phase 1 planning scope on 2026-06-19.
 
-Implementation requires a separate Admin approval gate and a scoped Implementation Engineer task.
+This approval covers the Phase 1 scope only. Implementation must remain narrow and must follow `planning/003_supabase_card_database_phase_1_implementation_task.md`.
 
 Implementation Engineer must not create tickets, broaden scope, or start unrelated backend/frontend work from this file.
 
@@ -555,7 +556,7 @@ This is not final production API design. It defines the minimum backend contract
 
 ## 14. Definition Of Done
 
-Phase 1 specification is complete when Admin has reviewed and accepted:
+Phase 1 specification is complete because Admin has reviewed and accepted:
 
 - Phase 1 objective;
 - table list;
@@ -567,51 +568,19 @@ Phase 1 specification is complete when Admin has reviewed and accepted:
 - missing-data statuses;
 - explicit out-of-scope items;
 - validation checks;
-- proposed Implementation Engineer task.
+- proposed Implementation Engineer task boundary.
 
 Phase 1 implementation is complete only when the approved implementation task has built and validated the agreed backend behaviour.
 
-## 15. Proposed Implementation Task Boundary
+## 15. Implementation Task Boundary
 
-Do not send this task until Admin approves delegation.
+Implementation task file:
 
 ```text
-IMPLEMENTATION TASK — Supabase Card Database Phase 1
-
-Build the Phase 1 Supabase card database foundation exactly as specified in planning/002_supabase_card_database_phase_1_spec.md.
-
-Implement:
-1. cards table
-2. card_names table
-3. card_import_batches table
-4. optional card_lookup_audit table if practical
-5. exact card lookup
-6. fuzzy card lookup
-7. basic card text search
-8. basic metadata search
-9. source/freshness metadata
-10. nullable banlist and legality fields with source/freshness guardrails
-11. safe missing-data statuses
-12. validation checks
-
-Do not implement:
-- frontend UI
-- recommendations
-- strategic tags
-- rulings engine
-- full banlist automation
-- full legality automation
-- tournament companion
-- combo solver
-- payment/team features
-
-Before coding:
-- inspect current repository structure
-- confirm whether any Supabase folder or migration structure already exists
-- propose the smallest file changes
-- do not create unrelated tickets
-- do not change architecture beyond the approved spec
+planning/003_supabase_card_database_phase_1_implementation_task.md
 ```
+
+Implementation must remain within that task boundary.
 
 ## 16. Change Log
 
@@ -620,4 +589,9 @@ Before coding:
 Status: DRAFTED
 Change: Created Supabase Card Database Phase 1 specification.
 Reason: Admin approved creating a GitHub markdown planning file and clarified that banlist status should be included as a core card-data field even if not populated immediately.
+
+2026-06-19
+Status: VERIFIED
+Change: Marked Phase 1 specification as Admin-approved and linked the prepared implementation task.
+Reason: Admin approved the Phase 1 scope and asked Technical Strategy Lead to prepare the narrow Implementation Engineer task.
 ```
